@@ -32,6 +32,9 @@ public class Renderer {
       return single_instance;
    }
 
+   /**
+    * Render all gameObjects
+    */
    public void render(){
       Gdx.gl.glClearColor(0.95f,0.95f,0.95f,0.95f);
       Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -52,6 +55,11 @@ public class Renderer {
 
       batch.end();
    }
+
+   /**
+    * Render hitbox of all gameObject. For testing purpose only.
+    * @param world container of all gameObjects for physic.
+    */
    public void renderHitBox(World world){
          renderer.render(world,camera.combined.cpy().scale(ppm,ppm,0));
 

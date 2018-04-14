@@ -16,9 +16,18 @@ public class ScriptManager {
       return single_instance;
    }
 
+   /**
+    * Add listener to script engine so it knows who to call.
+    * @param script object that implement script.
+    */
    public void addScriptListener(Script script){
       scriptList.add(script);
    }
+
+
+   /**
+    * Run script of all listeners.
+    */
    public void runScripts(){
       for (Script s:scriptList){
          s.runObjectScript();

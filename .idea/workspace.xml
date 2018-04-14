@@ -23,12 +23,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="16" column="72" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="72" />
+            <state relative-caret-position="84">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Body.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Body.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-315">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Sprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BunnySnakeTankMaze.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Script.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Script.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScriptManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObjectManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="e#377#378#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#738#739#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +116,18 @@
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="369">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -2500,7 +2590,6 @@
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Component.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/Screen.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/Entity/GameObject.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Transform.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Sprite.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java" />
@@ -2509,14 +2598,15 @@
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MazeGenerator/Maze.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MazeGenerator/SpiralBacktrackerGen.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/BScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Script.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java" />
       </list>
     </option>
   </component>
@@ -2574,6 +2664,13 @@
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="bunnysnaketankmaze" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
@@ -2770,12 +2867,12 @@
       <updated>1523478884617</updated>
       <workItem from="1523478886109" duration="6594000" />
       <workItem from="1523550155780" duration="22843000" />
-      <workItem from="1523744767255" duration="4470000" />
+      <workItem from="1523744767255" duration="5007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33907000" />
+    <option name="totallyTimeSpent" value="34444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
@@ -2903,17 +3000,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Sprite.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/1fd1df309f965e52196900b270afc2bcd0acd0a2/gdx-box2d-1.9.8-sources.jar!/com/badlogic/gdx/physics/box2d/Body.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="282">
+          <caret line="666" column="18" lean-forward="false" selection-start-line="666" selection-start-column="18" selection-end-line="666" selection-end-column="18" />
+          <folding>
+            <element signature="e#24132#24133#0" expanded="false" />
+            <element signature="e#24163#24164#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/BScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#623#624#0" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#833#834#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="60" column="47" lean-forward="false" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Script.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Body.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="-315">
           <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
@@ -2927,101 +3122,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/1fd1df309f965e52196900b270afc2bcd0acd0a2/gdx-box2d-1.9.8-sources.jar!/com/badlogic/gdx/physics/box2d/Body.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="666" column="18" lean-forward="false" selection-start-line="666" selection-start-column="18" selection-end-line="666" selection-end-column="18" />
-          <folding>
-            <element signature="e#24132#24133#0" expanded="false" />
-            <element signature="e#24163#24164#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="351">
           <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/BScreen.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Sprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Script.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="16" column="72" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="72" />
+        <state relative-caret-position="336">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

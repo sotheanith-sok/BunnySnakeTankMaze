@@ -20,10 +20,18 @@ public class Physic {
       return single_instance;
    }
 
+   /**
+    * Get the physic container.
+    * @return
+    */
    public World getWorld(){
       return world;
    }
 
+   /**
+    * Add listeners to the physic engine
+    * @param contactListener listener
+    */
    public void addCollision(ContactListener contactListener){
       world.setContactListener(contactListener);
    }

@@ -10,6 +10,9 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.World;
 
+/**
+ * Method use to creates a batch of object.
+ */
 public class ObjectFactory {
    public static ObjectFactory single_instance;
 
@@ -24,7 +27,9 @@ public class ObjectFactory {
    private ObjectFactory(){
    }
 
-
+   /**
+    * Call at the start of the game. Use to create all gameObjects
+    */
    public void start(){
       Bullet bullet=new Bullet();
       Player player=new Player();
