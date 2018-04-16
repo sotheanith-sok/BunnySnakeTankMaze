@@ -1,5 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.components;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
@@ -18,13 +19,13 @@ public class Body {
       this.height=height;
       this.angle=angle;
       BodyDef bodyDef = new BodyDef();
-      bodyDef.type = BodyDef.BodyType.DynamicBody;
-      bodyDef.position.set(posX+width/2, posY+height/2);
+      bodyDef.type = BodyDef.BodyType.KinematicBody;
+      bodyDef.position.set(posX, posY);
       body = world.createBody(bodyDef);
 
       //Collider Box
       PolygonShape shape=new PolygonShape();
-      shape.setAsBox(this.width/10,this.height/10);
+      shape.setAsBox(this.width/2,this.height/2);
 
       //Body material type and stuff...
       FixtureDef fixtureDef=new FixtureDef();
@@ -32,28 +33,6 @@ public class Body {
       fixtureDef.density=1;
       fixture=body.createFixture(fixtureDef);
    }
-
-   // Body constructor for Bullet objects. Hitbox is appropriately tiny.
-   public Body(World world,float posX, float posY, float width, float height, float angle, int bullet) {
-      this.width=width;
-      this.height=height;
-      this.angle=angle;
-      BodyDef bodyDef = new BodyDef();
-      bodyDef.type = BodyDef.BodyType.DynamicBody;
-      bodyDef.position.set(posX+width/2, posY+height/2);
-      body = world.createBody(bodyDef);
-
-      // Collider Box
-      PolygonShape shape=new PolygonShape();
-      shape.setAsBox(0.1f,0.1f);
-
-      //Body material type and stuff...
-      FixtureDef fixtureDef=new FixtureDef();
-      fixtureDef.shape=shape;
-      fixtureDef.density=1;
-      fixture=body.createFixture(fixtureDef);
-
-    }
 
     /**
      * Get the physic engine representation of this object.
@@ -128,7 +107,7 @@ public class Body {
      * @return degree
      */
    public float getAngle(){
-       return (float)(body.getAngle()/DEGREE_TO_RADIANS);
+       return (float)(body.getAngle()/ MathUtils.degreesToRadians);
    }
 
     /**

@@ -16,10 +16,7 @@ public class Bullet extends GameObject implements Script,ContactListener{
    // Pretty much for testing purposes now.
    public Bullet(){
       super(false,new Sprite(
-              // Modify this line below to make it work on your system. For some reason, I have to use the absolute
-              // path of the file in order for it to work.
-              // Sorry for the inconvenience. -RB
-              "C:\\Users\\rubes\\Documents\\GitHub\\BunnySnakeTankMaze\\android\\assets\\game\\bullet.png"
+              "game/bullet.png"
       ),new Body(Physic.getObject().getWorld(),0,0,10,10,0));
       GameObjectManager.getObject().addGameObject(this);
       this.getSprite().getSprite().flip(false,true);
@@ -37,12 +34,9 @@ public class Bullet extends GameObject implements Script,ContactListener{
    // New bullet constructor that accepts variables to determine initial position and direction.
    public Bullet(float posX, float posY, float angle) {
        super(false,new Sprite(
-               // Modify this line below to make it work on your system. For some reason, I have to use the absolute
-               // path of the file in order for it to work.
-               // Sorry for the inconvenience. -RB
-               "C:\\Users\\rubes\\Documents\\GitHub\\BunnySnakeTankMaze\\android\\assets\\game\\bullet.png"
+               "game/bullet.png"
        ), new Body(Physic.getObject().getWorld()
-                       ,posX,posY,10,10,0, 0));
+                       ,posX,posY,10f,10f,0));
        GameObjectManager.getObject().addGameObject(this);
        this.getSprite().getSprite().flip(false,true);
 
@@ -52,6 +46,7 @@ public class Bullet extends GameObject implements Script,ContactListener{
        //Add to Physic engine
        Physic.getObject().addCollision(this);
 
+       getBody().setAngle(angle);
        // Set velocity vector.
        this.getBody().getBody().setLinearVelocity(
               MathUtils.cosDeg(angle)*speed,
@@ -59,8 +54,6 @@ public class Bullet extends GameObject implements Script,ContactListener{
 
        //Set tag for the object
        this.getBody().getFixture().setUserData("Bullet");
-
-
    }
 
    /**
