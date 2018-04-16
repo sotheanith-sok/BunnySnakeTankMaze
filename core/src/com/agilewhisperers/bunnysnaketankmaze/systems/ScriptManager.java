@@ -32,8 +32,8 @@ public class ScriptManager {
     * Run script of all listeners.
     */
    public void runScripts(){
-      for (Script s:scriptList){
-         s.runObjectScript();
+      for (int i = 0; i < scriptList.size(); i++){
+         scriptList.get(i).runObjectScript();
       }
    }
 

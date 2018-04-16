@@ -19,7 +19,12 @@ public class Player extends GameObject implements Script,ContactListener {
     private static final float speed=10;
     private boolean moveForward;
    public Player (){
-      super(false, new Sprite("game/Player.jpg"), new Body(Physic.getObject().getWorld(),0,0,10,10,0));
+      super(false, new Sprite(
+              // Modify this line below to make it work on your system. For some reason, I have to use the absolute
+              // path of the file in order for it to work.
+              // Sorry for the inconvenience. -RB
+              "C:\\Users\\rubes\\Documents\\GitHub\\BunnySnakeTankMaze\\android\\assets\\game\\Player.jpg"
+      ), new Body(Physic.getObject().getWorld(),30,15,10,10,0));
 
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
@@ -28,7 +33,7 @@ public class Player extends GameObject implements Script,ContactListener {
       Physic.getObject().addCollision(this);
 
       //Set tag for the object
-      this.getBody().getFixture().setUserData("Player");
+      //this.getBody().getFixture().setUserData("Player");
    }
 
 
@@ -45,6 +50,10 @@ public class Player extends GameObject implements Script,ContactListener {
       }
       if(Gdx.input.isKeyPressed(Input.Keys.UP)){
          this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle())*speed,MathUtils.sinDeg(getBody().getAngle())*speed);
+         //FIRE!!!
+         Bullet bullet = new Bullet(getBody().getBody().getPosition().x,
+                                    getBody().getBody().getPosition().y,
+                                    getBody().getAngle());
       }else if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle())*-speed,MathUtils.sinDeg(getBody().getAngle())*-speed);
       }else{

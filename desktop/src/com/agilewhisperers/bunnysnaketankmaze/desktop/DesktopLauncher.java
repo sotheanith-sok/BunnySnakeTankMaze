@@ -11,8 +11,8 @@ public class DesktopLauncher {
 
 		config.title="Bunny-Snake Tank Maze";
 		config.useGL30=true;
-		config.width=1600;
-		config.height=900;
+		config.width=1920;
+		config.height=1080;
 		config.allowSoftwareMode=true;
 		config.x=-1;
 		config.y=-1;
