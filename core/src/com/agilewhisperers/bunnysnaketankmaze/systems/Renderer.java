@@ -7,10 +7,14 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
+/**
+ * The rendering system.
+ */
 public class Renderer {
 
    private final float ppm=32/1f;
@@ -47,8 +51,10 @@ public class Renderer {
             if(object.getBody()!=null &&object.getSprite()!=null){
                Body body=object.getBody();
                Sprite sprite=object.getSprite();
-               batch.draw(sprite.getSprite(),body.getBody().getPosition().x*ppm,
-                       body.getBody().getPosition().y*ppm,body.getWidth()*ppm,body.getHigh()*ppm);
+               sprite.setPosition((body.getBody().getPosition().x-body.getWidth()/2)*ppm,(body.getBody().getPosition().y-body.getHeight()/2)*ppm);
+               sprite.setSize(body.getWidth()*ppm,body.getHeight()*ppm);
+               sprite.setRotation(body.getAngle());
+               sprite.getSprite().draw(batch);
             }
          }
       }
@@ -62,6 +68,5 @@ public class Renderer {
     */
    public void renderHitBox(World world){
          renderer.render(world,camera.combined.cpy().scale(ppm,ppm,0));
-
    }
 }
