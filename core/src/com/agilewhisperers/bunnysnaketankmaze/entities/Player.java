@@ -8,7 +8,6 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.Script;
 import com.agilewhisperers.bunnysnaketankmaze.systems.ScriptManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
@@ -16,17 +15,15 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 
 public class Player extends GameObject implements Script,ContactListener {
-    private static final float speed=10;
-    private boolean moveForward;
    public Player (){
-      super(false, new Sprite("game/Player.jpg"), new Body(Physic.getObject().getWorld(),0,0,10,10,0));
+      super(false, new Sprite("game/Player.jpg"), new Body(Physic.getObject().getWorld(),0,0,10,10));
+      GameObjectManager.getObject().addGameObject(this);
 
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
 
       //Add to Physic engine
       Physic.getObject().addCollision(this);
-
       //Set tag for the object
       this.getBody().getFixture().setUserData("Player");
    }
@@ -41,11 +38,15 @@ public class Player extends GameObject implements Script,ContactListener {
          this.getBody().getBody().setLinearVelocity(new Vector2(0,0));
       }
       if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
-          getBody().addAngle(1);
+         this.getBody().getBody().setLinearVelocity(-5,0);
       }
       if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
 <<<<<<< HEAD
+<<<<<<< HEAD
           getBody().addAngle(-1);
+=======
+         this.getBody().getBody().setLinearVelocity(new Vector2(5,0));
+>>>>>>> parent of 5ae0105... Add rotation.
       }
 =======
            this.getBody().getBody().setLinearVelocity(new Vector2(5,0));
@@ -53,13 +54,11 @@ public class Player extends GameObject implements Script,ContactListener {
 
 >>>>>>> 5d2f1eaf4fc77874d794ab36333f8db2dd66bcc3
       if(Gdx.input.isKeyPressed(Input.Keys.UP)){
-         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle())*speed,MathUtils.sinDeg(getBody().getAngle())*speed);
-      }else if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
-           this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle())*-speed,MathUtils.sinDeg(getBody().getAngle())*-speed);
-      }else{
-          this.getBody().getBody().setLinearVelocity(0,0);
+         this.getBody().getBody().setLinearVelocity(0,5);
       }
-
+      if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
+         this.getBody().getBody().setLinearVelocity(0,-5);
+      }
    }
 
    /**

@@ -31,7 +31,7 @@ public class ObjectFactory {
     * Call at the start of the game. Use to create all gameObjects
     */
    public void start(){
-      //Bullet bullet=new Bullet();
+      Bullet bullet=new Bullet();
       Player player=new Player();
 
    }

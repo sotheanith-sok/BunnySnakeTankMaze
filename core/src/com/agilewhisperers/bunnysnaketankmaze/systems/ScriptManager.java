@@ -3,9 +3,6 @@ package com.agilewhisperers.bunnysnaketankmaze.systems;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * The Script system.
- */
 public class ScriptManager {
    private static ScriptManager single_instance;
    List<Script> scriptList;
