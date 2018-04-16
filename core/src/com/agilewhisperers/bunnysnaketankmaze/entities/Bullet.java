@@ -4,13 +4,10 @@ import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.ContactImpulse;
-import com.badlogic.gdx.physics.box2d.ContactListener;
-import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.physics.box2d.*;
 
 public class Bullet extends GameObject implements Script,ContactListener{
-   private static final float speed=20;
+   private static final float speed=10;
 
    // Default(???) Bullet constructor.
    // Pretty much for testing purposes now.
@@ -20,6 +17,7 @@ public class Bullet extends GameObject implements Script,ContactListener{
       ),new Body(Physic.getObject().getWorld(),0,0,10,10,0));
       GameObjectManager.getObject().addGameObject(this);
       this.getSprite().getSprite().flip(false,true);
+      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
 
 
       //Add to scriptManager
@@ -36,7 +34,8 @@ public class Bullet extends GameObject implements Script,ContactListener{
        super(false,new Sprite(
                "game/bullet.png"
        ), new Body(Physic.getObject().getWorld()
-                       ,posX,posY,10f,10f,0));
+                       ,posX+0.25f/2*MathUtils.cosDeg(angle),posY+0.25f/2*MathUtils.sinDeg(angle),0.25f,0.25f,0));
+      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
        GameObjectManager.getObject().addGameObject(this);
        this.getSprite().getSprite().flip(false,true);
 
