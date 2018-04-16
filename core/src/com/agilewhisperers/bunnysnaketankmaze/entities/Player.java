@@ -37,12 +37,21 @@ public class Player extends GameObject implements Script,ContactListener {
     */
    @Override
    public void runObjectScript() {
+      if(!Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+         this.getBody().getBody().setLinearVelocity(new Vector2(0,0));
+      }
       if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
           getBody().addAngle(1);
       }
       if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+<<<<<<< HEAD
           getBody().addAngle(-1);
       }
+=======
+           this.getBody().getBody().setLinearVelocity(new Vector2(5,0));
+       }
+
+>>>>>>> 5d2f1eaf4fc77874d794ab36333f8db2dd66bcc3
       if(Gdx.input.isKeyPressed(Input.Keys.UP)){
          this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle())*speed,MathUtils.sinDeg(getBody().getAngle())*speed);
       }else if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
