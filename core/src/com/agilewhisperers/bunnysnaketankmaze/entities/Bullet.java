@@ -10,7 +10,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 
 public class Bullet extends GameObject implements Script,ContactListener{
    public Bullet(){
-      super(false,new Sprite("game/bullet.png"),new Body(Physic.getObject().getWorld(),0,0,10,10));
+      super(false,new Sprite("game/bullet.png"),new Body(Physic.getObject().getWorld(),0,0,10,10,0));
       GameObjectManager.getObject().addGameObject(this);
       this.getSprite().getSprite().flip(false,true);
 
