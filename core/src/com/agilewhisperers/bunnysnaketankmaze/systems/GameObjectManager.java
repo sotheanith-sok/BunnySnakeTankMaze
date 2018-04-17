@@ -32,6 +32,8 @@ public class GameObjectManager {
       gameObjectList.add(gameObject);
    }
 
+   public void removeGameObject(GameObject gameObject) {gameObjectList.remove(gameObject);}
+
    /**
     * Get the list of all gameObject.
     * @return gameObject list.

@@ -18,6 +18,8 @@ public class Player extends GameObject implements Script,ContactListener {
     * turn speed in degree
     */
    private static final float turnSpeed=2;
+
+   //
    public Player (){
       super(false, new Sprite(
               "game/Player.jpg"
@@ -33,6 +35,8 @@ public class Player extends GameObject implements Script,ContactListener {
       //Set tag for the object
       this.getBody().getFixture().setUserData("Player");
    }
+
+   //
    public Player(float posX, float posY){
       super(false, new Sprite(
               "game/Player.jpg"

@@ -8,7 +8,8 @@ import com.badlogic.gdx.physics.box2d.*;
 
 public class Bullet extends GameObject implements Script,ContactListener{
    private static final float speed=10;
-
+   private int lifetime = 0;
+   private static final int max_Lifetime = 300;
    // Default(???) Bullet constructor.
    // Pretty much for testing purposes now.
    public Bullet(){
@@ -60,7 +61,10 @@ public class Bullet extends GameObject implements Script,ContactListener{
     */
    @Override
    public void runObjectScript() {
-
+        lifetime++;
+        if (lifetime >= max_Lifetime) {
+            GameObjectManager.getObject().removeGameObject(this);
+        }
    }
 
    /**
