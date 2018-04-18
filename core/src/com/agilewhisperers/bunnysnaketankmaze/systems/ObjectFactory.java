@@ -30,15 +30,26 @@ public class ObjectFactory {
 
    private int[][] data;
    private ObjectFactory(){
-      Maze maze=new Maze(10,10);
+      Maze maze=new Maze(20,10);
       data=maze.getMazeAsData();
    }
 
+   private void removeSomeWall(){
+      Random random=new Random();
+      for(int i=1;i<data.length-1;i++){
+         for(int j=1;j<data[0].length-1;j++){
+            if(random.nextBoolean()==true){
+               data[i][j]=0;
+            }
+         }
+      }
+   }
    /**
     * Call at the start of the game. Use to create all gameObjects
     */
    public void start(){
       //Bullet bullet=new Bullet();
+      removeSomeWall();
      spawnPlayer();
       spawnWall();
 

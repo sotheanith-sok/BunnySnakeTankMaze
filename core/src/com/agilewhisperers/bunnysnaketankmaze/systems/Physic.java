@@ -1,8 +1,11 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.Identifier;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * The physic system.
@@ -40,5 +43,14 @@ public class Physic {
    }
 
 
+   public void cleanDeadBody(){
+      Array<Body> bodies=new Array<>();
+      Physic.getObject().getWorld().getBodies(bodies);
+      for(com.badlogic.gdx.physics.box2d.Body body:bodies){
+         if(body.getUserData()!=null&&((Identifier)body.getUserData()).isExist==false){
+            Physic.getObject().getWorld().destroyBody(body);
+         }
 
+      }
+   }
 }

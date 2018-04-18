@@ -13,13 +13,14 @@ public class Bullet extends GameObject implements Script,ContactListener{
    // Default(???) Bullet constructor.
    // Pretty much for testing purposes now.
    public Bullet(){
-      super(false,new Sprite(
+      super(new Sprite(
               "game/bullet.png"
       ),new Body(Physic.getObject().getWorld(),0,0,10,10,0));
       GameObjectManager.getObject().addGameObject(this);
       this.getSprite().getSprite().flip(false,true);
       getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-
+      getIdentifier().ID="Bullet";
+      getIdentifier().isExist=true;
 
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
@@ -27,17 +28,21 @@ public class Bullet extends GameObject implements Script,ContactListener{
       //Add to Physic engine
       Physic.getObject().addCollision(this);
       //Set tag for the object
-      this.getBody().getFixture().setUserData("Bullet");
+      this.getBody().getBody().setUserData(getIdentifier());
    }
 
    // New bullet constructor that accepts variables to determine initial position and direction.
    public Bullet(float posX, float posY, float angle) {
-       super(false,new Sprite(
+       super(new Sprite(
                "game/bullet.png"
        ), new Body(Physic.getObject().getWorld()
                        ,posX+0.25f/2*MathUtils.cosDeg(angle),posY+0.25f/2*MathUtils.sinDeg(angle),0.25f,0.25f,0));
       getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
        GameObjectManager.getObject().addGameObject(this);
+
+       getIdentifier().ID="Bullet";
+       getIdentifier().isExist=true;
+
        this.getSprite().getSprite().flip(false,true);
 
        //Add to scriptManager
@@ -53,7 +58,7 @@ public class Bullet extends GameObject implements Script,ContactListener{
               MathUtils.sinDeg(angle)*speed);
 
        //Set tag for the object
-       this.getBody().getFixture().setUserData("Bullet");
+       getBody().getBody().setUserData(getIdentifier());
    }
 
    /**

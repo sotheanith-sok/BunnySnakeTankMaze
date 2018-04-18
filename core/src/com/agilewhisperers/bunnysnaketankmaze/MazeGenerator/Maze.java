@@ -59,12 +59,6 @@ public class Maze {
             }
          }
       }
-      for (int i=0;i<mazeData.length;i++){
-         for(int j=0;j<mazeData[0].length;j++){
-            System.out.print(mazeData[i][j]);
-         }
-         System.out.println();
-      }
       return mazeData;
    }
    public Cell[][] getMaze() {

@@ -1,8 +1,14 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.Body;
+import com.agilewhisperers.bunnysnaketankmaze.components.Identifier;
 import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.utils.Array;
+import sun.font.PhysicalStrike;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -32,7 +38,11 @@ public class GameObjectManager {
       gameObjectList.add(gameObject);
    }
 
-   public void removeGameObject(GameObject gameObject) {gameObjectList.remove(gameObject);}
+   public void removeGameObject(GameObject gameObject) {
+      gameObject.getIdentifier().isExist=false;
+      gameObjectList.remove(gameObject);
+   }
+
 
    /**
     * Get the list of all gameObject.

@@ -21,11 +21,14 @@ public class Player extends GameObject implements Script,ContactListener {
 
    //
    public Player (){
-      super(false, new Sprite(
+      super( new Sprite(
               "game/Player.jpg"
       ), new Body(Physic.getObject().getWorld(),0+0.5f,0+0.5f,1,1,0));
 
       getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+      getIdentifier().ID="Player";
+      getIdentifier().isExist=true;
+
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
 
@@ -33,15 +36,16 @@ public class Player extends GameObject implements Script,ContactListener {
       Physic.getObject().addCollision(this);
 
       //Set tag for the object
-      this.getBody().getFixture().setUserData("Player");
+      this.getBody().getBody().setUserData(getIdentifier());
    }
 
    //
    public Player(float posX, float posY){
-      super(false, new Sprite(
+      super( new Sprite(
               "game/Player.jpg"
       ), new Body(Physic.getObject().getWorld(),posX+0.5f,posY+0.5f,1,1,0));
-
+      getIdentifier().ID="Player";
+      getIdentifier().isExist=true;
       getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
@@ -50,7 +54,7 @@ public class Player extends GameObject implements Script,ContactListener {
       Physic.getObject().addCollision(this);
 
       //Set tag for the object
-      this.getBody().getFixture().setUserData("Player");
+      this.getBody().getBody().setUserData(getIdentifier());
    }
 
 
@@ -81,7 +85,6 @@ public class Player extends GameObject implements Script,ContactListener {
                  getBody().getAngle());
 
       }
-      System.out.println(getBody().getAngle());
 
    }
 

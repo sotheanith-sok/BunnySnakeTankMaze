@@ -47,7 +47,7 @@ public class Renderer {
       batch.begin();
 
       for(GameObject object:GameObjectManager.getObject().getAllGameObjects()){
-         if(!object.isExcluded()){
+         if(object.isExist()){
             if(object.getBody()!=null &&object.getSprite()!=null){
                Body body=object.getBody();
                Sprite sprite=object.getSprite();

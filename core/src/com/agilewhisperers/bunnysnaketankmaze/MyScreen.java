@@ -28,10 +28,14 @@ public class MyScreen implements Screen {
 
    @Override
    public void render(float delta) {
-      ScriptManager.getObject().runScripts();
-      Physic.getObject().getWorld().step(1/60f,6,2);
-      Renderer.getObject().render();
-      Renderer.getObject().renderHitBox(Physic.getObject().getWorld());
+      if(!Physic.getObject().getWorld().isLocked()){
+         ScriptManager.getObject().runScripts();
+         Physic.getObject().getWorld().step(1/60f,6,2);
+         Renderer.getObject().render();
+         Physic.getObject().cleanDeadBody();
+         Renderer.getObject().renderHitBox(Physic.getObject().getWorld());
+      }
+
 
    }
 
