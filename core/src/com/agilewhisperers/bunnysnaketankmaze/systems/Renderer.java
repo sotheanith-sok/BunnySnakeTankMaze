@@ -50,7 +50,7 @@ public class Renderer {
                 if (object.getBody() != null && object.getSprite() != null) {
                     Body body = object.getBody();
                     Sprite sprite = object.getSprite();
-                    sprite.setPosition((body.getBody().getPosition().x - body.getWidth() / 2) * ppm, (body.getBody().getPosition().y - body.getHeight() / 2) * ppm);
+                    sprite.setPosition((body.getBody().getPosition().x-body.getWidth()/2) * ppm, (body.getBody().getPosition().y-body.getHeight()/2) * ppm);
                     sprite.setSize(body.getWidth() * ppm, body.getHeight() * ppm);
                     sprite.setRotation(body.getAngle());
                     sprite.getSprite().draw(batch);

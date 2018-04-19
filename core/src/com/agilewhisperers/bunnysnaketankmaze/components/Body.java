@@ -1,5 +1,7 @@
 package com.agilewhisperers.bunnysnaketankmaze.components;
 
+import com.agilewhisperers.bunnysnaketankmaze.systems.BodyEditorLoader;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
@@ -8,30 +10,27 @@ import com.badlogic.gdx.physics.box2d.*;
  * This is a component used to interact with physic engine.
  */
 public class Body {
-    private static final double DEGREE_TO_RADIANS = (double) (Math.PI / 180);
     private com.badlogic.gdx.physics.box2d.Body body;
     private Fixture fixture;
     private float width, height, angle;
 
-    public Body(World world, float posX, float posY, float width, float height, float angle) {
-        this.width = width;
-        this.height = height;
-        this.angle = angle;
-        BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.KinematicBody;
-        bodyDef.position.set(posX, posY);
-        body = world.createBody(bodyDef);
 
-        //Collider Box
-        PolygonShape shape = new PolygonShape();
-        shape.setAsBox(this.width / 2, this.height / 2);
+   public Body(World world, float posX, float posY,float scale, float angle, String name) {
+      BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("gameObjects/Data.json"));
+      this.width = 1*scale;
+      this.height = 1*scale;
+      this.angle = angle;
+      BodyDef bodyDef = new BodyDef();
+      bodyDef.type = BodyDef.BodyType.KinematicBody;
+      bodyDef.position.set(posX+width/2, posY+height/2);
+      body = world.createBody(bodyDef);
 
-        //Body material type and stuff...
-        FixtureDef fixtureDef = new FixtureDef();
-        fixtureDef.shape = shape;
-        fixtureDef.density = 1;
-        fixture = body.createFixture(fixtureDef);
-    }
+
+      //Body material type and stuff...
+      FixtureDef fixtureDef = new FixtureDef();
+      fixtureDef.density = 1;
+      loader.attachFixture(body,name,fixtureDef,scale);
+   }
 
     /**
      * Get the physic engine representation of this object.
@@ -61,16 +60,6 @@ public class Body {
     }
 
     /**
-     * Set the width of the hitbox
-     *
-     * @param width
-     */
-    public void setWidth(float width) {
-        this.width = width;
-        ((PolygonShape) (fixture.getShape())).setAsBox(width, height);
-    }
-
-    /**
      * Get the height of the hitbox.
      *
      * @return height
@@ -79,15 +68,6 @@ public class Body {
         return height;
     }
 
-    /**
-     * Set the height of the hitbox.
-     *
-     * @param height
-     */
-    public void setHeight(float height) {
-        this.height = height;
-        ((PolygonShape) (fixture.getShape())).setAsBox(width, height);
-    }
 
     /**
      * Incriminate the angle of this object by a certain amount.
@@ -95,7 +75,7 @@ public class Body {
      * @param degree
      */
     public void addAngle(float degree) {
-        angle = (float) (degree * DEGREE_TO_RADIANS);
+        angle = (float) (degree * MathUtils.degRad);
         body.setTransform(body.getPosition(), body.getAngle() + angle);
     }
 
@@ -105,7 +85,7 @@ public class Body {
      * @return degree
      */
     public float getAngle() {
-        return body.getAngle() / MathUtils.degreesToRadians;
+        return body.getAngle() / MathUtils.degRad;
     }
 
     /**
@@ -114,7 +94,7 @@ public class Body {
      * @param degree
      */
     public void setAngle(float degree) {
-        angle = (float) (degree * DEGREE_TO_RADIANS);
+        angle = (float) (degree * MathUtils.degRad);
         body.setTransform(body.getPosition(), angle);
     }
 

@@ -1,9 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze;
 
-import com.agilewhisperers.bunnysnaketankmaze.systems.ObjectFactory;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Renderer;
-import com.agilewhisperers.bunnysnaketankmaze.systems.ScriptManager;
+import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.Screen;
 
 public class MyScreen implements Screen {
@@ -17,7 +14,8 @@ public class MyScreen implements Screen {
 
     @Override
     public void show() {
-
+       AssetManager.getObject().loadAssets();
+       AssetManager.getObject().getAssetManager().finishLoading();
         ObjectFactory.getObject().start();
 
 
@@ -25,15 +23,13 @@ public class MyScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        if (!Physic.getObject().getWorld().isLocked()) {
+      if (!Physic.getObject().getWorld().isLocked()) {
             ScriptManager.getObject().runScripts();
             Physic.getObject().getWorld().step(1 / 300f, 8, 3);
             Renderer.getObject().render();
             Physic.getObject().cleanDeadBody();
             Renderer.getObject().renderHitBox(Physic.getObject().getWorld());
         }
-
-
     }
 
 

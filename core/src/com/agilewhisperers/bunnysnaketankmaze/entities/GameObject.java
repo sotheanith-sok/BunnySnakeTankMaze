@@ -1,7 +1,7 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
-import com.agilewhisperers.bunnysnaketankmaze.components.Identifier;
+import com.agilewhisperers.bunnysnaketankmaze.components.State;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
 import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 
@@ -11,19 +11,19 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 public class GameObject {
     private Sprite sprite;
     private Body body;
-    private Identifier identifier;
+    private State state;
 
     public GameObject() {
         sprite = null;
         body = null;
-        identifier = new Identifier();
+        state = new State();
         GameObjectManager.getObject().addGameObject(this);
     }
 
     public GameObject(Sprite sprite, Body body) {
         this.sprite = sprite;
         this.body = body;
-        identifier = new Identifier();
+        state = new State();
         GameObjectManager.getObject().addGameObject(this);
     }
 
@@ -63,15 +63,15 @@ public class GameObject {
         this.body = body;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public State getState() {
+        return state;
     }
 
     public boolean isExist() {
-        return identifier.isExist;
+        return state.isExist;
     }
 
     public String getID() {
-        return identifier.ID;
+        return state.ID;
     }
 }

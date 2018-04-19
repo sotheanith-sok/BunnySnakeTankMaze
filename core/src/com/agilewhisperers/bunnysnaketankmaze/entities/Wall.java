@@ -8,12 +8,12 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 public class Wall extends GameObject {
     public Wall(float posX, float posY) {
         super(new Sprite(
-                "game/Wall.png"
-        ), new Body(Physic.getObject().getWorld(), posX + 0.5f, posY + 0.5f, 1, 1, 0));
+                "gameObjects/Wall.png"
+        ), new Body(Physic.getObject().getWorld(), posX , posY, 1, 0,"Wall"));
         getBody().getBody().setType(BodyDef.BodyType.StaticBody);
-        getIdentifier().ID = "Wall";
-        getIdentifier().isExist = true;
-        getBody().getBody().setUserData(getIdentifier());
+        getState().ID = "Wall";
+        getState().isExist = true;
+        getBody().getBody().setUserData(getState());
     }
 
 }

@@ -2,6 +2,7 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
+import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Script;
 import com.agilewhisperers.bunnysnaketankmaze.systems.ScriptManager;
@@ -11,108 +12,125 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.*;
 
 public class Player extends GameObject implements Script, ContactListener {
-    private static final float speed = 25f;
-    /**
-     * turn speed in degree
-     */
-    private static final float turnSpeed = 2;
 
-    //
-    public Player() {
-        super(new Sprite(
-                "game/Player.jpg"
-        ), new Body(Physic.getObject().getWorld(), 0 + 0.5f, 0 + 0.5f, 0.8f, 0.8f, 0));
+   private float rateTimer = 0;
+   private float reloadTimer=0;
+   private float capacityCounter=0;
 
-        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        getIdentifier().ID = "Player";
-        getIdentifier().isExist = true;
+   public Player() {
+      super(new Sprite(
+              "gameObjects/Player.jpg"
+      ), new Body(Physic.getObject().getWorld(), 0 + 0.5f, 0 + 0.5f, 1, 0.8f, "Player"));
 
-        //Add to scriptManager
-        ScriptManager.getObject().addScriptListener(this);
+      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+      getState().ID = "Player";
+      getState().isExist = true;
 
-        //Add to Physic engine
-        Physic.getObject().addCollision(this);
+      //Add to scriptManager
+      ScriptManager.getObject().addScriptListener(this);
 
-        //Set tag for the object
-        this.getBody().getBody().setUserData(getIdentifier());
-    }
+      //Add to Physic engine
+      Physic.getObject().addCollision(this);
 
-    //
-    public Player(float posX, float posY) {
-        super(new Sprite(
-                "game/Player.jpg"
-        ), new Body(Physic.getObject().getWorld(), posX + 0.5f, posY + 0.5f, 0.8f, 0.8f, 0));
-        getIdentifier().ID = "Player";
-        getIdentifier().isExist = true;
-        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        //Add to scriptManager
-        ScriptManager.getObject().addScriptListener(this);
+      //Set tag for the object
+      this.getBody().getBody().setUserData(getState());
+   }
 
-        //Add to Physic engine
-        Physic.getObject().addCollision(this);
+   //
+   public Player(float posX, float posY) {
+      super(new Sprite(
+              "gameObjects/Player.jpg"
+      ), new Body(Physic.getObject().getWorld(), posX , posY , 1, 0.8f, "Player"));
+      getState().ID = "Player";
+      getState().isExist = true;
+      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+      //Add to scriptManager
+      ScriptManager.getObject().addScriptListener(this);
 
-        //Set tag for the object
-        this.getBody().getBody().setUserData(getIdentifier());
-    }
+      //Add to Physic engine
+      Physic.getObject().addCollision(this);
+
+      //Set tag for the object
+      this.getBody().getBody().setUserData(getState());
+   }
 
 
-    /**
-     * This method will be call every game loop.
-     */
-    @Override
-    public void runObjectScript() {
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            getBody().addAngle(turnSpeed);
-        } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            getBody().addAngle(-turnSpeed);
-        } else {
-            getBody().getBody().setAngularVelocity(0);
-        }
+   /**
+    * This method will be call every game loop.
+    */
+   @Override
+   public void runObjectScript() {
+      movement();
+      fire();
+   }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * speed, MathUtils.sinDeg(getBody().getAngle()) * speed);
+   private void movement() {
+      if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+         getBody().addAngle(getState().rotatingSpeed);
+      } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+         getBody().addAngle(-getState().rotatingSpeed);
+      } else {
+         getBody().getBody().setAngularVelocity(0);
+      }
 
-        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -speed, MathUtils.sinDeg(getBody().getAngle()) * -speed);
-        } else {
-            this.getBody().getBody().setLinearVelocity(0, 0);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.M)) {
-            Bullet bullet = new Bullet(getBody().getBody().getPosition().x + getBody().getWidth() / 2 * MathUtils.cosDeg(getBody().getAngle()),
-                    getBody().getBody().getPosition().y + getBody().getHeight() / 2 * MathUtils.sinDeg(getBody().getAngle()),
-                    getBody().getAngle());
+      if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getState().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getState().movingSpeed);
 
-        }
+      } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getState().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getState().movingSpeed);
+      } else {
+         this.getBody().getBody().setLinearVelocity(0, 0);
+      }
+   }
 
-    }
+   private void fire() {
+      //Normal Fire
+      rateTimer+=Gdx.graphics.getDeltaTime();
+      if ((capacityCounter<=getState().capacity)&&rateTimer>1/getState().RPS&&Gdx.input.isKeyPressed(Input.Keys.M)) {
+         GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x - 0.25f + getBody().getWidth()*MathUtils.cosDeg(getBody().getAngle()),
+                 getBody().getBody().getPosition().y-0.25f+getBody().getHeight()*MathUtils.sinDeg(getBody().getAngle()) ,
+                 getBody().getAngle(), getState().bulletSpeed);
+         rateTimer=0;
+         capacityCounter++;
+      }
 
-    /**
-     * Called when two fixtures begin to touch.
-     *
-     * @param contact
-     */
-    @Override
-    public void beginContact(Contact contact) {
+      //Reload
+      if(capacityCounter>getState().capacity){
+         reloadTimer+=Gdx.graphics.getDeltaTime();
+         if(reloadTimer>=getState().reloadTime){
+            capacityCounter=0;
+            reloadTimer=0;
+         }
+      }
+   }
 
-    }
+   /**
+    * Called when two fixtures begin to touch.
+    *
+    * @param contact
+    */
+   @Override
+   public void beginContact(Contact contact) {
 
-    /**
-     * Called when two fixtures cease to touch.
-     *
-     * @param contact
-     */
-    @Override
-    public void endContact(Contact contact) {
+   }
 
-    }
+   /**
+    * Called when two fixtures cease to touch.
+    *
+    * @param contact
+    */
+   @Override
+   public void endContact(Contact contact) {
 
-    @Override
-    public void preSolve(Contact contact, Manifold oldManifold) {
+   }
 
-    }
+   @Override
+   public void preSolve(Contact contact, Manifold oldManifold) {
 
-    @Override
-    public void postSolve(Contact contact, ContactImpulse impulse) {
+   }
 
-    }
+   @Override
+   public void postSolve(Contact contact, ContactImpulse impulse) {
+
+   }
 }

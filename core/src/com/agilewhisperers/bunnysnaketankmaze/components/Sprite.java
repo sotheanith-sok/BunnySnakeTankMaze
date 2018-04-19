@@ -1,5 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.components;
 
+import com.agilewhisperers.bunnysnaketankmaze.systems.AssetManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 
@@ -11,7 +12,7 @@ public class Sprite {
     private com.badlogic.gdx.graphics.g2d.Sprite sprite;
 
     public Sprite(String path) {
-        texture = new Texture(Gdx.files.internal(path));
+        texture = AssetManager.getObject().getAssetManager().get(path,Texture.class);
         texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         sprite = new com.badlogic.gdx.graphics.g2d.Sprite(texture);
         sprite.flip(false, true);
