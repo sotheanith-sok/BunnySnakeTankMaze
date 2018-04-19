@@ -11,46 +11,48 @@ import com.badlogic.gdx.utils.Array;
  * The physic system.
  */
 public class Physic {
-   private static Physic single_instance;
-   private World world;
+    private static Physic single_instance;
+    private World world;
 
 
-   private Physic(){
-      world=new World(new Vector2(0,0),true);
-   }
+    private Physic() {
+        world = new World(new Vector2(0, 0), true);
+    }
 
-   public static Physic getObject(){
-      if(single_instance==null){
-         single_instance=new Physic();
-      }
-      return single_instance;
-   }
+    public static Physic getObject() {
+        if (single_instance == null) {
+            single_instance = new Physic();
+        }
+        return single_instance;
+    }
 
-   /**
-    * Get the physic container.
-    * @return
-    */
-   public World getWorld(){
-      return world;
-   }
+    /**
+     * Get the physic container.
+     *
+     * @return
+     */
+    public World getWorld() {
+        return world;
+    }
 
-   /**
-    * Add listeners to the physic engine
-    * @param contactListener listener
-    */
-   public void addCollision(ContactListener contactListener){
-      world.setContactListener(contactListener);
-   }
+    /**
+     * Add listeners to the physic engine
+     *
+     * @param contactListener listener
+     */
+    public void addCollision(ContactListener contactListener) {
+        world.setContactListener(contactListener);
+    }
 
 
-   public void cleanDeadBody(){
-      Array<Body> bodies=new Array<>();
-      Physic.getObject().getWorld().getBodies(bodies);
-      for(com.badlogic.gdx.physics.box2d.Body body:bodies){
-         if(body.getUserData()!=null&&((Identifier)body.getUserData()).isExist==false){
-            Physic.getObject().getWorld().destroyBody(body);
-         }
+    public void cleanDeadBody() {
+        Array<Body> bodies = new Array<>();
+        Physic.getObject().getWorld().getBodies(bodies);
+        for (com.badlogic.gdx.physics.box2d.Body body : bodies) {
+            if (body.getUserData() != null && ((Identifier) body.getUserData()).isExist == false) {
+                Physic.getObject().getWorld().destroyBody(body);
+            }
 
-      }
-   }
+        }
+    }
 }

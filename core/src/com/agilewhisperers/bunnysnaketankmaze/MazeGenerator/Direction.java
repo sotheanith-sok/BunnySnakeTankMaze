@@ -1,5 +1,5 @@
 package com.agilewhisperers.bunnysnaketankmaze.MazeGenerator;
 
 public enum Direction {
-   North, West, East, South
+    North, West, East, South
 }
