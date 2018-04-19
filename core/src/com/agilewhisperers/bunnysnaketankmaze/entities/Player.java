@@ -11,7 +11,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.*;
 
 public class Player extends GameObject implements Script, ContactListener {
-    private static final float speed = 2.5f;
+    private static final float speed = 25f;
     /**
      * turn speed in degree
      */
@@ -21,7 +21,7 @@ public class Player extends GameObject implements Script, ContactListener {
     public Player() {
         super(new Sprite(
                 "game/Player.jpg"
-        ), new Body(Physic.getObject().getWorld(), 0 + 0.5f, 0 + 0.5f, 1, 1, 0));
+        ), new Body(Physic.getObject().getWorld(), 0 + 0.5f, 0 + 0.5f, 0.8f, 0.8f, 0));
 
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
         getIdentifier().ID = "Player";
@@ -41,7 +41,7 @@ public class Player extends GameObject implements Script, ContactListener {
     public Player(float posX, float posY) {
         super(new Sprite(
                 "game/Player.jpg"
-        ), new Body(Physic.getObject().getWorld(), posX + 0.5f, posY + 0.5f, 1, 1, 0));
+        ), new Body(Physic.getObject().getWorld(), posX + 0.5f, posY + 0.5f, 0.8f, 0.8f, 0));
         getIdentifier().ID = "Player";
         getIdentifier().isExist = true;
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);

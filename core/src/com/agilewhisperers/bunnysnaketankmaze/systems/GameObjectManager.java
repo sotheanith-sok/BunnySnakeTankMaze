@@ -36,6 +36,9 @@ public class GameObjectManager {
     public void removeGameObject(GameObject gameObject) {
         gameObject.getIdentifier().isExist = false;
         gameObjectList.remove(gameObject);
+        if(gameObject instanceof Script){
+            ScriptManager.getObject().removeScriptListener((Script)gameObject);
+        }
     }
 
 

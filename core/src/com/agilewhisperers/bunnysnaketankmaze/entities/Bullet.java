@@ -6,16 +6,17 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Script;
 import com.agilewhisperers.bunnysnaketankmaze.systems.ScriptManager;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.*;
 
 public class Bullet extends GameObject implements Script, ContactListener {
-    private static final float speed = 10;
-    private static final int max_Lifetime = 300;
-    private int lifetime = 0;
+    private static final float speed = 100;
 
-    // Default(???) Bullet constructor.
-    // Pretty much for testing purposes now.
+    //In second
+    private static final float max_Lifetime = 10;
+    private float lifetime = 0;
+
     public Bullet() {
         super(new Sprite(
                 "game/bullet.png"
@@ -70,7 +71,7 @@ public class Bullet extends GameObject implements Script, ContactListener {
      */
     @Override
     public void runObjectScript() {
-        lifetime++;
+        lifetime+= Gdx.graphics.getDeltaTime();
         if (lifetime >= max_Lifetime) {
             GameObjectManager.getObject().removeGameObject(this);
         }

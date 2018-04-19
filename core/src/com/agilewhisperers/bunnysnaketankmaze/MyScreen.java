@@ -27,7 +27,7 @@ public class MyScreen implements Screen {
     public void render(float delta) {
         if (!Physic.getObject().getWorld().isLocked()) {
             ScriptManager.getObject().runScripts();
-            Physic.getObject().getWorld().step(1 / 60f, 6, 2);
+            Physic.getObject().getWorld().step(1 / 300f, 8, 3);
             Renderer.getObject().render();
             Physic.getObject().cleanDeadBody();
             Renderer.getObject().renderHitBox(Physic.getObject().getWorld());
