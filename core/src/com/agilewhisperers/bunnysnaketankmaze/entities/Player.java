@@ -29,7 +29,6 @@ public class Player extends GameObject implements Script, Collider {
 
         Filter filter=new Filter();
         filter.categoryBits=Physic.CATEGORY_PLAYER1;
-        filter.maskBits=~Physic.CATEGORY_PLAYER1;
         getFixture().setFilterData(filter);
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
