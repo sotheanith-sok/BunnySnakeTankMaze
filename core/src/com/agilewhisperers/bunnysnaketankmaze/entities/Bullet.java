@@ -2,21 +2,21 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Script;
-import com.agilewhisperers.bunnysnaketankmaze.systems.ScriptManager;
+import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.Pool;
 
-public class Bullet extends GameObject implements Script, ContactListener,Pool.Poolable {
+public class Bullet extends GameObject implements Script, Pool.Poolable, Collider {
     //In second
-    private static final float max_Lifetime = 10;
-    private float lifetime = 0;
-    private boolean freed=false;
+    private static final float max_Lifetime = 10f;
+    private float lifetime = 0f;
+    private boolean freed = false;
+
     public Bullet() {
         super(new Sprite(
                 "gameObjects/Bullet.png"
@@ -30,10 +30,12 @@ public class Bullet extends GameObject implements Script, ContactListener,Pool.P
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
-        //Add to Physic engine
-        Physic.getObject().addCollision(this);
+        //Add collision
+        CollisionManager.getObject().addCollider(this);
+
         //Set tag for the object
         this.getBody().getBody().setUserData(getState());
+        getBody().getFixture().setUserData(getState().ID);
     }
 
     // New bullet constructor that accepts variables to determine initial position and direction.
@@ -53,8 +55,8 @@ public class Bullet extends GameObject implements Script, ContactListener,Pool.P
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
-        //Add to Physic engine
-        Physic.getObject().addCollision(this);
+        //Add collision
+        CollisionManager.getObject().addCollider(this);
 
         getBody().setAngle(angle);
         // Set velocity vector.
@@ -64,17 +66,18 @@ public class Bullet extends GameObject implements Script, ContactListener,Pool.P
 
         //Set tag for the object
         getBody().getBody().setUserData(getState());
+        getBody().getFixture().setUserData(getState().ID);
     }
 
-    public void update(float posX, float posY, float angle, float speed){
-       getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-       getBody().setPosition(posX,posY);
-       getBody().setAngle(angle);
-       getBody().getBody().setLinearVelocity(
-               MathUtils.cosDeg(angle) * speed,
-               MathUtils.sinDeg(angle) * speed);
-       lifetime=0;
-       freed=false;
+    public void update(float posX, float posY, float angle, float speed) {
+        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+        getBody().setPosition(posX, posY);
+        getBody().setAngle(angle);
+        getBody().getBody().setLinearVelocity(
+                MathUtils.cosDeg(angle) * speed,
+                MathUtils.sinDeg(angle) * speed);
+        lifetime = 0;
+        freed = false;
 
     }
 
@@ -83,53 +86,54 @@ public class Bullet extends GameObject implements Script, ContactListener,Pool.P
      */
     @Override
     public void runObjectScript() {
-        lifetime+= Gdx.graphics.getDeltaTime();
-        if (lifetime >= max_Lifetime&&!freed) {
+        lifetime += Gdx.graphics.getDeltaTime();
+        if (lifetime >= max_Lifetime && !freed) {
             GameObjectManager.getObject().freeBullet(this);
-            freed=true;
+            freed = true;
 
         }
     }
 
+
     /**
-     * Called when two fixtures begin to touch.
+     * Resets the object for reuse. Object references should be nulled and fields may be set to default values.
+     */
+    @Override
+    public void reset() {
+        getBody().getBody().setLinearVelocity(new Vector2(0, 0));
+        getBody().getBody().setAngularVelocity(0);
+        getBody().setPosition(-10, -10);
+        getBody().getBody().setType(BodyDef.BodyType.StaticBody);
+
+    }
+
+    /**
+     * Call when the collision begin
      *
      * @param contact
      */
     @Override
-    public void beginContact(Contact contact) {
-
+    public void beginCollision(Contact contact) {
+        System.out.println("Bullet is collided with something");
     }
 
     /**
-     * Called when two fixtures cease to touch.
+     * Call when collision end
      *
      * @param contact
      */
     @Override
-    public void endContact(Contact contact) {
+    public void endCollision(Contact contact) {
 
     }
 
+    /**
+     * Get the fixture of this collider
+     *
+     * @return Fixture
+     */
     @Override
-    public void preSolve(Contact contact, Manifold oldManifold) {
-
+    public Fixture getFixture() {
+        return getBody().getFixture();
     }
-
-    @Override
-    public void postSolve(Contact contact, ContactImpulse impulse) {
-
-    }
-
-   /**
-    * Resets the object for reuse. Object references should be nulled and fields may be set to default values.
-    */
-   @Override
-   public void reset() {
-      getBody().getBody().setLinearVelocity(new Vector2(0,0));
-      getBody().getBody().setAngularVelocity(0);
-      getBody().setPosition(-10,-10);
-      getBody().getBody().setType(BodyDef.BodyType.StaticBody);
-
-   }
 }

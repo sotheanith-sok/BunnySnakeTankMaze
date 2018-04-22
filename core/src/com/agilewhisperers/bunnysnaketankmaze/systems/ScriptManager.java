@@ -40,7 +40,7 @@ public class ScriptManager {
         }
     }
 
-    public void removeScriptListener(Script script){
+    public void removeScriptListener(Script script) {
         scriptList.remove(script);
     }
 }

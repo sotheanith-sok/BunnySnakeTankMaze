@@ -4,7 +4,10 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.BodyEditorLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.World;
 
 /**
  * This is a component used to interact with physic engine.
@@ -15,22 +18,23 @@ public class Body {
     private float width, height, angle;
 
 
-   public Body(World world, float posX, float posY,float scale, float angle, String name) {
-      BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("gameObjects/Data.json"));
-      this.width = 1*scale;
-      this.height = 1*scale;
-      this.angle = angle;
-      BodyDef bodyDef = new BodyDef();
-      bodyDef.type = BodyDef.BodyType.KinematicBody;
-      bodyDef.position.set(posX+width/2, posY+height/2);
-      body = world.createBody(bodyDef);
+    public Body(World world, float posX, float posY, float scale, float angle, String name) {
+        BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("gameObjects/Data.json"));
+        this.width = 1 * scale;
+        this.height = 1 * scale;
+        this.angle = angle;
+        BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.KinematicBody;
+        bodyDef.position.set(posX + width / 2, posY + height / 2);
+        body = world.createBody(bodyDef);
 
 
-      //Body material type and stuff...
-      FixtureDef fixtureDef = new FixtureDef();
-      fixtureDef.density = 1;
-      loader.attachFixture(body,name,fixtureDef,scale);
-   }
+        //Body material type and stuff...
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.density = 1;
+        loader.attachFixture(body, name, fixtureDef, scale);
+        fixture = body.getFixtureList().get(0);
+    }
 
     /**
      * Get the physic engine representation of this object.
@@ -105,6 +109,6 @@ public class Body {
      * @param y
      */
     public void setPosition(float x, float y) {
-        body.setTransform(new Vector2(x + width / 2, y + height / 2), body.getAngle());
+        body.setTransform(new Vector2(x, y), body.getAngle());
     }
 }

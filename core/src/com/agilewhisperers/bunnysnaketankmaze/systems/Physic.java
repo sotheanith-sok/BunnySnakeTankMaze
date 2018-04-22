@@ -42,6 +42,7 @@ public class Physic {
      */
     public void addCollision(ContactListener contactListener) {
         world.setContactListener(contactListener);
+
     }
 
 

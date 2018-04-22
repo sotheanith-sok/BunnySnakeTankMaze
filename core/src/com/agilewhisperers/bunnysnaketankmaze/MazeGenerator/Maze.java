@@ -2,7 +2,7 @@ package com.agilewhisperers.bunnysnaketankmaze.MazeGenerator;
 
 import java.util.Random;
 
-public class  Maze {
+public class Maze {
     private int column, row;
     private Cell[][] maze;
     private Random rnd;
@@ -28,8 +28,8 @@ public class  Maze {
     }
 
     public int[][] getMazeAsData(int column, int row) {
-        this.column=column;
-        this.row=row;
+        this.column = column;
+        this.row = row;
         initialize();
         Cell[][] maze = getMaze();
         int[][] mazeData = new int[maze.length * 3 + 1][maze[0].length * 3 + 1];

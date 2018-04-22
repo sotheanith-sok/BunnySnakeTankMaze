@@ -1,8 +1,8 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
-import com.agilewhisperers.bunnysnaketankmaze.components.State;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
+import com.agilewhisperers.bunnysnaketankmaze.components.State;
 import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 
 /**
