@@ -8,11 +8,15 @@ import com.badlogic.gdx.utils.Array;
 
 public class CollisionManager implements ContactListener {
     private static CollisionManager single_instance;
-    Array<Collider> colliders;
+    private Array<Contact> contacts;
+    private Array<Integer> contactsType;
+    private Array<Collider> colliders;
 
     private CollisionManager() {
         Physic.getObject().addCollision(this);
+        contacts = new Array<>();
         colliders = new Array<>();
+        contactsType = new Array<>();
     }
 
     public static CollisionManager getObject() {
@@ -26,32 +30,26 @@ public class CollisionManager implements ContactListener {
         colliders.add(collider);
     }
 
+    /**
+     * Called when two fixtures begin to touch.
+     *
+     * @param contact
+     */
     @Override
     public void beginContact(Contact contact) {
-        int count = 0;
-        for (int i = 0; i < colliders.size; i++) {
-            if (colliders.get(i).getFixture() == contact.getFixtureA() || colliders.get(i).getFixture() == contact.getFixtureB()) {
-                colliders.get(i).beginCollision(contact);
-                count++;
-                if (count > 1) {
-                    break;
-                }
-            }
-        }
+        contacts.add(contact);
+        contactsType.add(0);
     }
 
+    /**
+     * Called when two fixtures cease to touch.
+     *
+     * @param contact
+     */
     @Override
     public void endContact(Contact contact) {
-        int count = 0;
-        for (int i = 0; i < colliders.size; i++) {
-            if (colliders.get(i).getFixture() == contact.getFixtureA() || colliders.get(i).getFixture() == contact.getFixtureB()) {
-                colliders.get(i).endCollision(contact);
-                count++;
-                if (count > 1) {
-                    break;
-                }
-            }
-        }
+        contacts.add(contact);
+        contactsType.add(1);
     }
 
     @Override
@@ -62,5 +60,26 @@ public class CollisionManager implements ContactListener {
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {
 
+    }
+
+    public void calculateCollision() {
+        while (contacts.size > 0) {
+            Contact contact = contacts.removeIndex(0);
+            int type = contactsType.removeIndex(0);
+            int count = 0;
+            for (int i = 0; i < colliders.size; i++) {
+                if (colliders.get(i).getFixture() == contact.getFixtureA() || colliders.get(i).getFixture() == contact.getFixtureB()) {
+                    if (type == 0) {
+                        colliders.get(i).startCollision(contact);
+                    } else if (type == 1) {
+                        colliders.get(i).endCollision(contact);
+                    }
+                    count++;
+                    if (count > 1) {
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

@@ -20,38 +20,24 @@ public class Wall extends GameObject implements Collider {
         getBody().getBody().setUserData(getState());
         getBody().getFixture().setUserData(getState().ID);
 
-        //Add collision
         CollisionManager.getObject().addCollider(this);
+
     }
 
-
-    /**
-     * Call when the collision begin
-     *
-     * @param contact
-     */
     @Override
-    public void beginCollision(Contact contact) {
-        System.out.println("Wall is collided with something.");
+    public void startCollision(Contact contact) {
+
     }
 
-    /**
-     * Call when collision end
-     *
-     * @param contact
-     */
     @Override
     public void endCollision(Contact contact) {
 
     }
 
-    /**
-     * Get the fixture of this collider
-     *
-     * @return Fixture
-     */
     @Override
     public Fixture getFixture() {
         return getBody().getFixture();
     }
+
+
 }

@@ -28,15 +28,13 @@ public class Player extends GameObject implements Script, Collider {
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
-        //Add collision
-        CollisionManager.getObject().addCollider(this);
 
         //Set tag for the body and fixture
         this.getBody().getBody().setUserData(getState());
         getBody().getFixture().setUserData(getState().ID);
     }
 
-    //
+
     public Player(float posX, float posY) {
         super(new Sprite(
                 "gameObjects/Player.jpg"
@@ -47,12 +45,11 @@ public class Player extends GameObject implements Script, Collider {
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
-        //Add collision
-        CollisionManager.getObject().addCollider(this);
-
         //Set tag for the object
         this.getBody().getBody().setUserData(getState());
         getBody().getFixture().setUserData(getState().ID);
+
+        CollisionManager.getObject().addCollider(this);
     }
 
 
@@ -106,31 +103,16 @@ public class Player extends GameObject implements Script, Collider {
     }
 
 
-    /**
-     * Call when the collision begin
-     *
-     * @param contact
-     */
     @Override
-    public void beginCollision(Contact contact) {
-        System.out.println("Player is collided with something");
+    public void startCollision(Contact contact) {
+
     }
 
-    /**
-     * Call when collision end
-     *
-     * @param contact
-     */
     @Override
     public void endCollision(Contact contact) {
 
     }
 
-    /**
-     * Get the fixture of this collider
-     *
-     * @return Fixture
-     */
     @Override
     public Fixture getFixture() {
         return getBody().getFixture();

@@ -30,7 +30,6 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
-        //Add collision
         CollisionManager.getObject().addCollider(this);
 
         //Set tag for the object
@@ -38,36 +37,6 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         getBody().getFixture().setUserData(getState().ID);
     }
 
-    // New bullet constructor that accepts variables to determine initial position and direction.
-    public Bullet(float posX, float posY, float angle, float speed) {
-        super(new Sprite(
-                "gameObjects/Bullet.png"
-        ), new Body(Physic.getObject().getWorld()
-                , posX + 0.25f / 2 * MathUtils.cosDeg(angle), posY + 0.25f / 2 * MathUtils.sinDeg(angle), 0.25f, 0.25f, "Bullet"));
-        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        GameObjectManager.getObject().addGameObject(this);
-
-        getState().ID = "Bullet";
-        getState().isExist = true;
-
-        this.getSprite().getSprite().flip(false, true);
-
-        //Add to scriptManager
-        ScriptManager.getObject().addScriptListener(this);
-
-        //Add collision
-        CollisionManager.getObject().addCollider(this);
-
-        getBody().setAngle(angle);
-        // Set velocity vector.
-        this.getBody().getBody().setLinearVelocity(
-                MathUtils.cosDeg(angle) * speed,
-                MathUtils.sinDeg(angle) * speed);
-
-        //Set tag for the object
-        getBody().getBody().setUserData(getState());
-        getBody().getFixture().setUserData(getState().ID);
-    }
 
     public void update(float posX, float posY, float angle, float speed) {
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
@@ -107,33 +76,29 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
 
     }
 
-    /**
-     * Call when the collision begin
-     *
-     * @param contact
-     */
     @Override
-    public void beginCollision(Contact contact) {
-        System.out.println("Bullet is collided with something");
+    public void startCollision(Contact contact) {
+
+        /*Fixture firstBody, secondBody;
+        if(contact.getFixtureA()==getFixture()){
+            firstBody=contact.getFixtureA();
+            secondBody=contact.getFixtureB();
+        }else{
+            secondBody=contact.getFixtureA();
+            firstBody=contact.getFixtureB();
+        }*/
+
+
     }
 
-    /**
-     * Call when collision end
-     *
-     * @param contact
-     */
     @Override
     public void endCollision(Contact contact) {
 
     }
 
-    /**
-     * Get the fixture of this collider
-     *
-     * @return Fixture
-     */
     @Override
     public Fixture getFixture() {
         return getBody().getFixture();
     }
 }
+
