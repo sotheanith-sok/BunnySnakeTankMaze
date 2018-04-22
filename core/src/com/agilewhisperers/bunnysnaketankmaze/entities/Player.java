@@ -8,6 +8,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
 
 public class Player extends GameObject implements Script, Collider {
@@ -16,23 +17,6 @@ public class Player extends GameObject implements Script, Collider {
     private float reloadTimer = 0;
     private float capacityCounter = 0;
 
-    public Player() {
-        super(new Sprite(
-                "gameObjects/Player.jpg"
-        ), new Body(Physic.getObject().getWorld(), 0 + 0.5f, 0 + 0.5f, 1, 0.8f, "Player"));
-
-        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        getState().ID = "Player";
-        getState().isExist = true;
-
-        //Add to scriptManager
-        ScriptManager.getObject().addScriptListener(this);
-
-
-        //Set tag for the body and fixture
-        this.getBody().getBody().setUserData(getState());
-        getBody().getFixture().setUserData(getState().ID);
-    }
 
 
     public Player(float posX, float posY) {
@@ -42,6 +26,11 @@ public class Player extends GameObject implements Script, Collider {
         getState().ID = "Player";
         getState().isExist = true;
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+
+        Filter filter=new Filter();
+        filter.categoryBits=Physic.CATEGORY_PLAYER1;
+        filter.maskBits=~Physic.CATEGORY_PLAYER1;
+        getFixture().setFilterData(filter);
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
@@ -85,8 +74,8 @@ public class Player extends GameObject implements Script, Collider {
         //Normal Fire
         rateTimer += Gdx.graphics.getDeltaTime();
         if ((capacityCounter <= getState().capacity) && rateTimer > 1 / getState().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
-            GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x + ((getBody().getWidth()) * 3 / 4 * MathUtils.cosDeg(getBody().getAngle())),
-                    getBody().getBody().getPosition().y + ((getBody().getHeight()) * 3 / 4 * MathUtils.sinDeg(getBody().getAngle())),
+            GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x ,
+                    getBody().getBody().getPosition().y,
                     getBody().getAngle(), getState().bulletSpeed);
             rateTimer = 0;
             capacityCounter++;

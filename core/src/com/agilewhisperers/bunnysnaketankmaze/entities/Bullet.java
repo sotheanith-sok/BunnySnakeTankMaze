@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.Pool;
 
@@ -27,6 +28,12 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         getState().ID = "Bullet";
         getState().isExist = true;
 
+        Filter filter=new Filter();
+        filter.categoryBits=Physic.CATEGORY_PLAYER1;
+        filter.categoryBits=1;
+
+        getFixture().setFilterData(filter);
+
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
@@ -45,6 +52,10 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         getBody().getBody().setLinearVelocity(
                 MathUtils.cosDeg(angle) * speed,
                 MathUtils.sinDeg(angle) * speed);
+        Filter filter=getFixture().getFilterData();
+        filter.categoryBits=Physic.CATEGORY_PLAYER1;
+        getFixture().setFilterData(filter);
+        getFixture().refilter();
         lifetime = 0;
         freed = false;
 
@@ -61,6 +72,7 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
             freed = true;
 
         }
+        turnOnCollision();
     }
 
 
@@ -78,15 +90,17 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
 
     @Override
     public void startCollision(Contact contact) {
+       turnOnCollision();
 
-        /*Fixture firstBody, secondBody;
+
+        Fixture firstBody, secondBody;
         if(contact.getFixtureA()==getFixture()){
             firstBody=contact.getFixtureA();
             secondBody=contact.getFixtureB();
         }else{
             secondBody=contact.getFixtureA();
             firstBody=contact.getFixtureB();
-        }*/
+        }
 
 
     }
@@ -99,6 +113,15 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     @Override
     public Fixture getFixture() {
         return getBody().getFixture();
+    }
+    public void turnOnCollision(){
+        if(lifetime>0.05f){
+            Filter filter=getFixture().getFilterData();
+            filter.categoryBits=Physic.CATEGORY_BULLET;
+            filter.maskBits=1;
+            getFixture().setFilterData(filter);
+            getFixture().refilter();
+        }
     }
 }
 

@@ -114,31 +114,31 @@ public class ObjectFactory {
         data[data.length * 3 / 4 - 1][data[0].length - 5] = 0;
         data[data.length * 3 / 4 - 2][data[0].length - 5] = 0;
 
-
-        //cleaning
-       /* for(int i=1; i<data[0].length-1;i++){
-            data[3][i]=0;
-            data[2][i]=0;
-            data[1][i]=0;
-            data[data.length-4][i]=0;
-            data[data.length-3][i]=0;
-            data[data.length-2][i]=0;
-            data[data.length/2+1][i]=0;
-            data[data.length/2-1][i]=0;
-            data[data.length/2][i]=0;
-        }
-        for(int j=1;j<data.length-1;j++){
-            data[j][1]=0;
-            data[j][2]=0;
-            data[j][3]=0;
-            data[j][data[0].length-4]=0;
-            data[j][data[0].length-3]=0;
-            data[j][data[0].length-2]=0;
-            data[j][data[0].length/2+1]=0;
-            data[j][data[0].length/2-1]=0;
-            data[j][data[0].length/2]=0;
-        }*/
-
+        //Remove extra wall
+        data[4+1][data[0].length / 4] = 0;
+        data[4+1][data[0].length / 4 + 1] = 0;
+        data[4+1][data[0].length / 4 + 2] = 0;
+        data[4+1][data[0].length * 3 / 4] = 0;
+        data[4+1][data[0].length * 3 / 4 - 2] = 0;
+        data[4+1][data[0].length * 3 / 4 - 1] = 0;
+        data[data.length / 2 - 3-1][data[0].length / 4] = 0;
+        data[data.length / 2 - 3-1][data[0].length / 4 + 1] = 0;
+        data[data.length / 2 - 3-1][data[0].length / 4 + 2] = 0;
+        data[data.length / 2 - 3-1][data[0].length * 3 / 4] = 0;
+        data[data.length / 2 - 3-1][data[0].length * 3 / 4 - 2] = 0;
+        data[data.length / 2 - 3-1][data[0].length * 3 / 4 - 1] = 0;
+        data[data.length - 5-1][data[0].length / 4] = 0;
+        data[data.length - 5-1][data[0].length / 4 + 1] = 0;
+        data[data.length - 5-1][data[0].length / 4 + 2] = 0;
+        data[data.length - 5-1][data[0].length * 3 / 4] = 0;
+        data[data.length - 5-1][data[0].length * 3 / 4 - 2] = 0;
+        data[data.length - 5-1][data[0].length * 3 / 4 - 1] = 0;
+        data[data.length / 2 + 2+1][data[0].length / 4] = 0;
+        data[data.length / 2 + 2+1][data[0].length / 4 + 1] = 0;
+        data[data.length / 2 + 2+1][data[0].length / 4 + 2] = 0;
+        data[data.length / 2 + 2+1][data[0].length * 3 / 4] = 0;
+        data[data.length / 2 + 2+1][data[0].length * 3 / 4 - 2] = 0;
+        data[data.length / 2 + 2+1][data[0].length * 3 / 4 - 1] = 0;
     }
 
     /**

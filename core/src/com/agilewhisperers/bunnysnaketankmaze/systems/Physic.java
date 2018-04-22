@@ -11,7 +11,16 @@ import com.badlogic.gdx.utils.Array;
  * The physic system.
  */
 public class Physic {
+    public static final short CATEGORY_PLAYER1=0x001;
+    public static final short CATEGORY_PLAYER2=0x002;
+    public static final short CATEGORY_ENVIROMENT=0x003;
+    public static final short CATEGORY_BULLET=0x004;
+
+
+
+
     private static Physic single_instance;
+
     private World world;
 
 
@@ -40,7 +49,7 @@ public class Physic {
      *
      * @param contactListener listener
      */
-    public void addCollision(ContactListener contactListener) {
+    public void setContactListener(ContactListener contactListener) {
         world.setContactListener(contactListener);
 
     }

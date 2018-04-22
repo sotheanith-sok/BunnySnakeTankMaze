@@ -7,6 +7,7 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.CollisionManager;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
 
 public class Wall extends GameObject implements Collider {
@@ -20,6 +21,10 @@ public class Wall extends GameObject implements Collider {
         getBody().getBody().setUserData(getState());
         getBody().getFixture().setUserData(getState().ID);
 
+        //Collision filter
+        Filter filter=new Filter();
+        filter.categoryBits=Physic.CATEGORY_ENVIROMENT;
+        getFixture().setFilterData(filter);
         CollisionManager.getObject().addCollider(this);
 
     }

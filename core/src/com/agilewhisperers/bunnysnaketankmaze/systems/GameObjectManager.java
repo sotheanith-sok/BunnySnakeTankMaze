@@ -33,7 +33,8 @@ public class GameObjectManager {
      * @param gameObject
      */
     public void addGameObject(GameObject gameObject) {
-        gameObjectList.add(gameObject);
+
+        gameObjectList.add(0,gameObject);
     }
 
     public void removeGameObject(GameObject gameObject) {

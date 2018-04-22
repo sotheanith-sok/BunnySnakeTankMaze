@@ -13,7 +13,7 @@ public class CollisionManager implements ContactListener {
     private Array<Collider> colliders;
 
     private CollisionManager() {
-        Physic.getObject().addCollision(this);
+        Physic.getObject().setContactListener(this);
         contacts = new Array<>();
         colliders = new Array<>();
         contactsType = new Array<>();
