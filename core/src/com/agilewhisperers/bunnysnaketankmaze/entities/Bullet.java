@@ -113,7 +113,7 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     public Fixture getFixture() {
         return getBody().getFixture();
     }
-    public void turnOnCollision(){ 
+    public void turnOnCollision(){
         if(lifetime>0.05f){
             Filter filter=getFixture().getFilterData();
             filter.categoryBits=Physic.CATEGORY_BULLET;
