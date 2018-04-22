@@ -20,10 +20,11 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
 
     public Bullet() {
         super(new Sprite(
-                "gameObjects/Bullet.png"
-        ), new Body(Physic.getObject().getWorld(), -1, -1, 0.5f, 10, "Bullet"));
+                "gameObjects/BlueFireball.atlas",1/24f
+        ), new Body(Physic.getObject().getWorld(), -1, -1, 2.5f, 0, "BlueFireball"));
+
+
         GameObjectManager.getObject().addGameObject(this);
-        this.getSprite().getSprite().flip(false, true);
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
         getState().ID = "Bullet";
         getState().isExist = true;
@@ -53,6 +54,7 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
                 MathUtils.sinDeg(angle) * speed);
         Filter filter=getFixture().getFilterData();
         filter.categoryBits=Physic.CATEGORY_PLAYER1;
+        filter.maskBits=~Physic.CATEGORY_PLAYER1;
         getFixture().setFilterData(filter);
         getFixture().refilter();
         lifetime = 0;
@@ -114,9 +116,10 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         return getBody().getFixture();
     }
     public void turnOnCollision(){
-        if(lifetime>0.05f){
+        if(lifetime>0.025f){
             Filter filter=getFixture().getFilterData();
             filter.categoryBits=Physic.CATEGORY_BULLET;
+            filter.maskBits=-1;
             getFixture().setFilterData(filter);
             getFixture().refilter();
         }

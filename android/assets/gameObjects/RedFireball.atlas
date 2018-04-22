@@ -1,0 +1,48 @@
+
+RedFireball.png
+size: 2048,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+RedFireball1
+  rotate: false
+  xy: 2, 201
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1
+RedFireball2
+  rotate: false
+  xy: 2, 2
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1
+RedFireball3
+  rotate: false
+  xy: 516, 201
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1
+RedFireball4
+  rotate: false
+  xy: 516, 2
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1
+RedFireball5
+  rotate: false
+  xy: 1030, 201
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1
+RedFireball6
+  rotate: false
+  xy: 1030, 2
+  size: 512, 197
+  orig: 512, 197
+  offset: 0, 0
+  index: -1

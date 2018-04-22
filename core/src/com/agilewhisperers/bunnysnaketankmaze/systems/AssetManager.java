@@ -1,6 +1,8 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 /**
  * Use to load asset.
@@ -21,9 +23,12 @@ public class AssetManager {
     }
 
     public void loadAssets() {
-        assetManager.load("gameObjects/Bullet.png", Texture.class);
-        assetManager.load("gameObjects/Player.jpg", Texture.class);
-        assetManager.load("gameObjects/Wall.png", Texture.class);
+        assetManager.load("gameObjects/Environment.atlas", TextureAtlas.class);
+        assetManager.load("gameObjects/Player.atlas", TextureAtlas.class);
+        assetManager.load("gameObjects/Snake.atlas",TextureAtlas.class);
+        assetManager.load("gameObjects/RedFireball.atlas",TextureAtlas.class);
+       assetManager.load("gameObjects/BlueFireball.atlas",TextureAtlas.class);
+       assetManager.load("gameObjects/Background.png",Texture.class);
 
     }
 

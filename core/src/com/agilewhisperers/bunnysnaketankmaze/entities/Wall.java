@@ -13,7 +13,7 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 public class Wall extends GameObject implements Collider {
     public Wall(float posX, float posY) {
         super(new Sprite(
-                "gameObjects/Wall.png"
+                "gameObjects/Environment.atlas",1f
         ), new Body(Physic.getObject().getWorld(), posX, posY, 1, 0, "Wall"));
         getBody().getBody().setType(BodyDef.BodyType.StaticBody);
         getState().ID = "Wall";
