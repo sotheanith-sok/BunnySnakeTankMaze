@@ -1,0 +1,41 @@
+
+Projectiles.png
+size: 512,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Carrot
+  rotate: false
+  xy: 2, 2
+  size: 52, 112
+  orig: 52, 112
+  offset: 0, 0
+  index: 1
+Carrot
+  rotate: false
+  xy: 56, 2
+  size: 52, 112
+  orig: 52, 112
+  offset: 0, 0
+  index: 2
+Carrot
+  rotate: false
+  xy: 110, 2
+  size: 52, 112
+  orig: 52, 112
+  offset: 0, 0
+  index: 3
+Carrot
+  rotate: false
+  xy: 164, 2
+  size: 52, 112
+  orig: 52, 112
+  offset: 0, 0
+  index: 4
+Carrot
+  rotate: false
+  xy: 218, 2
+  size: 52, 112
+  orig: 52, 112
+  offset: 0, 0
+  index: 5

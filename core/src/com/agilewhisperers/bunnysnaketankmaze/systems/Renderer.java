@@ -1,8 +1,8 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.Animator;
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.components.State;
 import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -52,16 +52,28 @@ public class Renderer {
          batch.draw((Texture)AssetManager.getObject().getAssetManager().get("gameObjects/Background.png"),0,0,1980,1080f);
         for (GameObject object : GameObjectManager.getObject().getAllGameObjects()) {
             if (object.isExist()) {
-                if (object.getBody() != null && object.getSprite() != null) {
+                if (object.getBody() != null && (object.getSprite() != null||object.getAnimator()!=null)) {
                     Body body = object.getBody();
-                    Sprite sprite = object.getSprite();
-                    TextureRegion textureRegion=(TextureRegion)sprite.getAnimation().getKeyFrame(elapsedTime,true);
-                    float ratio=(float)textureRegion.getRegionHeight()/(float)textureRegion.getRegionWidth();
+                    TextureRegion textureRegion=null;
+                    if(object.getAnimator()!=null){
+                        Animator animator=object.getAnimator();
+                        textureRegion=animator.getFrame(elapsedTime);
+                    }else if( object.getSprite()!=null){
+                        Sprite sprite=object.getSprite();
+                        textureRegion=sprite.getTexture();
+                    }
+                     if(textureRegion!=null){
+                        float ratio=(float)textureRegion.getRegionHeight()/(float)textureRegion.getRegionWidth();
+                        batch.draw(textureRegion,
+                                (body.getBody().getPosition().x - body.getWidth() / 2) * ppm,
+                                (body.getBody().getPosition().y - body.getHeight() / 2) * ppm,
+                                body.getWidth()/2*ppm,
+                                body.getHeight()/2*ppm,
+                                body.getWidth()*ppm,
+                                body.getHeight()*ppm,1f,ratio,
+                                body.getBody().getAngle()/MathUtils.degRad);
+                     }
 
-                   batch.draw(textureRegion,
-                           (body.getBody().getPosition().x - body.getWidth() / 2) * ppm,
-                           (body.getBody().getPosition().y - body.getHeight() / 2) * ppm,
-                           body.getWidth()/2*ppm,body.getHeight()/2*ppm,body.getWidth()*ppm,body.getHeight()*ppm,1f,ratio,body.getBody().getAngle()/MathUtils.degRad);
                 }
             }
         }
@@ -75,6 +87,6 @@ public class Renderer {
      * @param world container of all gameObjects for physic.
      */
     public void renderHitBox(World world) {
-        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+        //renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 }

@@ -1,8 +1,9 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.Animator;
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.components.State;
+import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 
 /**
@@ -11,19 +12,20 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 public class GameObject {
     private Sprite sprite;
     private Body body;
-    private State state;
+    private Stats stats;
+    private Animator animator;
 
     public GameObject() {
         sprite = null;
         body = null;
-        state = new State();
+        stats = new Stats();
         GameObjectManager.getObject().addGameObject(this);
     }
 
     public GameObject(Sprite sprite, Body body) {
         this.sprite = sprite;
         this.body = body;
-        state = new State();
+        stats = new Stats();
         GameObjectManager.getObject().addGameObject(this);
     }
 
@@ -54,24 +56,27 @@ public class GameObject {
         return body;
     }
 
-    /**
-     * Get the body component of this object.
-     *
-     * @param body
-     */
     public void setBody(Body body) {
         this.body = body;
     }
 
-    public State getState() {
-        return state;
+    public Stats getStats() {
+        return stats;
     }
 
     public boolean isExist() {
-        return state.isExist;
+        return stats.isExist;
     }
 
     public String getID() {
-        return state.ID;
+        return stats.ID;
     }
+
+   public void setAnimator(Animator animator) {
+      this.animator = animator;
+   }
+
+   public Animator getAnimator() {
+      return animator;
+   }
 }

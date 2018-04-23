@@ -25,10 +25,8 @@ public class AssetManager {
     public void loadAssets() {
         assetManager.load("gameObjects/Environment.atlas", TextureAtlas.class);
         assetManager.load("gameObjects/Player.atlas", TextureAtlas.class);
-        assetManager.load("gameObjects/Snake.atlas",TextureAtlas.class);
-        assetManager.load("gameObjects/RedFireball.atlas",TextureAtlas.class);
-       assetManager.load("gameObjects/BlueFireball.atlas",TextureAtlas.class);
        assetManager.load("gameObjects/Background.png",Texture.class);
+       assetManager.load("gameObjects/Projectiles.atlas",TextureAtlas.class);
 
     }
 

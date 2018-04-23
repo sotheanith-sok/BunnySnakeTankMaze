@@ -1,6 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
-import com.agilewhisperers.bunnysnaketankmaze.components.State;
+import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -59,7 +59,7 @@ public class Physic {
         Array<Body> bodies = new Array<>();
         Physic.getObject().getWorld().getBodies(bodies);
         for (com.badlogic.gdx.physics.box2d.Body body : bodies) {
-            if (body.getUserData() != null && ((State) body.getUserData()).isExist == false) {
+            if (body.getUserData() != null && ((Stats) body.getUserData()).isExist == false) {
                 Physic.getObject().getWorld().destroyBody(body);
             }
 

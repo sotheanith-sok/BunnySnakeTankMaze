@@ -13,13 +13,13 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 public class Wall extends GameObject implements Collider {
     public Wall(float posX, float posY) {
         super(new Sprite(
-                "gameObjects/Environment.atlas",1f
+                "gameObjects/Environment.atlas","Wall",1
         ), new Body(Physic.getObject().getWorld(), posX, posY, 1, 0, "Wall"));
         getBody().getBody().setType(BodyDef.BodyType.StaticBody);
-        getState().ID = "Wall";
-        getState().isExist = true;
-        getBody().getBody().setUserData(getState());
-        getBody().getFixture().setUserData(getState().ID);
+        getStats().ID = "Wall";
+        getStats().isExist = true;
+        getBody().getBody().setUserData(getStats());
+        getBody().getFixture().setUserData(getStats().ID);
 
         //Collision filter
         Filter filter=new Filter();

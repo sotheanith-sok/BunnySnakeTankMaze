@@ -12,14 +12,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
  */
 public class Sprite {
     private TextureAtlas textureAtlas;
-    private Animation<TextureRegion> animation;
+    private TextureRegion texture;
 
-    public Sprite(String path, float frameRate) {
+    public Sprite(String path, String name, int index) {
         textureAtlas = AssetManager.getObject().getAssetManager().get(path, TextureAtlas.class);
-        animation=new Animation(frameRate,textureAtlas.getRegions());
+        texture=textureAtlas.findRegion(name,index);
     }
 
-   public Animation getAnimation() {
-      return animation;
+   public TextureRegion getTexture() {
+      return texture;
    }
 }

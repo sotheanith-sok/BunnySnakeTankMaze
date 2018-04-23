@@ -19,15 +19,13 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     private boolean freed = false;
 
     public Bullet() {
-        super(new Sprite(
-                "gameObjects/BlueFireball.atlas",1/24f
-        ), new Body(Physic.getObject().getWorld(), -1, -1, 2.5f, 0, "BlueFireball"));
+       super();
+       super.setBody( new Body(Physic.getObject().getWorld(), -1, -1, 2.5f, 0, "BlueFireball"));
+      super.setSprite(new Sprite("gameObjects/Projectiles.atlas","Carrot",3));
 
-
-        GameObjectManager.getObject().addGameObject(this);
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        getState().ID = "Bullet";
-        getState().isExist = true;
+        getStats().ID = "Bullet";
+        getStats().isExist = true;
 
         Filter filter=new Filter();
         filter.categoryBits=Physic.CATEGORY_PLAYER1;
@@ -40,8 +38,8 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
         CollisionManager.getObject().addCollider(this);
 
         //Set tag for the object
-        this.getBody().getBody().setUserData(getState());
-        getBody().getFixture().setUserData(getState().ID);
+        this.getBody().getBody().setUserData(getStats());
+        getBody().getFixture().setUserData(getStats().ID);
     }
 
 

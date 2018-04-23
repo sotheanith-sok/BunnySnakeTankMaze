@@ -1,7 +1,7 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
-import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
+import com.agilewhisperers.bunnysnaketankmaze.components.PlayerAnimator;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -20,11 +20,11 @@ public class Player extends GameObject implements Script, Collider {
 
 
     public Player(float posX, float posY) {
-        super(new Sprite(
-                "gameObjects/Player.atlas",1f
-        ), new Body(Physic.getObject().getWorld(), posX, posY, 1, 0.8f, "Player"));
-        getState().ID = "Player";
-        getState().isExist = true;
+       super();
+       super.setBody(new Body(Physic.getObject().getWorld(), posX, posY, 1f, 0.8f, "Player"));
+         super.setAnimator(new PlayerAnimator());
+        getStats().ID = "Player";
+        getStats().isExist = true;
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
 
         Filter filter=new Filter();
@@ -35,8 +35,8 @@ public class Player extends GameObject implements Script, Collider {
         ScriptManager.getObject().addScriptListener(this);
 
         //Set tag for the object
-        this.getBody().getBody().setUserData(getState());
-        getBody().getFixture().setUserData(getState().ID);
+        this.getBody().getBody().setUserData(getStats());
+        getBody().getFixture().setUserData(getStats().ID);
 
         CollisionManager.getObject().addCollider(this);
     }
@@ -53,18 +53,22 @@ public class Player extends GameObject implements Script, Collider {
 
     private void movement() {
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            getBody().addAngle(getState().rotatingSpeed);
+            getBody().addAngle(getStats().rotatingSpeed);
+           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.ROTATE_COUNTERCLOCKWISE);
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            getBody().addAngle(-getState().rotatingSpeed);
+            getBody().addAngle(-getStats().rotatingSpeed);
+           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.ROTATE_CLOCKWISE);
         } else {
             getBody().getBody().setAngularVelocity(0);
+           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.STANDING);
+
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getState().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getState().movingSpeed);
+            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getStats().movingSpeed);
 
         } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getState().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getState().movingSpeed);
+            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getStats().movingSpeed);
         } else {
             this.getBody().getBody().setLinearVelocity(0, 0);
         }
@@ -73,18 +77,18 @@ public class Player extends GameObject implements Script, Collider {
     private void fire() {
         //Normal Fire
         rateTimer += Gdx.graphics.getDeltaTime();
-        if ((capacityCounter <= getState().capacity) && rateTimer > 1 / getState().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
+        if ((capacityCounter <= getStats().capacity) && rateTimer > 1 / getStats().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
             GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x ,
                     getBody().getBody().getPosition().y,
-                    getBody().getAngle(), getState().bulletSpeed);
+                    getBody().getAngle(), getStats().bulletSpeed);
             rateTimer = 0;
             capacityCounter++;
         }
 
         //Reload
-        if (capacityCounter > getState().capacity) {
+        if (capacityCounter > getStats().capacity) {
             reloadTimer += Gdx.graphics.getDeltaTime();
-            if (reloadTimer >= getState().reloadTime) {
+            if (reloadTimer >= getStats().reloadTime) {
                 capacityCounter = 0;
                 reloadTimer = 0;
             }
