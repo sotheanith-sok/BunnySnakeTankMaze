@@ -4,17 +4,15 @@ import com.agilewhisperers.bunnysnaketankmaze.systems.BodyEditorLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * This is a component used to interact with physic engine.
  */
 public class Body {
     private com.badlogic.gdx.physics.box2d.Body body;
-    private Fixture fixture;
+
     private float width, height, angle;
 
 
@@ -33,7 +31,7 @@ public class Body {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.density = 1;
         loader.attachFixture(body, name, fixtureDef, scale);
-        fixture = body.getFixtureList().get(0);
+
     }
 
     /**
@@ -45,14 +43,6 @@ public class Body {
         return body;
     }
 
-    /**
-     * Get the physical definition of this object in the engine.
-     *
-     * @return Fixture
-     */
-    public Fixture getFixture() {
-        return fixture;
-    }
 
     /**
      * Get the width of the hitbox.
@@ -72,7 +62,9 @@ public class Body {
         return height;
     }
 
-
+    public Array<Fixture> getFixtureList(){
+        return body.getFixtureList();
+    }
     /**
      * Incriminate the angle of this object by a certain amount.
      *
@@ -110,5 +102,15 @@ public class Body {
      */
     public void setPosition(float x, float y) {
         body.setTransform(new Vector2(x, y), body.getAngle());
+    }
+
+    public void updateFilter(short categoryBits, short maskBits){
+        Array<Fixture> fixtureArray=body.getFixtureList();
+        for(int i=0;i<fixtureArray.size;i++){
+            Filter filter=fixtureArray.get(i).getFilterData();
+            filter.categoryBits=categoryBits;
+            filter.maskBits=maskBits;
+            fixtureArray.get(i).setFilterData(filter);
+        }
     }
 }

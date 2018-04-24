@@ -87,6 +87,6 @@ public class Renderer {
      * @param world container of all gameObjects for physic.
      */
     public void renderHitBox(World world) {
-        //renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 }

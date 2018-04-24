@@ -11,10 +11,10 @@ import com.badlogic.gdx.utils.Array;
  * The physic system.
  */
 public class Physic {
-    public static final short CATEGORY_PLAYER1=0x001;
-    public static final short CATEGORY_PLAYER2=0x002;
-    public static final short CATEGORY_ENVIROMENT=0x003;
-    public static final short CATEGORY_BULLET=0x004;
+    public static final short CATEGORY_PLAYER1=0x002;
+    public static final short CATEGORY_PLAYER2=0x004;
+    public static final short CATEGORY_ENVIROMENT=0x006;
+    public static final short CATEGORY_BULLET=0x008;
 
 
 

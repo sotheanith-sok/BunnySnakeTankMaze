@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.utils.Array;
 
 public class Wall extends GameObject implements Collider {
     public Wall(float posX, float posY) {
@@ -19,13 +20,12 @@ public class Wall extends GameObject implements Collider {
         getStats().ID = "Wall";
         getStats().isExist = true;
         getBody().getBody().setUserData(getStats());
-        getBody().getFixture().setUserData(getStats().ID);
+        getBody().getFixtureList().get(0).setUserData(getStats().ID);
 
-        //Collision filter
-        Filter filter=new Filter();
-        filter.categoryBits=Physic.CATEGORY_ENVIROMENT;
-        getFixture().setFilterData(filter);
+
         CollisionManager.getObject().addCollider(this);
+
+        getBody().updateFilter(Physic.CATEGORY_ENVIROMENT,(short)-1);
 
     }
 
@@ -39,9 +39,10 @@ public class Wall extends GameObject implements Collider {
 
     }
 
+
     @Override
-    public Fixture getFixture() {
-        return getBody().getFixture();
+    public Array<Fixture> getFixtureArray() {
+        return getBody().getFixtureList();
     }
 
 

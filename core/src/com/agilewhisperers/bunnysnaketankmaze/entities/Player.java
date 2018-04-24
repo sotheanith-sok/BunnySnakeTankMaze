@@ -8,8 +8,8 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.Filter;
 import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.utils.Array;
 
 public class Player extends GameObject implements Script, Collider {
 
@@ -26,19 +26,17 @@ public class Player extends GameObject implements Script, Collider {
         getStats().ID = "Player";
         getStats().isExist = true;
         getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-
-        Filter filter=new Filter();
-        filter.categoryBits=Physic.CATEGORY_PLAYER1;
-        filter.maskBits=~Physic.CATEGORY_PLAYER1;
-        getFixture().setFilterData(filter);
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
 
         //Set tag for the object
         this.getBody().getBody().setUserData(getStats());
-        getBody().getFixture().setUserData(getStats().ID);
+        getBody().getFixtureList().get(0).setUserData(getStats().ID);
 
         CollisionManager.getObject().addCollider(this);
+
+        getBody().updateFilter(Physic.CATEGORY_PLAYER1,(short)-1);
+
     }
 
 
@@ -47,6 +45,9 @@ public class Player extends GameObject implements Script, Collider {
      */
     @Override
     public void runObjectScript() {
+
+
+
         movement();
         fire();
     }
@@ -107,7 +108,10 @@ public class Player extends GameObject implements Script, Collider {
     }
 
     @Override
-    public Fixture getFixture() {
-        return getBody().getFixture();
+    public Array<Fixture> getFixtureArray()
+    {
+        return getBody().getFixtureList();
     }
+
+
 }

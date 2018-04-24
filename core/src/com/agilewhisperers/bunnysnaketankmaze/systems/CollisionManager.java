@@ -68,16 +68,16 @@ public class CollisionManager implements ContactListener {
             int type = contactsType.removeIndex(0);
             int count = 0;
             for (int i = 0; i < colliders.size; i++) {
-                if (colliders.get(i).getFixture() == contact.getFixtureA() || colliders.get(i).getFixture() == contact.getFixtureB()) {
+                if (colliders.get(i).getFixtureArray().contains(contact.getFixtureA(),false) || colliders.get(i).getFixtureArray().contains(contact.getFixtureB(),false)) {
                     if (type == 0) {
                         colliders.get(i).startCollision(contact);
                     } else if (type == 1) {
                         colliders.get(i).endCollision(contact);
                     }
-                    count++;
+                    /*count++;
                     if (count > 1) {
                         break;
-                    }
+                    }*/
                 }
             }
         }
