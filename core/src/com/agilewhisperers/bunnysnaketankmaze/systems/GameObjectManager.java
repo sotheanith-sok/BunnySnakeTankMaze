@@ -10,56 +10,56 @@ import java.util.List;
  * Database of all gameObject.
  */
 public class GameObjectManager {
-    private static GameObjectManager single_instance;
-    private List<GameObject> gameObjectList;
-    private BulletPool bulletPool;
+   private static GameObjectManager single_instance;
+   private List<GameObject> gameObjectList;
+   private BulletPool bulletPool;
 
-    private GameObjectManager() {
-        gameObjectList = new ArrayList<GameObject>();
-        bulletPool = new BulletPool(250, 1000);
-    }
+   private GameObjectManager() {
+      gameObjectList = new ArrayList<GameObject>();
+      bulletPool = new BulletPool(250, 1000);
+   }
 
-    public static GameObjectManager getObject() {
-        if (single_instance == null) {
-            single_instance = new GameObjectManager();
-        }
-        return single_instance;
-    }
-
-
-    /**
-     * Add gameObject to the database
-     *
-     * @param gameObject
-     */
-    public void addGameObject(GameObject gameObject) {
-
-        gameObjectList.add(0,gameObject);
-    }
-
-    public void removeGameObject(GameObject gameObject) {
-        gameObject.getStats().isExist = false;
-        gameObjectList.remove(gameObject);
-        if (gameObject instanceof Script) {
-            ScriptManager.getObject().removeScriptListener((Script) gameObject);
-        }
-    }
+   public static GameObjectManager getObject() {
+      if (single_instance == null) {
+         single_instance = new GameObjectManager();
+      }
+      return single_instance;
+   }
 
 
-    /**
-     * Get the list of all gameObject.
-     *
-     * @return gameObject list.
-     */
-    public List<GameObject> getAllGameObjects() {
-        return gameObjectList;
-    }
+   /**
+    * Add gameObject to the database
+    *
+    * @param gameObject
+    */
+   public void addGameObject(GameObject gameObject) {
 
-    public Bullet getBullet() {
-        return bulletPool.obtain();
-    }
+      gameObjectList.add(0, gameObject);
+   }
 
-    public void freeBullet(Bullet bullet) {
-        bulletPool.free(bullet);
-    }
+   public void removeGameObject(GameObject gameObject) {
+      gameObject.getStats().isExist = false;
+      gameObjectList.remove(gameObject);
+      if (gameObject instanceof Script) {
+         ScriptManager.getObject().removeScriptListener((Script) gameObject);
+      }
+   }
+
+
+   /**
+    * Get the list of all gameObject.
+    *
+    * @return gameObject list.
+    */
+   public List<GameObject> getAllGameObjects() {
+      return gameObjectList;
+   }
+
+   public Bullet getBullet() {
+      return bulletPool.obtain();
+   }
+
+   public void freeBullet(Bullet bullet) {
+      bulletPool.free(bullet);
+   }
 }

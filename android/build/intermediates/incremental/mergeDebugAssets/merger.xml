@@ -1,2 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\Workstation\BunnySnakeTankMaze\android\assets"><file name="gameObjects/Background.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Background.png"/><file name="gameObjects/Data.json" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Data.json"/><file name="gameObjects/Enviroment.atlas" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Enviroment.atlas"/><file name="gameObjects/Enviroment.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Enviroment.png"/><file name="gameObjects/Environment.atlas" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Environment.atlas"/><file name="gameObjects/Environment.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Environment.png"/><file name="gameObjects/GDXTexturePacker.tpproj" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\GDXTexturePacker.tpproj"/><file name="gameObjects/Player.atlas" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Player.atlas"/><file name="gameObjects/Player.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Player.png"/><file name="gameObjects/Projectiles.atlas" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Projectiles.atlas"/><file name="gameObjects/Projectiles.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Projectiles.png"/><file name="gameObjects/Sprites/Carrot_01.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_01.png"/><file name="gameObjects/Sprites/Carrot_02.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_02.png"/><file name="gameObjects/Sprites/Carrot_03.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_03.png"/><file name="gameObjects/Sprites/Carrot_04.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_04.png"/><file name="gameObjects/Sprites/Carrot_05.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_05.png"/><file name="gameObjects/Sprites/Player_001.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_001.png"/><file name="gameObjects/Sprites/Player_002.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_002.png"/><file name="gameObjects/Sprites/Player_003.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_003.png"/><file name="gameObjects/Sprites/Player_004.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_004.png"/><file name="gameObjects/Sprites/Player_005.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_005.png"/><file name="gameObjects/Sprites/Player_006.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_006.png"/><file name="gameObjects/Sprites/Player_007.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_007.png"/><file name="gameObjects/Sprites/Player_008.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_008.png"/><file name="gameObjects/Sprites/Player_009.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_009.png"/><file name="gameObjects/Sprites/Wall_001.png" path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Wall_001.png"/><file name="tools/physics-body-editor.jar" path="D:\Workstation\BunnySnakeTankMaze\android\assets\tools\physics-body-editor.jar"/></source><source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\Workstation\BunnySnakeTankMaze\android\src\debug\assets"/></dataSet></merger>
+<merger version="3">
+   <dataSet config="main">
+      <source path="D:\Workstation\BunnySnakeTankMaze\android\assets">
+         <file name="gameObjects/Background.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Background.png"/>
+         <file name="gameObjects/Data.json"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Data.json"/>
+         <file name="gameObjects/Enviroment.atlas"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Enviroment.atlas"/>
+         <file name="gameObjects/Enviroment.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Enviroment.png"/>
+         <file name="gameObjects/Environment.atlas"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Environment.atlas"/>
+         <file name="gameObjects/Environment.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Environment.png"/>
+         <file name="gameObjects/GDXTexturePacker.tpproj"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\GDXTexturePacker.tpproj"/>
+         <file name="gameObjects/Player.atlas"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Player.atlas"/>
+         <file name="gameObjects/Player.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Player.png"/>
+         <file name="gameObjects/Projectiles.atlas"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Projectiles.atlas"/>
+         <file name="gameObjects/Projectiles.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Projectiles.png"/>
+         <file name="gameObjects/Sprites/Carrot_01.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_01.png"/>
+         <file name="gameObjects/Sprites/Carrot_02.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_02.png"/>
+         <file name="gameObjects/Sprites/Carrot_03.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_03.png"/>
+         <file name="gameObjects/Sprites/Carrot_04.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_04.png"/>
+         <file name="gameObjects/Sprites/Carrot_05.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Carrot_05.png"/>
+         <file name="gameObjects/Sprites/Player_001.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_001.png"/>
+         <file name="gameObjects/Sprites/Player_002.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_002.png"/>
+         <file name="gameObjects/Sprites/Player_003.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_003.png"/>
+         <file name="gameObjects/Sprites/Player_004.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_004.png"/>
+         <file name="gameObjects/Sprites/Player_005.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_005.png"/>
+         <file name="gameObjects/Sprites/Player_006.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_006.png"/>
+         <file name="gameObjects/Sprites/Player_007.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_007.png"/>
+         <file name="gameObjects/Sprites/Player_008.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_008.png"/>
+         <file name="gameObjects/Sprites/Player_009.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Player_009.png"/>
+         <file name="gameObjects/Sprites/Wall_001.png"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\gameObjects\Sprites\Wall_001.png"/>
+         <file name="tools/physics-body-editor.jar"
+               path="D:\Workstation\BunnySnakeTankMaze\android\assets\tools\physics-body-editor.jar"/>
+      </source>
+      <source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\assets\shaders\debug"/>
+   </dataSet>
+   <dataSet config="debug">
+      <source path="D:\Workstation\BunnySnakeTankMaze\android\src\debug\assets"/>
+   </dataSet>
+</merger>

@@ -7,7 +7,7 @@ repeat: none
 Spider
   rotate: false
   xy: 2, 2
-  size: 394, 478
-  orig: 394, 478
+  size: 346, 346
+  orig: 346, 346
   offset: 0, 0
   index: 1

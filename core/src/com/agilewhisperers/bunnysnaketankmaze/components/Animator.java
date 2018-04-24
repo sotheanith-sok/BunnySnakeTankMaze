@@ -8,16 +8,18 @@ public abstract class Animator {
 
    private Array<Animation<TextureRegion>> animationArray;
 
-   public Animator(){
-      animationArray=new Array<>();
+   public Animator() {
+      animationArray = new Array<>();
    }
 
-   public void addAnimation(Animation<TextureRegion> animation){
+   public void addAnimation(Animation<TextureRegion> animation) {
       animationArray.add(animation);
    }
-   public Animation<TextureRegion> getAnimation(int index){
+
+   public Animation<TextureRegion> getAnimation(int index) {
       return animationArray.get(index);
    }
+
    public abstract TextureRegion getFrame(float stateTimer);
 
 }

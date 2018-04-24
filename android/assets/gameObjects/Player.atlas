@@ -10,60 +10,60 @@ Player
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 7
+  index: 1
 Player
   rotate: false
   xy: 2, 2
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 8
+  index: 2
 Player
   rotate: false
   xy: 387, 347
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 9
+  index: 3
 Player
   rotate: false
   xy: 387, 2
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 1
+  index: 4
 Player
   rotate: false
   xy: 772, 347
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 2
+  index: 5
 Player
   rotate: false
   xy: 772, 2
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 3
+  index: 6
 Player
   rotate: false
   xy: 1157, 347
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 4
+  index: 7
 Player
   rotate: false
   xy: 1157, 2
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 5
+  index: 8
 Player
   rotate: false
   xy: 1542, 347
   size: 383, 343
   orig: 383, 343
   offset: 0, 0
-  index: 6
+  index: 9

@@ -13,105 +13,102 @@ import com.badlogic.gdx.utils.Array;
 
 public class Player extends GameObject implements Script, Collider {
 
-    private float rateTimer = 0;
-    private float reloadTimer = 0;
-    private float capacityCounter = 0;
+   private float rateTimer = 0;
+   private float reloadTimer = 0;
+   private float capacityCounter = 0;
 
 
+   public Player(float posX, float posY) {
+      super();
+      super.setBody(new Body(Physic.getObject().getWorld(), posX, posY, 1f, 0.8f, "Player"));
+      super.setAnimator(new PlayerAnimator());
+      getStats().ID = "Player";
+      getStats().isExist = true;
+      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+      //Add to scriptManager
+      ScriptManager.getObject().addScriptListener(this);
 
-    public Player(float posX, float posY) {
-       super();
-       super.setBody(new Body(Physic.getObject().getWorld(), posX, posY, 1f, 0.8f, "Player"));
-         super.setAnimator(new PlayerAnimator());
-        getStats().ID = "Player";
-        getStats().isExist = true;
-        getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-        //Add to scriptManager
-        ScriptManager.getObject().addScriptListener(this);
+      //Set tag for the object
+      this.getBody().getBody().setUserData(getStats());
+      getBody().getFixtureList().get(0).setUserData(getStats().ID);
 
-        //Set tag for the object
-        this.getBody().getBody().setUserData(getStats());
-        getBody().getFixtureList().get(0).setUserData(getStats().ID);
+      CollisionManager.getObject().addCollider(this);
 
-        CollisionManager.getObject().addCollider(this);
+      getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short) -1);
 
-        getBody().updateFilter(Physic.CATEGORY_PLAYER1,(short)-1);
-
-    }
-
-
-    /**
-     * This method will be call every game loop.
-     */
-    @Override
-    public void runObjectScript() {
+   }
 
 
-
-        movement();
-        fire();
-    }
-
-    private void movement() {
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-            getBody().addAngle(getStats().rotatingSpeed);
-           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.ROTATE_COUNTERCLOCKWISE);
-        } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-            getBody().addAngle(-getStats().rotatingSpeed);
-           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.ROTATE_CLOCKWISE);
-        } else {
-            getBody().getBody().setAngularVelocity(0);
-           ((PlayerAnimator)getAnimator()).updateState(PlayerAnimator.State.STANDING);
-
-        }
-
-        if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getStats().movingSpeed);
-
-        } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-            this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getStats().movingSpeed);
-        } else {
-            this.getBody().getBody().setLinearVelocity(0, 0);
-        }
-    }
-
-    private void fire() {
-        //Normal Fire
-        rateTimer += Gdx.graphics.getDeltaTime();
-        if ((capacityCounter <= getStats().capacity) && rateTimer > 1 / getStats().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
-            GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x ,
-                    getBody().getBody().getPosition().y,
-                    getBody().getAngle(), getStats().bulletSpeed);
-            rateTimer = 0;
-            capacityCounter++;
-        }
-
-        //Reload
-        if (capacityCounter > getStats().capacity) {
-            reloadTimer += Gdx.graphics.getDeltaTime();
-            if (reloadTimer >= getStats().reloadTime) {
-                capacityCounter = 0;
-                reloadTimer = 0;
-            }
-        }
-    }
+   /**
+    * This method will be call every game loop.
+    */
+   @Override
+   public void runObjectScript() {
 
 
-    @Override
-    public void startCollision(Contact contact) {
+      movement();
+      fire();
+   }
 
-    }
+   private void movement() {
+      if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+         getBody().addAngle(getStats().rotatingSpeed);
+         ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.ROTATE_COUNTERCLOCKWISE);
+      } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+         getBody().addAngle(-getStats().rotatingSpeed);
+         ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.ROTATE_CLOCKWISE);
+      } else {
+         getBody().getBody().setAngularVelocity(0);
+         ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.STANDING);
 
-    @Override
-    public void endCollision(Contact contact) {
+      }
 
-    }
+      if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getStats().movingSpeed);
 
-    @Override
-    public Array<Fixture> getFixtureArray()
-    {
-        return getBody().getFixtureList();
-    }
+      } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getStats().movingSpeed);
+      } else {
+         this.getBody().getBody().setLinearVelocity(0, 0);
+      }
+   }
+
+   private void fire() {
+      //Normal Fire
+      rateTimer += Gdx.graphics.getDeltaTime();
+      if ((capacityCounter <= getStats().capacity) && rateTimer > 1 / getStats().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
+         GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x,
+                 getBody().getBody().getPosition().y,
+                 getBody().getAngle(), getStats().bulletSpeed);
+         rateTimer = 0;
+         capacityCounter++;
+      }
+
+      //Reload
+      if (capacityCounter > getStats().capacity) {
+         reloadTimer += Gdx.graphics.getDeltaTime();
+         if (reloadTimer >= getStats().reloadTime) {
+            capacityCounter = 0;
+            reloadTimer = 0;
+         }
+      }
+   }
+
+
+   @Override
+   public void startCollision(Contact contact) {
+
+   }
+
+   @Override
+   public void endCollision(Contact contact) {
+
+   }
+
+   @Override
+   public Array<Fixture> getFixtureArray() {
+      return getBody().getFixtureList();
+   }
 
 
 }

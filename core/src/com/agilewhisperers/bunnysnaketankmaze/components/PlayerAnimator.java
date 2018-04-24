@@ -53,9 +53,10 @@ public class PlayerAnimator extends Animator {
       }
       return textureRegion;
    }
-   public void updateState(State state){
-      previousState=currentState;
-      currentState=state;
+
+   public void updateState(State state) {
+      previousState = currentState;
+      currentState = state;
    }
 
    public enum State {
