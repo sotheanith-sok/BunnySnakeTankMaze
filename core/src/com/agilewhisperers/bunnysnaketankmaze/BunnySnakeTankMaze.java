@@ -4,12 +4,12 @@ import com.badlogic.gdx.Game;
 
 public class BunnySnakeTankMaze extends Game {
 
-   private MyScreen myScreen;
+    private MyScreen myScreen;
 
-   @Override
-   public void create() {
-      myScreen = new MyScreen(this);
-      setScreen(myScreen);
+    @Override
+    public void create() {
+        myScreen = new MyScreen(this);
+        setScreen(myScreen);
 
-   }
+    }
 }
