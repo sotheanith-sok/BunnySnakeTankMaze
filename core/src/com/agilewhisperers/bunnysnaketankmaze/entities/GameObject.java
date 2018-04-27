@@ -65,11 +65,11 @@ public class GameObject {
    }
 
    public boolean isExist() {
-      return stats.isExist;
+      return stats.isExist();
    }
 
    public String getID() {
-      return stats.ID;
+      return stats.getID();
    }
 
    public Animator getAnimator() {

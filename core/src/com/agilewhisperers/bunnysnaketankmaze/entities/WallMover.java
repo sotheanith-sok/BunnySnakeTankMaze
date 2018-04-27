@@ -2,20 +2,14 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.Vector2;
+
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.Array;
 
-import java.util.List;
-import java.util.Random;
 
 public class WallMover extends GameObject implements Script, Collider {
-   private Random random;
    private float startTimer=0;
    private float stageTimer=0;
    private int[][] wallLocation;
@@ -27,10 +21,10 @@ public class WallMover extends GameObject implements Script, Collider {
       super.setBody(new Body(Physic.getObject().getWorld(), 15, 15, 2.5f, 0, "Spider"));
       super.setSprite(new Sprite("gameObjects/NPC.atlas", "Spider", 1));
       super.getBody().getBody().setType(BodyDef.BodyType.KinematicBody);
-      getStats().isExist = true;
-      getStats().ID = "WallMover";
-      random = new Random();
-      getBody().getBody().setUserData(getStats());
+      getStats().setExist(true);
+      getStats().setID("WallMover");
+      this.getBody().getBody().setUserData(getStats());
+      this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
       ScriptManager.getObject().addScriptListener(this);
       CollisionManager.getObject().addCollider(this);
       wallLocation=ObjectFactory.getObject().getData();
@@ -48,17 +42,14 @@ public class WallMover extends GameObject implements Script, Collider {
 
    }
 
-   @Override
-   public Array<Fixture> getFixtureArray() {
-      return getBody().getFixtureList();
-   }
+
 
    /**
     * This method will be call every game loop.
     */
    @Override
    public void runObjectScript() {
-      stageTimer+= Gdx.graphics.getDeltaTime();
+      /*stageTimer+= Gdx.graphics.getDeltaTime();
       startTimer+=Gdx.graphics.getDeltaTime();
       if(stageTimer>1f){
          List<GameObject> gameObjectList=GameObjectManager.getObject().getAllGameObjects();
@@ -86,8 +77,12 @@ public class WallMover extends GameObject implements Script, Collider {
          }
          stageTimer=0f;
 
-      }
+      }*/
 
 
+   }
+   @Override
+   public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
+      return getBody().getBody();
    }
 }

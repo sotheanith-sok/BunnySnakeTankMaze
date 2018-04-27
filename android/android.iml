@@ -90,13 +90,13 @@
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-bullet:1.9.8@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.ashley:ashley:1.7.3@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.9.8@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-freetype:1.9.8@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-ai:1.8.0@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-controllers-android:1.9.8@jar" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.ashley:ashley:1.7.0@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx:1.9.8@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-backend-android:1.9.8@jar" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-ai:1.8.1@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.box2dlights:box2dlights:1.4@jar" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.badlogicgames.gdx:gdx-controllers:1.9.8@jar" level="project" />
     <orderEntry type="module" module-name="core" exported="" />

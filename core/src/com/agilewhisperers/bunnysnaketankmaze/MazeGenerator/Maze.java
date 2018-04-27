@@ -1,12 +1,9 @@
 package com.agilewhisperers.bunnysnaketankmaze.MazeGenerator;
-
-import java.util.Random;
+import com.badlogic.gdx.math.MathUtils;
 
 public class Maze {
    private int column, row;
    private Cell[][] maze;
-   private Random rnd;
-   private Cell start, end;
 
    public Maze() {
       this.column = 10;
@@ -23,7 +20,6 @@ public class Maze {
 
    private void initialize() {
       maze = new Cell[row][column];
-      rnd = new java.util.Random();
 
    }
 
@@ -90,7 +86,7 @@ public class Maze {
    }
 
    private void generateMaze(int x1, int y1, int x2, int y2) {
-      int value = rnd.nextInt(2);
+      int value = MathUtils.random(1);
       // Horizontal divide
       if (value == 0) {
          if (y1 < y2) {
@@ -100,7 +96,7 @@ public class Maze {
                maze[middle + 1][i].setSide(true, Direction.North);
 
             }
-            int gate = rnd.nextInt(x2 - x1 + 1) + x1;
+            int gate = MathUtils.random(x2 - x1 ) + x1;
 
             maze[middle][gate].setSide(false, Direction.South);
             maze[middle + 1][gate].setSide(false, Direction.North);
@@ -117,7 +113,7 @@ public class Maze {
                maze[i][middle].setSide(true, Direction.East);
                maze[i][middle + 1].setSide(true, Direction.West);
             }
-            int gate = rnd.nextInt(y2 - y1 + 1) + y1;
+            int gate =  MathUtils.random(y2 - y1 ) + y1;
 
             maze[gate][middle].setSide(false, Direction.East);
             maze[gate][middle + 1].setSide(false, Direction.West);

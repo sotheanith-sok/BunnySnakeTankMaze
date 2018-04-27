@@ -8,35 +8,37 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.utils.Array;
 
 public class Player extends GameObject implements Script, Collider {
 
-   private float rateTimer = 0;
-   private float reloadTimer = 0;
-   private float capacityCounter = 0;
+   float rateTimer = 0;
+   float reloadTimer = 0;
+    float capacityCounter = 0;
+
+   private float startRustTimer = 0;
+   private float rustTime = 0;
 
 
    public Player(float posX, float posY) {
       super();
       super.setBody(new Body(Physic.getObject().getWorld(), posX, posY, 1f, 0.8f, "Player"));
       super.setAnimator(new PlayerAnimator());
-      getStats().ID = "Player";
-      getStats().isExist = true;
-      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+      getStats().setID("Player");
+      getStats().setExist(true);
+      this.getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
 
       //Set tag for the object
       this.getBody().getBody().setUserData(getStats());
-      getBody().getFixtureList().get(0).setUserData(getStats().ID);
+      this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
 
       CollisionManager.getObject().addCollider(this);
 
-      getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short) -1);
+      this.getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short) -1);
 
    }
+
 
 
    /**
@@ -44,50 +46,49 @@ public class Player extends GameObject implements Script, Collider {
     */
    @Override
    public void runObjectScript() {
-
-
       movement();
       fire();
+      //rust();
    }
 
-   private void movement() {
+   public void movement() {
       if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-         getBody().addAngle(getStats().rotatingSpeed);
+         this.getBody().addAngle(getStats().getRotatingSpeed());
          ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.ROTATE_COUNTERCLOCKWISE);
       } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-         getBody().addAngle(-getStats().rotatingSpeed);
+         this.getBody().addAngle(-getStats().getRotatingSpeed());
          ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.ROTATE_CLOCKWISE);
       } else {
-         getBody().getBody().setAngularVelocity(0);
+         this.getBody().getBody().setAngularVelocity(0);
          ((PlayerAnimator) getAnimator()).updateState(PlayerAnimator.State.STANDING);
 
       }
 
       if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
-         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * getStats().movingSpeed);
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(this.getBody().getAngle()) * getStats().getMovingSpeed(), MathUtils.sinDeg(this.getBody().getAngle()) * getStats().getMovingSpeed());
 
       } else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(getBody().getAngle()) * -getStats().movingSpeed, MathUtils.sinDeg(getBody().getAngle()) * -getStats().movingSpeed);
+         this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(this.getBody().getAngle()) * -getStats().getMovingSpeed(), MathUtils.sinDeg(this.getBody().getAngle()) * -getStats().getMovingSpeed());
       } else {
          this.getBody().getBody().setLinearVelocity(0, 0);
       }
    }
 
-   private void fire() {
+   public void fire() {
       //Normal Fire
       rateTimer += Gdx.graphics.getDeltaTime();
-      if ((capacityCounter <= getStats().capacity) && rateTimer > 1 / getStats().RPS && Gdx.input.isKeyPressed(Input.Keys.M)) {
-         GameObjectManager.getObject().getBullet().update(getBody().getBody().getPosition().x,
-                 getBody().getBody().getPosition().y,
-                 getBody().getAngle(), getStats().bulletSpeed);
+      if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.M)) {
+         GameObjectManager.getObject().getBullet().update(this.getBody().getBody().getPosition().x,
+                 this.getBody().getBody().getPosition().y,
+                 this.getBody().getAngle(), getStats().getBulletSpeed(),true);
          rateTimer = 0;
          capacityCounter++;
       }
 
       //Reload
-      if (capacityCounter > getStats().capacity) {
+      if (capacityCounter > getStats().getCapacity()) {
          reloadTimer += Gdx.graphics.getDeltaTime();
-         if (reloadTimer >= getStats().reloadTime) {
+         if (reloadTimer >= getStats().getReloadTime()) {
             capacityCounter = 0;
             reloadTimer = 0;
          }
@@ -105,10 +106,26 @@ public class Player extends GameObject implements Script, Collider {
 
    }
 
+
+
+   public void rust(){
+        if(this.getBody().getBody().getAngularVelocity() == 0 && this.getBody().getBody().getLinearVelocity().x == 0 && this.getBody().getBody().getLinearVelocity().y ==0){
+                startRustTimer += Gdx.graphics.getDeltaTime();
+            }else{
+               startRustTimer  = 0;
+             }
+           if(startRustTimer > 3){
+                rustTime += Gdx.graphics.getDeltaTime();
+                 if(rustTime > 1){
+                       getStats().setCurrentHP(getStats().getCurrentHP()-(getStats().getMaxHP() * 5f/100f));
+                       rustTime = 0;
+                    }
+              }
+
+                 }
+
    @Override
-   public Array<Fixture> getFixtureArray() {
-      return getBody().getFixtureList();
+   public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
+      return getBody().getBody();
    }
-
-
 }

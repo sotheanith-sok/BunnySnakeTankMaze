@@ -13,8 +13,8 @@ import com.badlogic.gdx.utils.Array;
 public class Physic {
    public static final short CATEGORY_PLAYER1 = 0x002;
    public static final short CATEGORY_PLAYER2 = 0x004;
-   public static final short CATEGORY_ENVIROMENT = 0x006;
-   public static final short CATEGORY_BULLET = 0x008;
+   public static final short CATEGORY_ENVIROMENT = 0x008;
+   public static final short CATEGORY_BULLET = 0x0016;
 
 
    private static Physic single_instance;
@@ -57,7 +57,7 @@ public class Physic {
       Array<Body> bodies = new Array<>();
       Physic.getObject().getWorld().getBodies(bodies);
       for (com.badlogic.gdx.physics.box2d.Body body : bodies) {
-         if (body.getUserData() != null && ((Stats) body.getUserData()).isExist == false) {
+         if (body.getUserData() != null && ((Stats) body.getUserData()).isExist() == false) {
             Physic.getObject().getWorld().destroyBody(body);
          }
 

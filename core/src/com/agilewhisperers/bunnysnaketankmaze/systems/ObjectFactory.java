@@ -1,9 +1,8 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
 import com.agilewhisperers.bunnysnaketankmaze.MazeGenerator.Maze;
-import com.agilewhisperers.bunnysnaketankmaze.entities.Player;
-import com.agilewhisperers.bunnysnaketankmaze.entities.Wall;
-import com.agilewhisperers.bunnysnaketankmaze.entities.WallMover;
+import com.agilewhisperers.bunnysnaketankmaze.entities.*;
+import com.badlogic.gdx.math.MathUtils;
 
 import java.util.Random;
 
@@ -35,7 +34,7 @@ public class ObjectFactory {
 
    private void buildMaze() {
 
-      //First maze
+      /*//First maze
       int[][] temp = maze.getMazeAsData(8, 3);
       for (int i = 0; i < temp.length; i++) {
          for (int j = 0; j < temp[0].length; j++) {
@@ -65,7 +64,7 @@ public class ObjectFactory {
          for (int j = 0; j < temp[0].length; j++) {
             data[i + data.length / 2 + 2][j + data[0].length / 2 + 2] = temp[i][j];
          }
-      }
+      }*/
 
       //Outside wall
       for (int i = 0; i < data.length; i++) {
@@ -153,21 +152,21 @@ public class ObjectFactory {
       //Bullet bullet=new Bullet();
       buildMaze();
       spawnPlayer();
-      spawnWall();
+      //spawnWall();
       new WallMover();
 
 
    }
 
    public void spawnPlayer() {
-      Random random = new Random();
       int x = 0;
       int y = 0;
       do {
-         x = random.nextInt(data[0].length);
-         y = random.nextInt(data.length);
+         x = MathUtils.random(data[0].length-1);
+         y = MathUtils.random(data.length-1);
       } while (data[y][x] == 1);
-      Player player = new Player(x, y);
+      Player player1 = new Player1(x+5, y+5);
+      Player player2 = new Player2(x,y);
    }
 
    public void spawnWall() {

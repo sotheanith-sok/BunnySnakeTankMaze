@@ -2,14 +2,13 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
+import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
 
 public class Bullet extends GameObject implements Script, Pool.Poolable, Collider {
@@ -23,9 +22,10 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
       super.setBody(new Body(Physic.getObject().getWorld(), 5, 5, 1f, 0, "Carrot"));
       super.setSprite(new Sprite("gameObjects/Projectiles.atlas", "Carrot", 3));
 
-      getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
-      getStats().ID = "Bullet";
-      getStats().isExist = true;
+      this.getBody().getBody().setType(BodyDef.BodyType.DynamicBody);
+
+      getStats().setID("Bullet");
+      getStats().setExist(true);
 
       //Add to scriptManager
       ScriptManager.getObject().addScriptListener(this);
@@ -34,22 +34,25 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
 
       //Set tag for the object
       this.getBody().getBody().setUserData(getStats());
-      getBody().getFixtureList().get(0).setUserData(getStats().ID);
-      getBody().updateFilter(Physic.CATEGORY_BULLET, (short) -1);
+      this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
+      this.getBody().updateFilter(Physic.CATEGORY_BULLET, (short) -1);
 
    }
 
 
-   public void update(float posX, float posY, float angle, float speed) {
-      getBody().setPosition(posX, posY);
-      getBody().setAngle(angle);
-      getBody().getBody().setLinearVelocity(
+   public void update(float posX, float posY, float angle, float speed, boolean isPlayer1) {
+      this.getBody().setPosition(posX, posY);
+      this.getBody().setAngle(angle);
+      this.getBody().getBody().setLinearVelocity(
               MathUtils.cosDeg(angle) * speed,
               MathUtils.sinDeg(angle) * speed);
       lifetime = 0;
       freed = false;
-      getBody().updateFilter(Physic.CATEGORY_BULLET, (short) ~Physic.CATEGORY_PLAYER1);
-
+      if (isPlayer1)
+         this.getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short)(~Physic.CATEGORY_PLAYER2|~Physic.CATEGORY_PLAYER1));
+      else
+         this.getBody().updateFilter(Physic.CATEGORY_PLAYER2, (short) (~Physic.CATEGORY_PLAYER2|~Physic.CATEGORY_PLAYER1));
+      System.out.println(getBody().getBody().getFixtureList().get(0).getFilterData().maskBits);
    }
 
    /**
@@ -62,8 +65,8 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
          GameObjectManager.getObject().freeBullet(this);
          freed = true;
       }
-      if (lifetime > 0.5f && !freed) {
-         getBody().updateFilter(Physic.CATEGORY_BULLET, (short) -1);
+      if (lifetime > 0.1f && !freed) {
+        // this.getBody().updateFilter(Physic.CATEGORY_BULLET, (short) ~Physic.CATEGORY_BULLET);
       }
 
    }
@@ -74,25 +77,32 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     */
    @Override
    public void reset() {
-      getBody().getBody().setLinearVelocity(new Vector2(0, 0));
-      getBody().getBody().setAngularVelocity(0);
-      getBody().setPosition(-10, -10);
-      getBody().updateFilter(Physic.CATEGORY_BULLET, (short) 0);
+      this.getBody().getBody().setLinearVelocity(new Vector2(0, 0));
+      this.getBody().getBody().setAngularVelocity(0);
+      this.getBody().setPosition(-10, -10);
+      //this.getBody().updateFilter(Physic.CATEGORY_BULLET, (short) 0);
 
    }
 
    @Override
    public void startCollision(Contact contact) {
-      getBody().updateFilter(Physic.CATEGORY_BULLET, (short) -1);
+      //this.getBody().updateFilter(Physic.CATEGORY_BULLET, (short) ~Physic.CATEGORY_BULLET);
+      //Damage
+      com.badlogic.gdx.physics.box2d.Body body1, body2;
+      if (contact.getFixtureA().getBody() == this.getBody().getBody()) {
+         body1 = contact.getFixtureA().getBody();
+         body2 = contact.getFixtureB().getBody();
+      } else {
+         body2 = contact.getFixtureA().getBody();
+         body1 = contact.getFixtureB().getBody();
+      }
 
-       /* Fixture firstBody, secondBody;
-        if(contact.getFixtureA()==getFixtureArray()){
-            firstBody=contact.getFixtureA();
-            secondBody=contact.getFixtureB();
-        }else{
-            secondBody=contact.getFixtureA();
-            firstBody=contact.getFixtureB();
-        }*/
+      Stats stats = (Stats) body2.getUserData();
+      if (stats.getID().equals("Player")) {
+         stats.setCurrentHP(stats.getCurrentHP() - (stats.getMaxHP() / 3f));
+         GameObjectManager.getObject().freeBullet(this);
+         freed = true;
+      }
 
 
    }
@@ -103,9 +113,8 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
    }
 
    @Override
-   public Array<Fixture> getFixtureArray() {
-
-      return getBody().getFixtureList();
+   public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
+      return getBody().getBody();
    }
 
 

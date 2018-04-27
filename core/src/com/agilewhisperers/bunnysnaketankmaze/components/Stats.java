@@ -3,24 +3,106 @@ package com.agilewhisperers.bunnysnaketankmaze.components;
 public class Stats {
 
    //Identifier
-   public String ID;
-   public boolean isExist = true;
+   private String ID;
+   private boolean isExist = true;
 
 
    //Weapon
    //Round per second
-   public float RPS = 10f;
-   public float bulletSpeed = 100f;
-   public float reloadTime = 0f;
-   public float capacity = 50;
+   private float RPS = 10f;
+   private float bulletSpeed = 150f;
+   private float reloadTime = 0f;
+   private float capacity = 50;
 
    //Health
-   public float currentHP = 100;
-   public float maxHP = 100;
+   private float currentHP = 100;
+   private float maxHP = 100;
 
    //Movement and Rotation
-   public float movingSpeed = 25 * (currentHP / maxHP);
-   public float rotatingSpeed = 2.5f;
+   private float movingSpeed = 25 ;
+   private float rotatingSpeed = 2.5f;
 
+   public String getID() {
+      return ID;
+   }
 
+   public void setID(String ID) {
+      this.ID = ID;
+   }
+
+   public boolean isExist() {
+      return isExist;
+   }
+
+   public void setExist(boolean exist) {
+      isExist = exist;
+   }
+
+   public float getRPS() {
+      return RPS;
+   }
+
+   public void setRPS(float RPS) {
+      this.RPS = RPS;
+   }
+
+   public float getBulletSpeed() {
+      return bulletSpeed;
+   }
+
+   public void setBulletSpeed(float bulletSpeed) {
+      this.bulletSpeed = bulletSpeed;
+   }
+
+   public float getReloadTime() {
+      return reloadTime;
+   }
+
+   public void setReloadTime(float reloadTime) {
+      this.reloadTime = reloadTime;
+   }
+
+   public float getCapacity() {
+      return capacity;
+   }
+
+   public void setCapacity(float capacity) {
+      this.capacity = capacity;
+   }
+
+   public float getCurrentHP() {
+      return currentHP;
+   }
+
+   public void setCurrentHP(float currentHP) {
+
+      this.currentHP = currentHP;
+      if(currentHP<0){
+         this.currentHP=0;
+      }
+   }
+
+   public float getMaxHP() {
+      return maxHP;
+   }
+
+   public void setMaxHP(float maxHP) {
+      this.maxHP = maxHP;
+   }
+
+   public float getMovingSpeed() {
+      return movingSpeed*(currentHP/maxHP);
+   }
+
+   public void setMovingSpeed(float movingSpeed) {
+      this.movingSpeed = movingSpeed;
+   }
+
+   public float getRotatingSpeed() {
+      return rotatingSpeed;
+   }
+
+   public void setRotatingSpeed(float rotatingSpeed) {
+      this.rotatingSpeed = rotatingSpeed;
+   }
 }

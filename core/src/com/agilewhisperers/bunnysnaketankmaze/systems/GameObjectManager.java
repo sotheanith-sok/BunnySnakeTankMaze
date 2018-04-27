@@ -2,20 +2,19 @@ package com.agilewhisperers.bunnysnaketankmaze.systems;
 
 import com.agilewhisperers.bunnysnaketankmaze.entities.Bullet;
 import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
+import com.badlogic.gdx.utils.Array;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Database of all gameObject.
  */
 public class GameObjectManager {
    private static GameObjectManager single_instance;
-   private List<GameObject> gameObjectList;
+   private Array<GameObject> gameObjectList;
    private BulletPool bulletPool;
 
    private GameObjectManager() {
-      gameObjectList = new ArrayList<GameObject>();
+      gameObjectList = new Array<>();
       bulletPool = new BulletPool(250, 1000);
    }
 
@@ -34,12 +33,12 @@ public class GameObjectManager {
     */
    public void addGameObject(GameObject gameObject) {
 
-      gameObjectList.add(0, gameObject);
+      gameObjectList.insert(0,gameObject);
    }
 
    public void removeGameObject(GameObject gameObject) {
-      gameObject.getStats().isExist = false;
-      gameObjectList.remove(gameObject);
+      gameObject.getStats().setExist( false);
+      gameObjectList.removeValue(gameObject,true);
       if (gameObject instanceof Script) {
          ScriptManager.getObject().removeScriptListener((Script) gameObject);
       }
@@ -51,7 +50,7 @@ public class GameObjectManager {
     *
     * @return gameObject list.
     */
-   public List<GameObject> getAllGameObjects() {
+   public Array<GameObject> getAllGameObjects() {
       return gameObjectList;
    }
 

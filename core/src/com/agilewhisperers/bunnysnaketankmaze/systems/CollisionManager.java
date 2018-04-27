@@ -1,5 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -68,16 +69,12 @@ public class CollisionManager implements ContactListener {
          int type = contactsType.removeIndex(0);
          int count = 0;
          for (int i = 0; i < colliders.size; i++) {
-            if (colliders.get(i).getFixtureArray().contains(contact.getFixtureA(), false) || colliders.get(i).getFixtureArray().contains(contact.getFixtureB(), false)) {
+            if (colliders.get(i).getBodyForCollisionTesting()==contact.getFixtureA().getBody() || colliders.get(i).getBodyForCollisionTesting()==contact.getFixtureB().getBody()) {
                if (type == 0) {
                   colliders.get(i).startCollision(contact);
                } else if (type == 1) {
                   colliders.get(i).endCollision(contact);
                }
-                    /*count++;
-                    if (count > 1) {
-                        break;
-                    }*/
             }
          }
       }
