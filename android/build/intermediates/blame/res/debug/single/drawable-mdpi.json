@@ -1,10 +1,10 @@
 [
-  {
-    "merged": "D:\\Workstation\\BunnySnakeTankMaze\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
-    "source": "D:\\Workstation\\BunnySnakeTankMaze\\android\\res\\drawable-mdpi\\ic_launcher.png"
-  },
-  {
-    "merged": "D:\\Workspace\\BunnySnakeTankMaze\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
-    "source": "D:\\Workspace\\BunnySnakeTankMaze\\android\\res\\drawable-mdpi\\ic_launcher.png"
-  }
+    {
+        "merged": "D:\\Workstation\\BunnySnakeTankMaze\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "D:\\Workstation\\BunnySnakeTankMaze\\android\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Workspace\\BunnySnakeTankMaze\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "D:\\Workspace\\BunnySnakeTankMaze\\android\\res\\drawable-mdpi\\ic_launcher.png"
+    }
 ]

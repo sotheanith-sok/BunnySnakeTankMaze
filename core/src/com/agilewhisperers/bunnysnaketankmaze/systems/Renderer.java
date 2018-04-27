@@ -10,7 +10,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 
@@ -43,10 +45,12 @@ public class Renderer {
     /**
      * Render all gameObjects
      *
-     * @param deltaTime
+     * @param alphaTime
+     * @param timeStep
      */
-    public void render(float deltaTime) {
-        elapsedTime += deltaTime;
+    public void render(float alphaTime, float timeStep) {
+
+        elapsedTime += alphaTime;
         Gdx.gl.glClearColor(0.95f, 0.95f, 0.95f, 0.95f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
@@ -66,15 +70,26 @@ public class Renderer {
                         textureRegion = sprite.getTexture();
                     }
                     if (textureRegion != null) {
+                       //Previous stats
                         float ratio = (float) textureRegion.getRegionHeight() / (float) textureRegion.getRegionWidth();
+                        Vector2  previousPosition=body.getBody().getPosition().sub(body.getWidth()/2,body.getHeight()/2);
+                        Vector2  previousVelocity=body.getBody().getLinearVelocity();
+
+                        //Current stats
+                        Vector2 targetPosition=new Vector2(previousPosition.x+previousVelocity.x*timeStep,previousPosition.y+previousVelocity.y*timeStep);
+                        Vector2 temp=previousPosition.cpy();
+                        temp.lerp(targetPosition,alphaTime);
                         batch.draw(textureRegion,
-                                (body.getBody().getPosition().x - body.getWidth() / 2) * ppm,
-                                (body.getBody().getPosition().y - body.getHeight() / 2) * ppm,
+                                (temp.x)* ppm,
+                                (temp.y) * ppm,
                                 body.getWidth() / 2 * ppm,
                                 body.getHeight() / 2 * ppm,
                                 body.getWidth() * ppm,
                                 body.getHeight() * ppm, 1f, ratio,
                                 body.getBody().getAngle() / MathUtils.degRad);
+
+
+
                     }
 
                 }
@@ -91,6 +106,6 @@ public class Renderer {
      */
     public void renderHitBox(World world) {
 
-        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+        //renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 }

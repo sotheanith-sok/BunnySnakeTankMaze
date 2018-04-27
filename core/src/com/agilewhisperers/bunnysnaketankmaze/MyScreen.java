@@ -5,7 +5,7 @@ import com.badlogic.gdx.Screen;
 
 public class MyScreen implements Screen {
 
-    private static final float TIME_STEP = 1f / 60f;
+    private static final float TIME_STEP = 1f / 10f;
     private static final int VELOCITY_ITERATIONS = 8;
     private static final int POSITION_ITERATIONS = 4;
     private BunnySnakeTankMaze myGame;
@@ -28,16 +28,21 @@ public class MyScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        rendering(delta);
+       //rendering(accumulator/TIME_STEP);
         float frameTime = Math.min(delta, 0.25f);
         accumulator += frameTime;
         while (accumulator >= TIME_STEP) {
+           Physic.getObject().getWorld().step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
             ScriptManager.getObject().runScripts(TIME_STEP);
+
             CollisionManager.getObject().calculateCollision();
             Physic.getObject().cleanDeadBody();
-            Physic.getObject().getWorld().step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
             accumulator -= TIME_STEP;
+
+
+
         }
+       rendering(accumulator/TIME_STEP);
     }
 
 
@@ -70,8 +75,8 @@ public class MyScreen implements Screen {
 
     }
 
-    private void rendering(float deltaTime) {
-        Renderer.getObject().render(deltaTime);
+    private void rendering(float alpha) {
+        Renderer.getObject().render(alpha,TIME_STEP);
         Renderer.getObject().renderHitBox(Physic.getObject().getWorld());
     }
 }
