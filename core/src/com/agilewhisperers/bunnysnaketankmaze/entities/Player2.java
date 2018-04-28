@@ -43,9 +43,9 @@ public class Player2 extends Player {
     public void fire() {
         rateTimer += getDeltaTime();
         if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
-            GameObjectManager.getObject().getBullet().update(this.getBody().getBody().getPosition().x,
+            GameObjectManager.getObject().getBullet(false).update(this.getBody().getBody().getPosition().x,
                     this.getBody().getBody().getPosition().y,
-                    this.getBody().getAngle(), getStats().getBulletSpeed(), false);
+                    this.getBody().getAngle(), getStats().getBulletSpeed());
             rateTimer = 0;
             capacityCounter++;
         }

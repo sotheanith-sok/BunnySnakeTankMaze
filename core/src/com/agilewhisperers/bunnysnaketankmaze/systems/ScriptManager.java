@@ -1,6 +1,7 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
 
+import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
 import com.badlogic.gdx.utils.Array;
 
 /**
@@ -36,13 +37,19 @@ public class ScriptManager {
      *
      * @param timeStep
      */
-    public void runScripts(float timeStep) {
+    public boolean runScripts(float timeStep) {
         for (int i = 0; i < scriptList.size; i++) {
             scriptList.get(i).runObjectScript(timeStep);
         }
+        return true;
     }
 
     public void removeScriptListener(Script script) {
         scriptList.removeValue(script, true);
+    }
+    public void resetPreviousPosition(){
+        Array<GameObject> gameObjectArray=GameObjectManager.getObject().getAllGameObjects();
+        for(int i=0;i<gameObjectArray.size;i++){
+            gameObjectArray.get(i).getBody().updatePreviousState();        }
     }
 }

@@ -11,11 +11,12 @@ import com.badlogic.gdx.utils.Array;
 public class GameObjectManager {
     private static GameObjectManager single_instance;
     private Array<GameObject> gameObjectList;
-    private BulletPool bulletPool;
+    private BulletPool bulletPoolForPlayer1,bulletPoolForPlayer2;
 
     private GameObjectManager() {
         gameObjectList = new Array<>();
-        bulletPool = new BulletPool();
+        bulletPoolForPlayer1 = new BulletPoolForPlayer1();
+        bulletPoolForPlayer2 =new BulletPoolForPlayer2();
     }
 
     public static GameObjectManager getObject() {
@@ -54,11 +55,21 @@ public class GameObjectManager {
         return gameObjectList;
     }
 
-    public Bullet getBullet() {
-        return bulletPool.obtain();
+    public Bullet getBullet(boolean isPlayer1) {
+        if(isPlayer1){
+            return bulletPoolForPlayer1.obtain();
+        }else {
+            return bulletPoolForPlayer2.obtain();
+        }
+
     }
 
-    public void freeBullet(Bullet bullet) {
-        bulletPool.free(bullet);
+    public void freeBullet(Bullet bullet, boolean isPlayer1) {
+
+        if(isPlayer1){
+            bulletPoolForPlayer1.free(bullet);
+        }else {
+            bulletPoolForPlayer2.free(bullet);
+        }
     }
 }

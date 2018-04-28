@@ -4,7 +4,7 @@ import com.agilewhisperers.bunnysnaketankmaze.entities.Bullet;
 import com.badlogic.gdx.utils.Pool;
 
 
-public class BulletPool extends Pool<Bullet> {
+public abstract class BulletPool extends Pool<Bullet> {
 
     /**
      * Create bullet pool with varaibles
@@ -23,8 +23,5 @@ public class BulletPool extends Pool<Bullet> {
         super();
     }
 
-    @Override
-    protected Bullet newObject() {
-        return new Bullet();
-    }
+
 }

@@ -72,24 +72,22 @@ public class Renderer {
                     if (textureRegion != null) {
                        //Previous stats
                         float ratio = (float) textureRegion.getRegionHeight() / (float) textureRegion.getRegionWidth();
-                        Vector2  previousPosition=body.getBody().getPosition().sub(body.getWidth()/2,body.getHeight()/2);
-                        Vector2  previousVelocity=body.getBody().getLinearVelocity();
+                        Vector2  currentPosition=body.getBody().getPosition();
+                        float currentAngle=body.getBody().getAngle();
+
 
                         //Current stats
-                        Vector2 targetPosition=new Vector2(previousPosition.x+previousVelocity.x*timeStep,previousPosition.y+previousVelocity.y*timeStep);
-                        Vector2 temp=previousPosition.cpy();
-                        temp.lerp(targetPosition,alphaTime);
+                        Vector2 previousPosition=body.getPreviousPosition();
+                        float previousAngle=body.getPreviousAngle();
+
                         batch.draw(textureRegion,
-                                (temp.x)* ppm,
-                                (temp.y) * ppm,
+                                (Interpolation.linear.apply(previousPosition.x,currentPosition.x,alphaTime)-body.getWidth()/2)* ppm,
+                                (Interpolation.linear.apply(previousPosition.y,currentPosition.y,alphaTime)-body.getHeight()/2) * ppm,
                                 body.getWidth() / 2 * ppm,
                                 body.getHeight() / 2 * ppm,
                                 body.getWidth() * ppm,
                                 body.getHeight() * ppm, 1f, ratio,
-                                body.getBody().getAngle() / MathUtils.degRad);
-
-
-
+                                (Interpolation.circle.apply(previousAngle,currentAngle,alphaTime)) / MathUtils.degRad);
                     }
 
                 }
@@ -106,6 +104,6 @@ public class Renderer {
      */
     public void renderHitBox(World world) {
 
-        //renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 }

@@ -80,9 +80,9 @@ public class Player extends GameObject implements Script, Collider {
         //Normal Fire
         rateTimer += deltaTime;
         if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.M)) {
-            GameObjectManager.getObject().getBullet().update(this.getBody().getBody().getPosition().x,
+            GameObjectManager.getObject().getBullet(true).update(this.getBody().getBody().getPosition().x,
                     this.getBody().getBody().getPosition().y,
-                    this.getBody().getAngle(), getStats().getBulletSpeed(), true);
+                    this.getBody().getAngle(), getStats().getBulletSpeed());
             rateTimer = 0;
             capacityCounter++;
         }

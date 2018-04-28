@@ -2,13 +2,11 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Collider;
-import com.agilewhisperers.bunnysnaketankmaze.systems.CollisionManager;
-import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
+import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
 
-public class Wall extends GameObject implements Collider {
+public class Wall extends GameObject implements Collider,Script {
     public Wall(float posX, float posY) {
         super(new Sprite(
                 "gameObjects/Environment.atlas", "Wall", 1
@@ -23,6 +21,7 @@ public class Wall extends GameObject implements Collider {
         CollisionManager.getObject().addCollider(this);
 
         this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
+        ScriptManager.getObject().addScriptListener(this);
 
     }
 
@@ -42,4 +41,13 @@ public class Wall extends GameObject implements Collider {
     }
 
 
+    /**
+     * This method will be call every game loop.
+     *
+     * @param deltaTime
+     */
+    @Override
+    public void runObjectScript(float deltaTime) {
+
+    }
 }

@@ -62,7 +62,7 @@ public class CollisionManager implements ContactListener {
 
     }
 
-    public void calculateCollision() {
+    public boolean calculateCollision() {
         while (contacts.size > 0) {
             Contact contact = contacts.removeIndex(0);
             int type = contactsType.removeIndex(0);
@@ -77,5 +77,6 @@ public class CollisionManager implements ContactListener {
                 }
             }
         }
+        return true;
     }
 }

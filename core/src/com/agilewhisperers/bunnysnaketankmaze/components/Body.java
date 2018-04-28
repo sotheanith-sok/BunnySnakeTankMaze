@@ -15,6 +15,8 @@ public class Body {
 
     private float width, height, angle;
 
+    private Vector2 previousPosition;
+    private float previousAngle;
 
     public Body(World world, float posX, float posY, float scale, float angle, String name) {
         BodyEditorLoader loader = new BodyEditorLoader(Gdx.files.internal("gameObjects/Data.json"));
@@ -27,10 +29,14 @@ public class Body {
         body = world.createBody(bodyDef);
 
 
+
         //Body material type and stuff...
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.density = 1;
         loader.attachFixture(body, name, fixtureDef, scale);
+
+        previousPosition=body.getPosition().cpy();
+        previousAngle=body.getAngle();
 
     }
 
@@ -117,5 +123,17 @@ public class Body {
 
     public void setAngularVelocity(float omega) {
         body.setAngularVelocity(omega);
+    }
+    public void updatePreviousState(){
+        previousAngle=body.getAngle();
+        previousPosition.set(body.getPosition());
+    }
+
+    public Vector2 getPreviousPosition() {
+        return previousPosition;
+    }
+
+    public float getPreviousAngle() {
+        return previousAngle;
     }
 }
