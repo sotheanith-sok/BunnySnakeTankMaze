@@ -69,7 +69,7 @@ public class GameObjectManager {
         if(isPlayer1){
             bulletPoolForPlayer1.free(bullet);
         }else {
-            bulletPoolForPlayer2.free(bullet);
+           bulletPoolForPlayer2.free(bullet);
         }
     }
 }

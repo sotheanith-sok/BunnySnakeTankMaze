@@ -1,6 +1,7 @@
 package com.agilewhisperers.bunnysnaketankmaze.components;
 
 import com.agilewhisperers.bunnysnaketankmaze.systems.BodyEditorLoader;
+import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -108,7 +109,13 @@ public class Body {
      * @param y
      */
     public void setPosition(float x, float y) {
-        body.setTransform(new Vector2(x, y), body.getAngle());
+        while (true){
+            if(!Physic.getObject().getWorld().isLocked()){
+                body.setTransform(new Vector2(x, y), body.getAngle());
+                break;
+            }
+        }
+
     }
 
     public void updateFilter(short categoryBits, short maskBits) {

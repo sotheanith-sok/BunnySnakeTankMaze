@@ -30,10 +30,9 @@ public class Player extends GameObject implements Script, Collider {
         ScriptManager.getObject().addScriptListener(this);
 
         //Set tag for the object
-        this.getBody().getBody().setUserData(getStats());
+        this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
 
-        CollisionManager.getObject().addCollider(this);
 
         this.getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short) -1);
 
@@ -80,9 +79,11 @@ public class Player extends GameObject implements Script, Collider {
         //Normal Fire
         rateTimer += deltaTime;
         if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.M)) {
-            GameObjectManager.getObject().getBullet(true).update(this.getBody().getBody().getPosition().x,
-                    this.getBody().getBody().getPosition().y,
-                    this.getBody().getAngle(), getStats().getBulletSpeed());
+
+            GameObjectManager.getObject().getBullet(true).update(this.getBody().getPreviousPosition().x,
+                    this.getBody().getPreviousPosition().y,
+                    this.getBody().getPreviousAngle()/MathUtils.degRad, getStats().getBulletSpeed());
+
             rateTimer = 0;
             capacityCounter++;
         }
@@ -125,10 +126,7 @@ public class Player extends GameObject implements Script, Collider {
 
     }
 
-    @Override
-    public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
-        return getBody().getBody();
-    }
+
 
     public float getDeltaTime() {
         return deltaTime;

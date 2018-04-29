@@ -1,5 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
+import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
@@ -8,15 +9,10 @@ import com.badlogic.gdx.utils.Array;
 
 public class CollisionManager implements ContactListener {
     private static CollisionManager single_instance;
-    private Array<Contact> contacts;
-    private Array<Integer> contactsType;
-    private Array<Collider> colliders;
+
 
     private CollisionManager() {
         Physic.getObject().setContactListener(this);
-        contacts = new Array<>();
-        colliders = new Array<>();
-        contactsType = new Array<>();
     }
 
     public static CollisionManager getObject() {
@@ -26,9 +22,6 @@ public class CollisionManager implements ContactListener {
         return single_instance;
     }
 
-    public void addCollider(Collider collider) {
-        colliders.add(collider);
-    }
 
     /**
      * Called when two fixtures begin to touch.
@@ -37,8 +30,14 @@ public class CollisionManager implements ContactListener {
      */
     @Override
     public void beginContact(Contact contact) {
-        contacts.add(contact);
-        contactsType.add(0);
+        GameObject gameObject1= (GameObject) contact.getFixtureA().getBody().getUserData();
+        GameObject gameObject2= (GameObject) contact.getFixtureB().getBody().getUserData();
+        if(gameObject1 instanceof Collider){
+            ((Collider) gameObject1).startCollision(contact);
+        }
+        if(gameObject2 instanceof Collider){
+            ((Collider) gameObject2).startCollision(contact);
+        }
     }
 
     /**
@@ -48,8 +47,14 @@ public class CollisionManager implements ContactListener {
      */
     @Override
     public void endContact(Contact contact) {
-        contacts.add(contact);
-        contactsType.add(1);
+        GameObject gameObject1= (GameObject) contact.getFixtureA().getBody().getUserData();
+        GameObject gameObject2= (GameObject) contact.getFixtureA().getBody().getUserData();
+        if(gameObject1 instanceof Collider){
+            ((Collider) gameObject1).endCollision(contact);
+        }
+        if(gameObject2 instanceof Collider){
+            ((Collider) gameObject2).endCollision(contact);
+        }
     }
 
     @Override
@@ -62,21 +67,4 @@ public class CollisionManager implements ContactListener {
 
     }
 
-    public boolean calculateCollision() {
-        while (contacts.size > 0) {
-            Contact contact = contacts.removeIndex(0);
-            int type = contactsType.removeIndex(0);
-            int count = 0;
-            for (int i = 0; i < colliders.size; i++) {
-                if (colliders.get(i).getBodyForCollisionTesting() == contact.getFixtureA().getBody() || colliders.get(i).getBodyForCollisionTesting() == contact.getFixtureB().getBody()) {
-                    if (type == 0) {
-                        colliders.get(i).startCollision(contact);
-                    } else if (type == 1) {
-                        colliders.get(i).endCollision(contact);
-                    }
-                }
-            }
-        }
-        return true;
-    }
 }

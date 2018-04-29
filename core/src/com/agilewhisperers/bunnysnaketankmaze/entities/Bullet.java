@@ -18,6 +18,7 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     private float lifetime = 0f;
     private boolean freed = false;
     private boolean isPlayer1;
+    private boolean needToReset;
 
     public Bullet(boolean isPlayer1) {
         super();
@@ -31,11 +32,8 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
 
         //Add to scriptManager
         ScriptManager.getObject().addScriptListener(this);
-
-        CollisionManager.getObject().addCollider(this);
-
         //Set tag for the object
-        this.getBody().getBody().setUserData(getStats());
+        this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
         this.getBody().updateFilter(CATEGORY_BULLET, (short) -1);
 
@@ -45,17 +43,19 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
             getBody().updateFilter(CATEGORY_BULLET, MASK_PLAYER2);
         }
         this.isPlayer1=isPlayer1;
+        needToReset=false;
     }
 
 
     public void update(float posX, float posY, float angle, float speed) {
+        lifetime = 0;
+        freed = false;
         this.getBody().setPosition(posX, posY);
         this.getBody().setAngle(angle);
         this.getBody().getBody().setLinearVelocity(
                 MathUtils.cosDeg(angle) * speed,
                 MathUtils.sinDeg(angle) * speed);
-        lifetime = 0;
-        freed = false;
+
 
     }
 
@@ -66,12 +66,11 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
      */
     @Override
     public void runObjectScript(float deltaTime) {
+        resetThisObject();
         lifetime += deltaTime;
         if (lifetime >= max_Lifetime && !freed) {
             GameObjectManager.getObject().freeBullet(this,isPlayer1);
-            freed = true;
         }
-
     }
 
 
@@ -80,10 +79,8 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
      */
     @Override
     public void reset() {
-
-        this.getBody().getBody().setLinearVelocity(Vector2.Zero);
-        this.getBody().getBody().setAngularVelocity(0);
-        this.getBody().setPosition(-10, -10);
+       needToReset=true;
+       freed=true;
     }
 
     @Override
@@ -98,12 +95,12 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
             body1 = contact.getFixtureB().getBody();
         }
 
-        Stats stats = (Stats) body2.getUserData();
+        Stats stats = ((GameObject)body2.getUserData()).getStats();
       if (stats.getID().equals("Player")) {
          stats.setCurrentHP(stats.getCurrentHP() - (stats.getMaxHP() / 3f));
          GameObjectManager.getObject().freeBullet(this,isPlayer1);
-          freed = true;
       }
+
 
 
     }
@@ -112,10 +109,13 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
     public void endCollision(Contact contact) {
 
     }
-
-    @Override
-    public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
-        return getBody().getBody();
+    private void resetThisObject(){
+        if(needToReset&&!Physic.getObject().getWorld().isLocked()){
+            this.getBody().getBody().setLinearVelocity(Vector2.Zero);
+            this.getBody().getBody().setAngularVelocity(0);
+            this.getBody().setPosition(-10, -10);
+            needToReset=false;
+        }
     }
 
 

@@ -14,11 +14,10 @@ public class Wall extends GameObject implements Collider,Script {
         this.getBody().getBody().setType(BodyDef.BodyType.KinematicBody);
         getStats().setID("Wall");
         getStats().setExist(true);
-        this.getBody().getBody().setUserData(getStats());
+        this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
 
 
-        CollisionManager.getObject().addCollider(this);
 
         this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
         ScriptManager.getObject().addScriptListener(this);
@@ -35,10 +34,6 @@ public class Wall extends GameObject implements Collider,Script {
 
     }
 
-    @Override
-    public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
-        return getBody().getBody();
-    }
 
 
     /**

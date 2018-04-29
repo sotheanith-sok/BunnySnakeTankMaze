@@ -33,11 +33,14 @@ public class MyScreen implements Screen {
         accumulator += frameTime;
         while (accumulator >= TIME_STEP) {
             ScriptManager.getObject().runScripts(TIME_STEP);
-            CollisionManager.getObject().calculateCollision();
-            Physic.getObject().cleanDeadBody();
-            accumulator -= TIME_STEP;
-            ScriptManager.getObject().resetPreviousPosition();
-            Physic.getObject().getWorld().step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+            if(!Physic.getObject().getWorld().isLocked()){
+
+                Physic.getObject().cleanDeadBody();
+                accumulator -= TIME_STEP;
+                ScriptManager.getObject().resetPreviousPosition();
+                Physic.getObject().getWorld().step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+            }
+
 
 
         }

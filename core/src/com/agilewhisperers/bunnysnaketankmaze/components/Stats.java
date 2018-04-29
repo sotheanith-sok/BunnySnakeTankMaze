@@ -10,7 +10,7 @@ public class Stats {
     //Weapon
     //Round per second
     private float RPS = 1f;
-    private float bulletSpeed = 50;
+    private float bulletSpeed = 25;
     private float reloadTime = 0f;
     private float capacity = 50;
 

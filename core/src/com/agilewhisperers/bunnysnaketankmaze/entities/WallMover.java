@@ -23,10 +23,9 @@ public class WallMover extends GameObject implements Script, Collider {
         super.getBody().getBody().setType(BodyDef.BodyType.KinematicBody);
         getStats().setExist(true);
         getStats().setID("WallMover");
-        this.getBody().getBody().setUserData(getStats());
+        this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
         ScriptManager.getObject().addScriptListener(this);
-        CollisionManager.getObject().addCollider(this);
         wallLocation = ObjectFactory.getObject().getData();
         bodyArray = new Array<>();
         isEating = true;
@@ -84,8 +83,4 @@ public class WallMover extends GameObject implements Script, Collider {
 
     }
 
-    @Override
-    public com.badlogic.gdx.physics.box2d.Body getBodyForCollisionTesting() {
-        return getBody().getBody();
-    }
 }
