@@ -195,7 +195,13 @@ public class ObjectFactory {
             x = MathUtils.random(data[0].length - 1);
             y = MathUtils.random(data.length - 1);
         } while (data[y][x] == 1);
-        engine.addEntity(new Player(world, x, y));
+        engine.addEntity(new Player(world, x, y,true));
+
+       do {
+          x = MathUtils.random(data[0].length - 1);
+          y = MathUtils.random(data.length - 1);
+       } while (data[y][x] == 1);
+       engine.addEntity(new Player(world, x, y,false));
     }
     public Bullet getBullet(boolean isPlayer1){
         if(isPlayer1){
