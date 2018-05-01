@@ -1,24 +1,18 @@
 package TestingAshley.Components;
 
+import TestingAshley.Components.Animators.Animator;
 import com.badlogic.ashley.core.Component;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.utils.Array;
 
-public abstract class AnimatorComponent implements Component {
-   private Array<Animation<TextureRegion>> animationArray;
 
-   public AnimatorComponent() {
-      animationArray = new Array<>();
-   }
+public class AnimatorComponent implements Component {
+    public Animator animator;
 
-   public void addAnimation(Animation<TextureRegion> animation) {
-      animationArray.add(animation);
-   }
+    public AnimatorComponent(Animator animator) {
+        this.animator = animator;
+    }
 
-   public Animation<TextureRegion> getAnimation(int index) {
-      return animationArray.get(index);
-   }
-
-   public abstract TextureRegion getFrame(float stateTimer);
+    public TextureRegion getFrame(float stateTimer) {
+        return animator.getFrame(stateTimer);
+    }
 }

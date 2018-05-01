@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger version="3">
-   <dataSet config="main$Generated" generated="true">
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\src\androidTest\res"/>
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\build\generated\res\rs\androidTest\debug"/>
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\build\generated\res\resValues\androidTest\debug"/>
-   </dataSet>
-   <dataSet config="main" generated-set="main$Generated">
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\src\androidTest\res"/>
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\build\generated\res\rs\androidTest\debug"/>
-      <source path="D:\Workspace\BunnySnakeTankMaze\android\build\generated\res\resValues\androidTest\debug"/>
-   </dataSet>
-   <mergedItems/>
+    <dataSet config="main$Generated" generated="true">
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\src\androidTest\res"/>
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\res\rs\androidTest\debug"/>
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\res\resValues\androidTest\debug"/>
+    </dataSet>
+    <dataSet config="main" generated-set="main$Generated">
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\src\androidTest\res"/>
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\res\rs\androidTest\debug"/>
+        <source path="D:\Workstation\BunnySnakeTankMaze\android\build\generated\res\resValues\androidTest\debug"/>
+    </dataSet>
+    <mergedItems/>
 </merger>
