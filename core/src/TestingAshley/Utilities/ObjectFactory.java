@@ -4,6 +4,9 @@ import TestingAshley.Entities.Bullet;
 import TestingAshley.Entities.Player;
 import TestingAshley.Entities.Wall;
 import TestingAshley.Systems.*;
+import TestingAshley.Utilities.Pools.BulletPool;
+import TestingAshley.Utilities.Pools.BulletPoolForPlayer1;
+import TestingAshley.Utilities.Pools.BulletPoolForPlayer2;
 import com.agilewhisperers.bunnysnaketankmaze.MazeGenerator.Maze;
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.math.MathUtils;
@@ -16,12 +19,15 @@ public class ObjectFactory {
     private PooledEngine engine;
     private int[][] data;
     private Maze maze;
+    private BulletPool bulletPool1,bulletPool2;
 
     private ObjectFactory() {
         world = new World(new Vector2(0, 0), true);
         engine = new PooledEngine(10, 1000, 10, 1000);
         maze = new Maze();
         data = new int[32][62];
+        bulletPool1=new BulletPoolForPlayer1();
+        bulletPool2=new BulletPoolForPlayer2();
     }
 
     public static ObjectFactory getObject() {
@@ -43,6 +49,7 @@ public class ObjectFactory {
 
         world.setContactListener(new CollisionSystem());
         engine.addSystem(new InputSystem());
+        engine.addSystem(new AttackSystem());
         engine.addSystem(new MovementSystem());
         engine.addSystem(new RenderingSystem(world));
         engine.addSystem(new PhysicSystem(world));
@@ -189,8 +196,20 @@ public class ObjectFactory {
             y = MathUtils.random(data.length - 1);
         } while (data[y][x] == 1);
         engine.addEntity(new Player(world, x, y));
-        engine.addEntity(new Bullet(world, x, y));
-
+    }
+    public Bullet getBullet(boolean isPlayer1){
+        if(isPlayer1){
+            return bulletPool1.obtain();
+        }else {
+            return bulletPool2.obtain();
+        }
+    }
+    public void removeBullet(Bullet bullet,boolean isPlayer1){
+        if(isPlayer1){
+            bulletPool1.free(bullet);
+        }else{
+            bulletPool2.free(bullet);
+        }
     }
 
 

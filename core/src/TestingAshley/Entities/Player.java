@@ -10,7 +10,7 @@ import com.badlogic.gdx.physics.box2d.World;
 public class Player extends Entity {
     public Player(World world, float posX, float posY) {
         add(new BodyComponent(world, posX, posY, 1f, "Player"));
-        add(new TagComponent("Player"));
+        add(new TagComponent("Player1"));
         add(new AnimatorComponent(new PlayerAnimator()));
         add(new TimeComponent());
         getComponent(BodyComponent.class).getBody().setUserData(this);
