@@ -77,8 +77,8 @@ public class SteerableComponent implements Steerable<Vector2> {
                 float newOrientation = vectorToAngle(linVel);
                 body.setAngularVelocity((newOrientation - getAngularVelocity()) * deltaTime); // this is superfluous if independentFacing is always true
                // body.setTransform(body.getPosition(), newOrientation);
-                body.setTransform(body.getPosition(),45*MathUtils.degreesToRadians);
-                System.out.println(vectorToAngle(new Vector2(-1,1))/MathUtils.degreesToRadians);
+                body.setTransform(body.getPosition(),newOrientation);
+                System.out.println(Math.atan2(0,-1));
             }
         }
 

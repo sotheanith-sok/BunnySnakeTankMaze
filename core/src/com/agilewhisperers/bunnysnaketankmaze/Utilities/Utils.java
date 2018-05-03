@@ -31,6 +31,6 @@ public class Utils {
         return outVector;
    }
     public static float vectorToAngle(Vector2 vector){
-        return MathUtils.atan2(-vector.x,vector.y);
+        return MathUtils.atan2(vector.y,vector.x);
     }
 }
