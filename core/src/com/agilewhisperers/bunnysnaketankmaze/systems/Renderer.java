@@ -117,7 +117,7 @@ public class Renderer {
      */
     public void renderHitBox(World world) {
 
-       // renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+       renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 
     public void updatePlayerHPBar(GameObject gameObject){

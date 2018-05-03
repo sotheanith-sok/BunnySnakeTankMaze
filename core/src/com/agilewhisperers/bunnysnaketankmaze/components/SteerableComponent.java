@@ -1,212 +1,191 @@
 package com.agilewhisperers.bunnysnaketankmaze.components;
 
-import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
+import com.agilewhisperers.bunnysnaketankmaze.Utilities.Utils;
 import com.badlogic.gdx.ai.steer.Steerable;
+import com.badlogic.gdx.ai.steer.SteeringAcceleration;
+import com.badlogic.gdx.ai.steer.SteeringBehavior;
+import com.badlogic.gdx.ai.steer.behaviors.Arrive;
+import com.badlogic.gdx.ai.steer.behaviors.BlendedSteering;
 import com.badlogic.gdx.ai.utils.Location;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 
 public class SteerableComponent implements Steerable<Vector2> {
 
-    public GameObject owner;
+    public Body body;	// stores a reference to our Box2D body
 
-    public SteerableComponent(GameObject owner) {
-        this.owner = owner;
+    // Steering data
+    float maxLinearSpeed = 25f;	// stores the max speed the entity can go
+    float maxLinearAcceleration = 5f;	// stores the max acceleration
+    float maxAngularSpeed =50f;		// the max turning speed
+    float maxAngularAcceleration = 5f;// the max turning acceleration
+    float zeroThreshold = 0.1f;	// how accurate should checks be (0.0000001f will mean the entity must get within 0.0000001f of
+    // target location. This will cause problems as our entities travel pretty fast and can easily over or undershoot this.)
+    public SteeringBehavior<Vector2> steeringBehavior; // stors the action behaviour
+    private static final SteeringAcceleration<Vector2> steeringOutput = new SteeringAcceleration<Vector2>(new Vector2()); // this is the actual steering vactor for our unit
+    private float boundingRadius = 1f;   // the minimum radius size for a circle required to cover whole object
+    private boolean tagged = false;		// This is a generic flag utilized in a variety of ways. (never used this myself)
+    private boolean independentFacing = false; // defines if the entity can move in a direction other than the way it faces)
+
+    public SteerableComponent(Body body, float boundingRadius) {
+        this.body = body;
+        this.boundingRadius = boundingRadius;
     }
 
-    /**
-     * Returns the vector indicating the linear velocity of this Steerable.
-     */
-    @Override
-    public Vector2 getLinearVelocity() {
-        return owner.getBody().getBody().getLinearVelocity();
-
+    public boolean isIndependentFacing () {
+        return independentFacing;
     }
 
-    /**
-     * Returns the float value indicating the the angular velocity in radians of this Steerable.
-     */
-    @Override
-    public float getAngularVelocity() {
-        return owner.getBody().getBody().getAngularVelocity();
+    public void setIndependentFacing (boolean independentFacing) {
+        this.independentFacing = independentFacing;
     }
 
-    /**
-     * Returns the bounding radius of this Steerable.
+    /** Call this to update the steering behaviour (per frame)
+     * @param delta delta time between frames
      */
-    @Override
-    public float getBoundingRadius() {
-        return 0;
+    public void update (float delta) {
+        if (steeringBehavior != null) {
+            steeringBehavior.calculateSteering(steeringOutput);
+            applySteering( delta);
+        }
     }
 
-    /**
-     * Returns {@code true} if this Steerable is tagged; {@code false} otherwise.
+    /** apply steering to the Box2d body
+     * @param deltaTime teh delta time
      */
-    @Override
-    public boolean isTagged() {
-        return false;
+    protected void applySteering ( float deltaTime) {
+        boolean anyAccelerations = false;
+
+        // Update position and linear velocity.
+        if (!steeringOutput.linear.isZero()) {
+            // this method internally scales the force by deltaTime
+            body.applyForceToCenter(steeringOutput.linear, true);
+            anyAccelerations = true;
+        }
+        // Update orientation and angular velocity
+        if (isIndependentFacing()) {
+            if (steeringOutput.angular != 0) {
+                // this method internally scales the torque by deltaTime
+                body.applyTorque(steeringOutput.angular, true);
+                anyAccelerations = true;
+            }
+        } else {
+            // If we haven't got any velocity, then we can do nothing.
+            Vector2 linVel = getLinearVelocity();
+            if (!linVel.isZero(getZeroLinearSpeedThreshold())) {
+                float newOrientation = vectorToAngle(linVel);
+                body.setAngularVelocity((newOrientation - getAngularVelocity()) * deltaTime); // this is superfluous if independentFacing is always true
+               // body.setTransform(body.getPosition(), newOrientation);
+                body.setTransform(body.getPosition(),45*MathUtils.degreesToRadians);
+                System.out.println(vectorToAngle(new Vector2(-1,1))/MathUtils.degreesToRadians);
+            }
+        }
+
+        if (anyAccelerations) {
+            // Cap the linear speed
+            Vector2 velocity = body.getLinearVelocity();
+            float currentSpeedSquare = velocity.len2();
+            float maxLinearSpeed = getMaxLinearSpeed();
+            if (currentSpeedSquare > (maxLinearSpeed * maxLinearSpeed)) {
+                body.setLinearVelocity(velocity.scl(maxLinearSpeed / (float)Math.sqrt(currentSpeedSquare)));
+            }
+            // Cap the angular speed
+            float maxAngVelocity = getMaxAngularSpeed();
+            if (body.getAngularVelocity() > maxAngVelocity) {
+                body.setAngularVelocity(maxAngVelocity);
+            }
+        }
     }
 
-    /**
-     * Tag/untag this Steerable. This is a generic flag utilized in a variety of ways.
-     *
-     * @param tagged the boolean value to set
-     */
-    @Override
-    public void setTagged(boolean tagged) {
 
-    }
-
-    /**
-     * Returns the threshold below which the linear speed can be considered zero. It must be a small positive value near to zero.
-     * Usually it is used to avoid updating the orientation when the velocity vector has a negligible length.
-     */
-    @Override
-    public float getZeroLinearSpeedThreshold() {
-        return 0;
-    }
-
-    /**
-     * Sets the threshold below which the linear speed can be considered zero. It must be a small positive value near to zero.
-     * Usually it is used to avoid updating the orientation when the velocity vector has a negligible length.
-     *
-     * @param value
-     */
-    @Override
-    public void setZeroLinearSpeedThreshold(float value) {
-
-    }
-
-    /**
-     * Returns the maximum linear speed.
-     */
-    @Override
-    public float getMaxLinearSpeed() {
-        return 0;
-    }
-
-    /**
-     * Sets the maximum linear speed.
-     *
-     * @param maxLinearSpeed
-     */
-    @Override
-    public void setMaxLinearSpeed(float maxLinearSpeed) {
-
-    }
-
-    /**
-     * Returns the maximum linear acceleration.
-     */
-    @Override
-    public float getMaxLinearAcceleration() {
-        return 0;
-    }
-
-    /**
-     * Sets the maximum linear acceleration.
-     *
-     * @param maxLinearAcceleration
-     */
-    @Override
-    public void setMaxLinearAcceleration(float maxLinearAcceleration) {
-
-    }
-
-    /**
-     * Returns the maximum angular speed.
-     */
-    @Override
-    public float getMaxAngularSpeed() {
-        return 0;
-    }
-
-    /**
-     * Sets the maximum angular speed.
-     *
-     * @param maxAngularSpeed
-     */
-    @Override
-    public void setMaxAngularSpeed(float maxAngularSpeed) {
-
-    }
-
-    /**
-     * Returns the maximum angular acceleration.
-     */
-    @Override
-    public float getMaxAngularAcceleration() {
-        return 0;
-    }
-
-    /**
-     * Sets the maximum angular acceleration.
-     *
-     * @param maxAngularAcceleration
-     */
-    @Override
-    public void setMaxAngularAcceleration(float maxAngularAcceleration) {
-
-    }
-
-    /**
-     * Returns the vector indicating the position of this location.
-     */
     @Override
     public Vector2 getPosition() {
-        return null;
+        return body.getPosition();
     }
 
-    /**
-     * Returns the float value indicating the orientation of this location. The orientation is the angle in radians representing
-     * the direction that this location is facing.
-     */
     @Override
     public float getOrientation() {
-        return 0;
+        return body.getAngle();
     }
 
-    /**
-     * Sets the orientation of this location, i.e. the angle in radians representing the direction that this location is facing.
-     *
-     * @param orientation the orientation in radians
-     */
     @Override
     public void setOrientation(float orientation) {
-
+        body.setTransform(getPosition(), orientation);
     }
-
-    /**
-     * Returns the angle in radians pointing along the specified vector.
-     *
-     * @param vector the vector
-     */
     @Override
     public float vectorToAngle(Vector2 vector) {
-        return 0;
+        return Utils.vectorToAngle(vector);
     }
-
-    /**
-     * Returns the unit vector in the direction of the specified angle expressed in radians.
-     *
-     * @param outVector the output vector.
-     * @param angle     the angle in radians.
-     * @return the output vector for chaining.
-     */
     @Override
     public Vector2 angleToVector(Vector2 outVector, float angle) {
-        return null;
+        return Utils.angleToVector(outVector, angle);
     }
-
-    /**
-     * Creates a new location.
-     * <p>
-     * This method is used internally to instantiate locations of the correct type parameter {@code T}. This technique keeps the API
-     * simple and makes the API easier to use with the GWT backend because avoids the use of reflection.
-     *
-     * @return the newly created location.
-     */
     @Override
     public Location<Vector2> newLocation() {
-        return null;
+        return new BodyLocation();
+    }
+    @Override
+    public float getZeroLinearSpeedThreshold() {
+        return zeroThreshold;
+    }
+    @Override
+    public void setZeroLinearSpeedThreshold(float value) {
+        zeroThreshold = value;
+    }
+    @Override
+    public float getMaxLinearSpeed() {
+        return this.maxLinearSpeed;
+    }
+    @Override
+    public void setMaxLinearSpeed(float maxLinearSpeed) {
+        this.maxLinearSpeed = maxLinearSpeed;
+    }
+    @Override
+    public float getMaxLinearAcceleration() {
+        return this.maxLinearAcceleration;
+    }
+    @Override
+    public void setMaxLinearAcceleration(float maxLinearAcceleration) {
+        this.maxLinearAcceleration = maxLinearAcceleration;
+    }
+    @Override
+    public float getMaxAngularSpeed() {
+        return this.maxAngularSpeed;
+    }
+    @Override
+    public void setMaxAngularSpeed(float maxAngularSpeed) {
+        this.maxAngularSpeed = maxAngularSpeed;
+    }
+    @Override
+    public float getMaxAngularAcceleration() {
+        return this.maxAngularAcceleration;
+    }
+    @Override
+    public void setMaxAngularAcceleration(float maxAngularAcceleration) {
+        this.maxAngularAcceleration = maxAngularAcceleration;
+    }
+    @Override
+    public Vector2 getLinearVelocity() {
+        return body.getLinearVelocity();
+    }
+    @Override
+    public float getAngularVelocity() {
+        return body.getAngularVelocity();
+    }
+    @Override
+    public float getBoundingRadius() {
+        return this.boundingRadius;
+    }
+    @Override
+    public boolean isTagged() {
+        return this.tagged;
+    }
+    @Override
+    public void setTagged(boolean tagged) {
+        this.tagged = tagged;
+    }
+    public void setSteeringBehavior(SteeringBehavior<Vector2> steeringBehavior){
+        this.steeringBehavior=steeringBehavior;
     }
 }

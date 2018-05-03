@@ -2,8 +2,6 @@ package com.agilewhisperers.bunnysnaketankmaze;
 
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
 import com.badlogic.gdx.Screen;
-import com.kotcrab.vis.ui.VisUI;
-
 public class MyScreen implements Screen {
 
     private static final float TIME_STEP = 1f / 300f;
@@ -23,9 +21,6 @@ public class MyScreen implements Screen {
         AssetManager.getObject().getAssetManager().finishLoading();
         ObjectFactory.getObject().start();
         CollisionManager.getObject();
-       VisUI.load();
-
-
     }
 
     @Override

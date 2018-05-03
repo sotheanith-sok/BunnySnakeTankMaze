@@ -1,9 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
-import com.agilewhisperers.bunnysnaketankmaze.components.Animator;
-import com.agilewhisperers.bunnysnaketankmaze.components.Body;
-import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
+import com.agilewhisperers.bunnysnaketankmaze.components.*;
 import com.agilewhisperers.bunnysnaketankmaze.systems.GameObjectManager;
 
 /**
@@ -14,6 +11,7 @@ public class GameObject {
     private Body body;
     private Stats stats;
     private Animator animator;
+    private SteerableComponent steerableComponent;
 
     public GameObject() {
         sprite = null;
@@ -78,5 +76,13 @@ public class GameObject {
 
     public void setAnimator(Animator animator) {
         this.animator = animator;
+    }
+
+    public SteerableComponent getSteerableComponent() {
+        return steerableComponent;
+    }
+
+    public void setSteerableComponent(SteerableComponent steerableComponent) {
+        this.steerableComponent = steerableComponent;
     }
 }

@@ -51,6 +51,9 @@ public class Player extends GameObject implements Script, Collider {
         movement();
         fire();
         rust();
+        if(getSteerableComponent()!=null){
+            getSteerableComponent().update(deltaTime);
+        }
     }
 
     public void movement() {

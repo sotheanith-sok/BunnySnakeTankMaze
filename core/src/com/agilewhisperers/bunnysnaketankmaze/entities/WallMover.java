@@ -1,5 +1,6 @@
 package com.agilewhisperers.bunnysnaketankmaze.entities;
 
+import com.agilewhisperers.bunnysnaketankmaze.components.SteerableComponent;
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
@@ -29,6 +30,7 @@ public class WallMover extends GameObject implements Script, Collider {
         wallLocation = ObjectFactory.getObject().getData();
         bodyArray = new Array<>();
         isEating = true;
+        setSteerableComponent(new SteerableComponent(getBody().getBody(),10));
     }
 
     @Override
@@ -50,37 +52,10 @@ public class WallMover extends GameObject implements Script, Collider {
     @Override
     public void runObjectScript(float deltaTime) {
         this.deltaTime = deltaTime;
-      /*stageTimer+= deltaTime;
-      startTimer+=deltaTime;
-      if(stageTimer>1f){
-         List<GameObject> gameObjectList=GameObjectManager.getObject().getAllGameObjects();
-         //EAT WALL
-         if (isEating){
-            Body body=gameObjectList.get(random.nextInt(gameObjectList.size())).getBody();
-            Vector2 position=body.getBody().getPosition();
-            Stats userData= (Stats) body.getBody().getUserData();
-            if(userData.ID.equals("Wall")
-                    &&position.x>=1&&position.x<wallLocation[0].length-1
-                    &&position.y>=1&&position.y<wallLocation.length-1){
-               wallLocation[(int)position.y][(int)position.x]=0;
-               bodyArray.add(body);
-               body.setPosition(-10,-10);
-               body.updateFilter(Physic.CATEGORY_ENVIRONMENT,(short)0);
-               getBody().setPosition(position.x,position.y);
-            }
-            if(isEating&&bodyArray.size>10){
-               isEating=false;
-               getBody().setPosition(-10,-10);
-            }
-
-         }else{
-            //PLACE WALL
-         }
-         stageTimer=0f;
-
-      }*/
-
-
+      if(getSteerableComponent()!=null){
+          getSteerableComponent().update(deltaTime);
+      }
     }
+
 
 }
