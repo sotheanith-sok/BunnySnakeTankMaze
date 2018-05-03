@@ -26,5 +26,6 @@ public class Player extends Entity {
         add(new StatsComponent());
         add(new CollisionComponent(new PlayerCollision()));
         add(new AttackComponent());
+        add(new HealthBarComponent(100,100));
     }
 }

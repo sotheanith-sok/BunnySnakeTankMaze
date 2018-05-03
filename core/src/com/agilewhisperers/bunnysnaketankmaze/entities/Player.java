@@ -13,7 +13,7 @@ public class Player extends GameObject implements Script, Collider {
 
     float rateTimer = 0;
     float reloadTimer = 0;
-    float capacityCounter = 0;
+    float iFrameTimer=0f;
 
     private float startRustTimer = 0;
     private float rustTime = 0;
@@ -47,9 +47,10 @@ public class Player extends GameObject implements Script, Collider {
     @Override
     public void runObjectScript(float deltaTime) {
         this.deltaTime = deltaTime;
+        iFrameTimer-=deltaTime;
         movement();
         fire();
-        //rust();
+        rust();
     }
 
     public void movement() {
@@ -78,21 +79,20 @@ public class Player extends GameObject implements Script, Collider {
     public void fire() {
         //Normal Fire
         rateTimer += deltaTime;
-        if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.M)) {
-
+        if ((getStats().getCapacityCounter() <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.M)) {
             GameObjectManager.getObject().getBullet(true).update(this.getBody().getPreviousPosition().x,
                     this.getBody().getPreviousPosition().y,
                     this.getBody().getPreviousAngle() / MathUtils.degRad, getStats().getBulletSpeed());
 
             rateTimer = 0;
-            capacityCounter++;
+            getStats().setCapacityCounter(getStats().getCapacityCounter()+1);
         }
 
         //Reload
-        if (capacityCounter > getStats().getCapacity()) {
+        if (getStats().getCapacityCounter() > getStats().getCapacity()) {
             reloadTimer += deltaTime;
             if (reloadTimer >= getStats().getReloadTime()) {
-                capacityCounter = 0;
+                getStats().setCapacityCounter(0);
                 reloadTimer = 0;
             }
         }
@@ -116,7 +116,7 @@ public class Player extends GameObject implements Script, Collider {
         } else {
             startRustTimer = 0;
         }
-        if (startRustTimer > 3) {
+        if (startRustTimer > 10) {
             rustTime += deltaTime;
             if (rustTime > 1) {
                 getStats().setCurrentHP(getStats().getCurrentHP() - (getStats().getMaxHP() * 5f / 100f));
@@ -130,4 +130,11 @@ public class Player extends GameObject implements Script, Collider {
     public float getDeltaTime() {
         return deltaTime;
     }
+    public void startIFrame(){
+       iFrameTimer=0.05f;
+    }
+
+   public float getiFrameTimer() {
+      return iFrameTimer;
+   }
 }

@@ -9,10 +9,11 @@ public class Stats {
 
     //Weapon
     //Round per second
-    private float RPS = 1f;
-    private float bulletSpeed = 25;
-    private float reloadTime = 0f;
+    private float RPS = 10f;
+    private float bulletSpeed = 100f;
+    private float reloadTime = 5f;
     private float capacity = 50;
+   private float capacityCounter = 0;
 
     //Health
     private float currentHP = 100;
@@ -75,7 +76,6 @@ public class Stats {
     }
 
     public void setCurrentHP(float currentHP) {
-
         this.currentHP = currentHP;
         if (currentHP < 0) {
             this.currentHP = 0;
@@ -105,4 +105,12 @@ public class Stats {
     public void setRotatingSpeed(float rotatingSpeed) {
         this.rotatingSpeed = rotatingSpeed;
     }
+
+   public float getCapacityCounter() {
+      return capacityCounter;
+   }
+
+   public void setCapacityCounter(float capacityCounter) {
+      this.capacityCounter = capacityCounter;
+   }
 }

@@ -25,6 +25,7 @@ public class RenderingSystem extends IteratingSystem {
     private ComponentMapper<AnimatorComponent> animatorComponents = ComponentMapper.getFor(AnimatorComponent.class);
     private ComponentMapper<TagComponent> tagComponents = ComponentMapper.getFor(TagComponent.class);
     private ComponentMapper<TimeComponent> timeComponents = ComponentMapper.getFor(TimeComponent.class);
+   private ComponentMapper<HealthBarComponent> hpComponents = ComponentMapper.getFor(HealthBarComponent.class);
 
 
     private OrthographicCamera camera;
@@ -37,7 +38,7 @@ public class RenderingSystem extends IteratingSystem {
     public RenderingSystem(World world) {
         super(Family.all(BodyComponent.class, TagComponent.class, TimeComponent.class).get(), 50);
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 1980, 1020);
+        camera.setToOrtho(false, 1980, 1100);
         batch = new SpriteBatch();
         renderer = new Box2DDebugRenderer();
         this.world = world;
@@ -101,9 +102,10 @@ public class RenderingSystem extends IteratingSystem {
         camera.update();
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        batch.draw((Texture) AssetManagingSystem.getObject().getAssetManager().get("gameObjects/Background.png"), 0, 0, 1980, 1080f);
+        batch.draw((Texture) AssetManagingSystem.getObject().getAssetManager().get("gameObjects/Background.png"), 0, 0, camera.viewportWidth, camera.viewportHeight);
         super.update(deltaTime);
         batch.end();
+
         renderHitBox();
     }
 }

@@ -42,19 +42,19 @@ public class Player2 extends Player {
     @Override
     public void fire() {
         rateTimer += getDeltaTime();
-        if ((capacityCounter <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
+        if ((getStats().getCapacityCounter() <= getStats().getCapacity()) && rateTimer > 1 / getStats().getRPS() && Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
             GameObjectManager.getObject().getBullet(false).update(this.getBody().getPreviousPosition().x,
                     this.getBody().getPreviousPosition().y,
                     this.getBody().getPreviousAngle() / MathUtils.degRad, getStats().getBulletSpeed());
             rateTimer = 0;
-            capacityCounter++;
+            getStats().setCapacityCounter(getStats().getCapacityCounter()+1);
         }
 
         //Reload
-        if (capacityCounter > getStats().getCapacity()) {
+        if (getStats().getCapacityCounter() > getStats().getCapacity()) {
             reloadTimer += getDeltaTime();
             if (reloadTimer >= getStats().getReloadTime()) {
-                capacityCounter = 0;
+                getStats().setCapacityCounter(0);
                 reloadTimer = 0;
             }
         }

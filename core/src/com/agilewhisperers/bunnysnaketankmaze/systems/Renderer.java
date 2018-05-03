@@ -3,7 +3,8 @@ package com.agilewhisperers.bunnysnaketankmaze.systems;
 import com.agilewhisperers.bunnysnaketankmaze.components.Animator;
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
-import com.agilewhisperers.bunnysnaketankmaze.entities.GameObject;
+import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
+import com.agilewhisperers.bunnysnaketankmaze.entities.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -15,6 +16,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 
 /**
  * The rendering system.
@@ -28,9 +31,14 @@ public class Renderer {
     private Box2DDebugRenderer renderer;
     private float elapsedTime = 0f;
 
+    private Stage stageUI;
+  private HealthBar healthBar1,healthBar2;
+  private AmmoBar ammoBar1, ammoBar2;
+
     private Renderer() {
+         initializeHpBar();
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 1980, 1020);
+        camera.setToOrtho(false, 1980, 1060);
         batch = new SpriteBatch();
         renderer = new Box2DDebugRenderer();
     }
@@ -64,6 +72,7 @@ public class Renderer {
                     TextureRegion textureRegion = null;
                     if (object.getAnimator() != null) {
                         Animator animator = object.getAnimator();
+
                         textureRegion = animator.getFrame(elapsedTime);
                     } else if (object.getSprite() != null) {
                         Sprite sprite = object.getSprite();
@@ -91,10 +100,14 @@ public class Renderer {
                     }
 
                 }
+              updatePlayerHPBar(object);
             }
         }
+       //
 
         batch.end();
+       stageUI.act();
+       stageUI.draw();
     }
 
     /**
@@ -104,6 +117,40 @@ public class Renderer {
      */
     public void renderHitBox(World world) {
 
-        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+       // renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+    }
+
+    public void updatePlayerHPBar(GameObject gameObject){
+       if(gameObject instanceof Player){
+          Stats stats= ((GameObject) gameObject.getBody().getBody().getUserData()).getStats();
+          if(gameObject instanceof Player1){
+             healthBar1.setValue(stats.getCurrentHP()/stats.getMaxHP());
+             ammoBar1.setValue((stats.getCapacity()-stats.getCapacityCounter())/stats.getCapacity());
+          }
+          if(gameObject instanceof Player2){
+             healthBar2.setValue(stats.getCurrentHP()/stats.getMaxHP());
+             ammoBar2.setValue((stats.getCapacity()-stats.getCapacityCounter())/stats.getCapacity());
+          }
+       }
+    }
+    public void initializeHpBar(){
+
+       stageUI = new Stage();
+       Group group=new Group();
+       healthBar1 =new HealthBar(Gdx.graphics.getWidth()/3,25);
+       healthBar1.setPosition(0,0);
+       ammoBar1=new AmmoBar(Gdx.graphics.getWidth()/4,10);
+       ammoBar1.setPosition(0,25);
+       group.addActor(healthBar1);
+       group.addActor(ammoBar1);
+       group.setPosition(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+       group.setRotation(180);
+       healthBar2 =new HealthBar(Gdx.graphics.getWidth()/3,25);
+       healthBar2.setPosition(0,Gdx.graphics.getHeight()-25);
+       ammoBar2=new AmmoBar(Gdx.graphics.getWidth()/4,10);
+       ammoBar2.setPosition(0,Gdx.graphics.getHeight()-35);
+       stageUI.addActor(group);
+       stageUI.addActor(healthBar2);
+       stageUI.addActor(ammoBar2);
     }
 }

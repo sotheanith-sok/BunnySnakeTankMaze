@@ -32,9 +32,18 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: ashley-1.7.3" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: gdx-freetype-1.9.8" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: gdx-bullet-1.9.8" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: vis-ui-1.4.1-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: box2dlights-1.4" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: gdx-box2d-1.9.8" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: gdx-1.9.8" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Gradle: universal-tween-engine-6.3.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: core.core-1.0" level="project" />
   </component>
 </module>

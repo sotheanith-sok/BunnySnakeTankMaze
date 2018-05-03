@@ -1,19 +1,43 @@
 package TestingAshley;
 
+import TestingAshley.Components.HealthBarComponent;
 import TestingAshley.Utilities.AssetManagingSystem;
 import TestingAshley.Utilities.ObjectFactory;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+
+import java.util.concurrent.TimeUnit;
 
 public class MainScreen implements Screen {
     private Game myGame;
     private Engine engine;
+    private Stage stageUI;
+   private HealthBarComponent healthBarComponentPlayer1,healthBarComponentPlayer2;
 
+   private long lastUpdate = 0L;
 
     public MainScreen(Game myGame) {
         this.myGame = myGame;
         engine = ObjectFactory.getObject().getEngine();
+
+       stageUI = new Stage();
+      Group group=new Group();
+       healthBarComponentPlayer1 =new HealthBarComponent(Gdx.graphics.getWidth()/3,25);
+       healthBarComponentPlayer1.setPosition(0,0);
+       group.addActor(healthBarComponentPlayer1);
+       group.setPosition(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+       group.setRotation(180);
+       healthBarComponentPlayer2 =new HealthBarComponent(Gdx.graphics.getWidth()/3,25);
+       healthBarComponentPlayer2.setPosition(0,Gdx.graphics.getHeight()-25);
+      stageUI.addActor(group);
+      stageUI.addActor(healthBarComponentPlayer2);
+
+
     }
 
     /**
@@ -22,7 +46,6 @@ public class MainScreen implements Screen {
     @Override
     public void show() {
         AssetManagingSystem.getObject().loadAssets();
-
         ObjectFactory.getObject().loadEntities();
         ObjectFactory.getObject().loadSystems();
 
@@ -37,6 +60,15 @@ public class MainScreen implements Screen {
     @Override
     public void render(float delta) {
         engine.update(delta);
+       Gdx.gl.glClearColor(0, 0, 0, 1);
+       Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+       if (System.currentTimeMillis() - lastUpdate > TimeUnit.SECONDS.toMillis(100000)) {
+          healthBarComponentPlayer1.setValue(healthBarComponentPlayer1.getValue() - 0.1f);
+          lastUpdate = System.currentTimeMillis();
+       }
+       stageUI.draw();
+       stageUI.act();
 
     }
 
