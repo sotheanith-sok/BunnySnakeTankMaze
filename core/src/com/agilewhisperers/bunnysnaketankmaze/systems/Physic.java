@@ -18,6 +18,7 @@ public class Physic {
     public static final short CATEGORY_WORLDMOVER = 0x0010;
     public static final short MASK_PLAYER1 = ~CATEGORY_PLAYER1 & ~CATEGORY_BULLET;
     public static final short MASK_PLAYER2 = ~CATEGORY_PLAYER2 & ~CATEGORY_BULLET;
+    public  static final  short MASK_WORLDMOVER=0;
 
 
     private static Physic single_instance;

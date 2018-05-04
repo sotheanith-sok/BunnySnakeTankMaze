@@ -20,7 +20,7 @@ public class Stats {
     private float maxHP = 100;
 
     //Movement and Rotation
-    private float movingSpeed = 5;
+    private float movingSpeed = 10;
     private float rotatingSpeed = 5f;
 
     public String getID() {

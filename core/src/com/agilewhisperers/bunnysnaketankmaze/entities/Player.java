@@ -32,8 +32,6 @@ public class Player extends GameObject implements Script, Collider {
         //Set tag for the object
         this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
-
-
         this.getBody().updateFilter(Physic.CATEGORY_PLAYER1, (short) -1);
 
     }

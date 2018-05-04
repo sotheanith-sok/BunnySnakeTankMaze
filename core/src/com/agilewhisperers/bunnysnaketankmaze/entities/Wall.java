@@ -2,6 +2,7 @@ package com.agilewhisperers.bunnysnaketankmaze.entities;
 
 import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
+import com.agilewhisperers.bunnysnaketankmaze.components.SteerableComponent;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Collider;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Physic;
 import com.agilewhisperers.bunnysnaketankmaze.systems.Script;
@@ -23,6 +24,7 @@ public class Wall extends GameObject implements Collider, Script {
 
         this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
         ScriptManager.getObject().addScriptListener(this);
+        setSteerableComponent(new SteerableComponent(getBody().getBody(),1));
 
     }
 

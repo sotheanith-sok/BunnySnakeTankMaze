@@ -13,7 +13,10 @@ public class BodyLocation implements Location<Vector2> {
         this.position=new Vector2();
         this.orientation=0;
     }
-
+      public BodyLocation(float x, float y, float orientation){
+         this.position=new Vector2(x,y);
+         this.orientation=orientation;
+      }
     /**
      * Returns the vector indicating the position of this location.
      */

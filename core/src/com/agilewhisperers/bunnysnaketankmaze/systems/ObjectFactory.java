@@ -6,6 +6,7 @@ import com.agilewhisperers.bunnysnaketankmaze.components.SteerableComponent;
 import com.agilewhisperers.bunnysnaketankmaze.entities.*;
 import com.badlogic.gdx.ai.steer.behaviors.Arrive;
 import com.badlogic.gdx.ai.steer.behaviors.BlendedSteering;
+import com.badlogic.gdx.ai.steer.behaviors.PrioritySteering;
 import com.badlogic.gdx.ai.steer.behaviors.RaycastObstacleAvoidance;
 import com.badlogic.gdx.ai.steer.utils.RayConfiguration;
 import com.badlogic.gdx.ai.steer.utils.rays.CentralRayWithWhiskersConfiguration;
@@ -162,7 +163,8 @@ public class ObjectFactory {
         //Bullet bullet=new Bullet();
         buildMaze();
         spawnPlayer();
-       // spawnWall();
+        spawnWall();
+        new WallMover();
 
 
 
@@ -182,27 +184,29 @@ public class ObjectFactory {
         } while (data[y][x] == 1);
         Player player2 = new Player2(x, y);
 
-        player1.setSteerableComponent(new SteerableComponent(player1.getBody().getBody(),1));
+        /*player1.setSteerableComponent(new SteerableComponent(player1.getBody().getBody(),1));
         player2.setSteerableComponent(new SteerableComponent(player2.getBody().getBody(),1));
-        Arrive<Vector2> arriveSB=new Arrive<Vector2>(player2.getSteerableComponent(),player1.getSteerableComponent())
-                .setTimeToTarget(0.01f)
-                .setArrivalTolerance(0.1f)
-                .setDecelerationRadius(0.1f);
+        Arrive<Vector2> arriveSB=new Arrive<Vector2>(player2.getSteerableComponent(),player1.getSteerableComponent());
+        arriveSB.setArrivalTolerance(2);
+
+
+
         CentralRayWithWhiskersConfiguration<Vector2> configuration=new CentralRayWithWhiskersConfiguration<>(
                 player2.getSteerableComponent(),
-                0.1f,0.05f,
+                1f,0.5f,
                 35*MathUtils.degreesToRadians);
+       SingleRayConfiguration<Vector2> singleRayConfiguration=new SingleRayConfiguration<>(player2.getSteerableComponent(),0.01f);
 
         RaycastCollisionDetector<Vector2>raycastCollisionDetector=new Box2dRaycastCollisionDetector(Physic.getObject().getWorld());
 
         RaycastObstacleAvoidance<Vector2>raycastObstacleAvoidance=new RaycastObstacleAvoidance<>(player2.getSteerableComponent(),
                 configuration
-        ,raycastCollisionDetector,0.01f);
-        BlendedSteering<Vector2>blendedSteering=new BlendedSteering<>(player2.getSteerableComponent());
-        blendedSteering.add(arriveSB,1);
-      //  blendedSteering.add(raycastObstacleAvoidance,2);
+        ,raycastCollisionDetector,0.001f);
+       PrioritySteering<Vector2> prioritySteering=new PrioritySteering<>(player2.getSteerableComponent(),0.001f);
+       // prioritySteering.add(raycastObstacleAvoidance);
+        prioritySteering.add(arriveSB);
 
-        player2.getSteerableComponent().setSteeringBehavior(blendedSteering);
+        player2.getSteerableComponent().setSteeringBehavior(prioritySteering);*/
     }
 
     public void spawnWall() {

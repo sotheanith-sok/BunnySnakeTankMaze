@@ -16,11 +16,11 @@ public class SteerableComponent implements Steerable<Vector2> {
     public Body body;	// stores a reference to our Box2D body
 
     // Steering data
-    float maxLinearSpeed = 25f;	// stores the max speed the entity can go
-    float maxLinearAcceleration = 5f;	// stores the max acceleration
+    float maxLinearSpeed = 5f;	// stores the max speed the entity can go
+    float maxLinearAcceleration = 100f;	// stores the max acceleration
     float maxAngularSpeed =50f;		// the max turning speed
-    float maxAngularAcceleration = 5f;// the max turning acceleration
-    float zeroThreshold = 0.1f;	// how accurate should checks be (0.0000001f will mean the entity must get within 0.0000001f of
+    float maxAngularAcceleration = 100f;// the max turning acceleration
+    float zeroThreshold =0.0001f;	// how accurate should checks be (0.0000001f will mean the entity must get within 0.0000001f of
     // target location. This will cause problems as our entities travel pretty fast and can easily over or undershoot this.)
     public SteeringBehavior<Vector2> steeringBehavior; // stors the action behaviour
     private static final SteeringAcceleration<Vector2> steeringOutput = new SteeringAcceleration<Vector2>(new Vector2()); // this is the actual steering vactor for our unit
@@ -49,9 +49,15 @@ public class SteerableComponent implements Steerable<Vector2> {
             steeringBehavior.calculateSteering(steeringOutput);
             applySteering( delta);
         }
+
+
     }
 
-    /** apply steering to the Box2d body
+   public  SteeringAcceleration<Vector2> getSteeringOutput() {
+      return steeringOutput;
+   }
+
+   /** apply steering to the Box2d body
      * @param deltaTime teh delta time
      */
     protected void applySteering ( float deltaTime) {
@@ -60,14 +66,16 @@ public class SteerableComponent implements Steerable<Vector2> {
         // Update position and linear velocity.
         if (!steeringOutput.linear.isZero()) {
             // this method internally scales the force by deltaTime
-            body.applyForceToCenter(steeringOutput.linear, true);
+            body.setLinearVelocity(body.getLinearVelocity().mulAdd(steeringOutput.linear,deltaTime));
             anyAccelerations = true;
+        }else {
+           body.setLinearVelocity(0,0);
         }
         // Update orientation and angular velocity
         if (isIndependentFacing()) {
             if (steeringOutput.angular != 0) {
                 // this method internally scales the torque by deltaTime
-                body.applyTorque(steeringOutput.angular, true);
+               body.setAngularVelocity(body.getAngularVelocity()+(steeringOutput.angular*deltaTime));
                 anyAccelerations = true;
             }
         } else {
@@ -76,9 +84,7 @@ public class SteerableComponent implements Steerable<Vector2> {
             if (!linVel.isZero(getZeroLinearSpeedThreshold())) {
                 float newOrientation = vectorToAngle(linVel);
                 body.setAngularVelocity((newOrientation - getAngularVelocity()) * deltaTime); // this is superfluous if independentFacing is always true
-               // body.setTransform(body.getPosition(), newOrientation);
                 body.setTransform(body.getPosition(),newOrientation);
-                System.out.println(Math.atan2(0,-1));
             }
         }
 

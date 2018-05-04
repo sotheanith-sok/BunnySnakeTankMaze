@@ -35,7 +35,7 @@ public class Player2 extends Player {
         } else if (Gdx.input.isKeyPressed(Input.Keys.S)) {
             this.getBody().getBody().setLinearVelocity(MathUtils.cosDeg(this.getBody().getAngle()) * -getStats().getMovingSpeed(), MathUtils.sinDeg(this.getBody().getAngle()) * -getStats().getMovingSpeed());
         } else {
-           // this.getBody().getBody().setLinearVelocity(0, 0);
+            this.getBody().getBody().setLinearVelocity(0, 0);
         }
     }
 

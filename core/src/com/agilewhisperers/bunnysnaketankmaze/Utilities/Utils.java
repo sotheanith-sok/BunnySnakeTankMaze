@@ -23,8 +23,8 @@ public class Utils {
    }
 
    public static Vector2 angleToVector(Vector2 outVector, float angle){
-        outVector.x=-MathUtils.sin(angle);
-        outVector.y=MathUtils.cos(angle);
+        outVector.x=MathUtils.cos(angle);
+        outVector.y=MathUtils.sin(angle);
 
 
 
@@ -32,5 +32,6 @@ public class Utils {
    }
     public static float vectorToAngle(Vector2 vector){
         return MathUtils.atan2(vector.y,vector.x);
+
     }
 }
