@@ -13,7 +13,7 @@ public class Player extends GameObject implements Script, Collider {
 
     float rateTimer = 0;
     float reloadTimer = 0;
-    float iFrameTimer=0f;
+    float iFrameTimer = 0f;
 
     private float startRustTimer = 0;
     private float rustTime = 0;
@@ -45,11 +45,11 @@ public class Player extends GameObject implements Script, Collider {
     @Override
     public void runObjectScript(float deltaTime) {
         this.deltaTime = deltaTime;
-        iFrameTimer-=deltaTime;
+        iFrameTimer -= deltaTime;
         movement();
         fire();
         rust();
-        if(getSteerableComponent()!=null){
+        if (getSteerableComponent() != null) {
             getSteerableComponent().update(deltaTime);
         }
     }
@@ -86,7 +86,7 @@ public class Player extends GameObject implements Script, Collider {
                     this.getBody().getPreviousAngle() / MathUtils.degRad, getStats().getBulletSpeed());
 
             rateTimer = 0;
-            getStats().setCapacityCounter(getStats().getCapacityCounter()+1);
+            getStats().setCapacityCounter(getStats().getCapacityCounter() + 1);
         }
 
         //Reload
@@ -131,11 +131,12 @@ public class Player extends GameObject implements Script, Collider {
     public float getDeltaTime() {
         return deltaTime;
     }
-    public void startIFrame(){
-       iFrameTimer=0.05f;
+
+    public void startIFrame() {
+        iFrameTimer = 0.05f;
     }
 
-   public float getiFrameTimer() {
-      return iFrameTimer;
-   }
+    public float getiFrameTimer() {
+        return iFrameTimer;
+    }
 }

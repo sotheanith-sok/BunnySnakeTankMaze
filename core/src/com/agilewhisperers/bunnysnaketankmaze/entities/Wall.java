@@ -20,11 +20,9 @@ public class Wall extends GameObject implements Collider, Script {
         getStats().setExist(true);
         this.getBody().getBody().setUserData(this);
         this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
-
-
         this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
         ScriptManager.getObject().addScriptListener(this);
-        setSteerableComponent(new SteerableComponent(getBody().getBody(),1));
+        setSteerableComponent(new SteerableComponent(getBody().getBody(), 1));
 
     }
 

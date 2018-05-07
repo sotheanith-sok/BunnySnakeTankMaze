@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BunnySnakeTankMaze:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c1f732c9-cb75-42a7-bf40-1e25b421617e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileContent/annotation-processors.bin" afterDir="false" />
@@ -7,27 +12,97 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/android.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-hdpi.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-hdpi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-mdpi.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-mdpi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental-safeguard/androidTest/debug/tag.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/AnimatorComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/Animators/Animator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/Animators/PlayerAnimator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/AttackComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/BodyComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/CollisionComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/Collisions/Collision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/Collisions/PlayerCollision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/HealthBarComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/MovementComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/SpriteComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/StatsComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/TagComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Components/TimeComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Entities/Bullet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Entities/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Entities/Wall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/MainScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/AttackSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/CleanerSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/CollisionSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/InputSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/MovementSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/PhysicSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Systems/RenderingSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/AssetManagingSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Maze/Cell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Maze/Direction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Maze/Maze.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPoolForPlayer1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPoolForPlayer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/TestingAshley/Utilities/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/Utilities/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/Utilities/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/BodyLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/BodyLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Box2dRaycastCollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Box2dRaycastCollisionDetector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/SteerableComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/SteerableComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/AmmoBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/AmmoBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/HealthBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/BScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainGameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/AssetManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/AssetManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/CollisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/CollisionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/desktop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/desktop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/com/agilewhisperers/bunnysnaketankmaze/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/agilewhisperers/bunnysnaketankmaze/desktop/DesktopLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -106,103 +181,19 @@
       </state>
     </system>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="BunnySnakeTankMaze" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Physic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WallMover.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#startCollision#0;class#WallMover#0" />
-                <element signature="method#endCollision#0;class#WallMover#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1858">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BodyLocation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/BodyLocation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-              <folding>
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1410#1411#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScriptManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Script.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Script.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Entities/Wall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wall.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Wall.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Body.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Body.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="28" column="41" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="6">
+              <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,10 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getBody().updateFilter(Physic.CATEGORY_ENVIROMENT,(short)0);</find>
-      <find>getUser</find>
-      <find>aiVersion</find>
-      <find>List</find>
       <find>contain</find>
       <find>List&lt;</find>
       <find>Arra</find>
@@ -249,10 +236,15 @@
       <find>System.out.</find>
       <find>&quot;Wall&quot;</find>
       <find>System.o</find>
+      <find>single_instance</find>
+      <find>System.out.println</find>
+      <find>gra</find>
+      <find>Rust</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Workspace\BunnySnakeTankMaze</dir>
       <dir>D:\Workspace\BunnySnakeTankMaze\core\src\TestingAshley\Components</dir>
+      <dir>D:\Workstation\BunnySnakeTankMaze</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -261,12 +253,12 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Sotheanith Sok\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1" />
+        <entry key="$PROJECT_DIR$" value="C:\Gradle\gradle-4.7" />
       </map>
     </option>
     <option name="myGradleVersions">
       <map>
-        <entry key="$PROJECT_DIR$" value="4.1" />
+        <entry key="$PROJECT_DIR$" value="4.7" />
       </map>
     </option>
     <option name="availableProjects">
@@ -2124,7 +2116,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="12194023041079" />
+        <entry key="$PROJECT_DIR$" value="10671264899274" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/android/build.gradle" value="3509192831" />
         <entry key="$PROJECT_DIR$/build.gradle" value="4081804430" />
@@ -2671,138 +2663,151 @@
               <option name="name" value="BunnySnakeTankMaze" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ide-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-android-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/model-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/publish" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/testing-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-base-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-base-services-groovy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-cli-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-core-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-docs-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-installation-beacon-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-jvm-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-compiler-plugin-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-builders-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-kotlin-dsl-tooling-models-0.10.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-launcher-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-logging-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-messaging-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-core-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-model-groovy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-process-services-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-resources-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-runtime-api-info-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-tooling-api-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/gradle-wrapper-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/groovy-all-2.4.11.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-announce-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-antlr-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-cache-http-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-comparison-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-build-init-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-code-quality-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-composite-builds-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-dependency-management-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-diagnostics-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ear-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ide-play-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-ivy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-jacoco-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-javascript-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-groovy-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-java-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-jvm-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-language-scala-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-maven-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-osgi-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-base-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-jvm-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-platform-play-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-development-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugin-use-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-plugins-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-publish-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-reporting-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-http-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-s3-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-resources-sftp-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-scala-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-signing-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-test-kit-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-base-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-jvm-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-testing-native-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-tooling-api-builders-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/gradle-workers-4.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.1-all/bzyivzo6n839fup2jbap0tjew/gradle-4.1/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="C:/Gradle/gradle-4.7/src/announce" />
+                  <option value="C:/Gradle/gradle-4.7/src/antlr" />
+                  <option value="C:/Gradle/gradle-4.7/src/base-services" />
+                  <option value="C:/Gradle/gradle-4.7/src/base-services-groovy" />
+                  <option value="C:/Gradle/gradle-4.7/src/build-cache" />
+                  <option value="C:/Gradle/gradle-4.7/src/build-cache-http" />
+                  <option value="C:/Gradle/gradle-4.7/src/build-comparison" />
+                  <option value="C:/Gradle/gradle-4.7/src/build-init" />
+                  <option value="C:/Gradle/gradle-4.7/src/build-option" />
+                  <option value="C:/Gradle/gradle-4.7/src/cli" />
+                  <option value="C:/Gradle/gradle-4.7/src/code-quality" />
+                  <option value="C:/Gradle/gradle-4.7/src/composite-builds" />
+                  <option value="C:/Gradle/gradle-4.7/src/core" />
+                  <option value="C:/Gradle/gradle-4.7/src/core-api" />
+                  <option value="C:/Gradle/gradle-4.7/src/dependency-management" />
+                  <option value="C:/Gradle/gradle-4.7/src/diagnostics" />
+                  <option value="C:/Gradle/gradle-4.7/src/ear" />
+                  <option value="C:/Gradle/gradle-4.7/src/ide" />
+                  <option value="C:/Gradle/gradle-4.7/src/ide-native" />
+                  <option value="C:/Gradle/gradle-4.7/src/ide-play" />
+                  <option value="C:/Gradle/gradle-4.7/src/installation-beacon" />
+                  <option value="C:/Gradle/gradle-4.7/src/internal-android-performance-testing" />
+                  <option value="C:/Gradle/gradle-4.7/src/internal-integ-testing" />
+                  <option value="C:/Gradle/gradle-4.7/src/internal-performance-testing" />
+                  <option value="C:/Gradle/gradle-4.7/src/internal-testing" />
+                  <option value="C:/Gradle/gradle-4.7/src/ivy" />
+                  <option value="C:/Gradle/gradle-4.7/src/jacoco" />
+                  <option value="C:/Gradle/gradle-4.7/src/javascript" />
+                  <option value="C:/Gradle/gradle-4.7/src/jvm-services" />
+                  <option value="C:/Gradle/gradle-4.7/src/language-groovy" />
+                  <option value="C:/Gradle/gradle-4.7/src/language-java" />
+                  <option value="C:/Gradle/gradle-4.7/src/language-jvm" />
+                  <option value="C:/Gradle/gradle-4.7/src/language-native" />
+                  <option value="C:/Gradle/gradle-4.7/src/language-scala" />
+                  <option value="C:/Gradle/gradle-4.7/src/launcher" />
+                  <option value="C:/Gradle/gradle-4.7/src/logging" />
+                  <option value="C:/Gradle/gradle-4.7/src/maven" />
+                  <option value="C:/Gradle/gradle-4.7/src/messaging" />
+                  <option value="C:/Gradle/gradle-4.7/src/model-core" />
+                  <option value="C:/Gradle/gradle-4.7/src/model-groovy" />
+                  <option value="C:/Gradle/gradle-4.7/src/native" />
+                  <option value="C:/Gradle/gradle-4.7/src/osgi" />
+                  <option value="C:/Gradle/gradle-4.7/src/persistent-cache" />
+                  <option value="C:/Gradle/gradle-4.7/src/platform-base" />
+                  <option value="C:/Gradle/gradle-4.7/src/platform-jvm" />
+                  <option value="C:/Gradle/gradle-4.7/src/platform-native" />
+                  <option value="C:/Gradle/gradle-4.7/src/platform-play" />
+                  <option value="C:/Gradle/gradle-4.7/src/plugin-development" />
+                  <option value="C:/Gradle/gradle-4.7/src/plugin-use" />
+                  <option value="C:/Gradle/gradle-4.7/src/plugins" />
+                  <option value="C:/Gradle/gradle-4.7/src/process-services" />
+                  <option value="C:/Gradle/gradle-4.7/src/publish" />
+                  <option value="C:/Gradle/gradle-4.7/src/reporting" />
+                  <option value="C:/Gradle/gradle-4.7/src/resources" />
+                  <option value="C:/Gradle/gradle-4.7/src/resources-gcs" />
+                  <option value="C:/Gradle/gradle-4.7/src/resources-http" />
+                  <option value="C:/Gradle/gradle-4.7/src/resources-s3" />
+                  <option value="C:/Gradle/gradle-4.7/src/resources-sftp" />
+                  <option value="C:/Gradle/gradle-4.7/src/scala" />
+                  <option value="C:/Gradle/gradle-4.7/src/signing" />
+                  <option value="C:/Gradle/gradle-4.7/src/test-kit" />
+                  <option value="C:/Gradle/gradle-4.7/src/testing-base" />
+                  <option value="C:/Gradle/gradle-4.7/src/testing-junit-platform" />
+                  <option value="C:/Gradle/gradle-4.7/src/testing-jvm" />
+                  <option value="C:/Gradle/gradle-4.7/src/testing-native" />
+                  <option value="C:/Gradle/gradle-4.7/src/tooling-api" />
+                  <option value="C:/Gradle/gradle-4.7/src/tooling-api-builders" />
+                  <option value="C:/Gradle/gradle-4.7/src/version-control" />
+                  <option value="C:/Gradle/gradle-4.7/src/workers" />
+                  <option value="C:/Gradle/gradle-4.7/src/wrapper" />
+                  <option value="C:/Gradle/gradle-4.7/lib/ant-1.9.9.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/ant-launcher-1.9.9.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-base-services-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-base-services-groovy-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-build-cache-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-build-option-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-cli-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-core-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-core-api-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-docs-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-installation-beacon-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-jvm-services-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-kotlin-dsl-0.16.3.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-kotlin-dsl-tooling-builders-0.16.3.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-kotlin-dsl-tooling-models-0.16.3.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-launcher-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-logging-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-messaging-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-model-core-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-model-groovy-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-native-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-persistent-cache-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-process-services-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-resources-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-runtime-api-info-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-tooling-api-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/gradle-wrapper-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/groovy-all-2.4.12.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-announce-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-antlr-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-build-cache-http-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-build-comparison-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-build-init-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-code-quality-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-composite-builds-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-dependency-management-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-diagnostics-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-ear-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-ide-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-ide-native-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-ide-play-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-ivy-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-jacoco-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-javascript-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-language-groovy-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-language-java-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-language-jvm-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-language-native-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-language-scala-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-maven-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-osgi-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-platform-base-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-platform-jvm-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-platform-native-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-platform-play-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-plugin-development-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-plugin-use-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-plugins-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-publish-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-reporting-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-resources-gcs-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-resources-http-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-resources-s3-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-resources-sftp-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-scala-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-signing-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-test-kit-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-testing-base-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-testing-junit-platform-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-testing-jvm-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-testing-native-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-tooling-api-builders-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-version-control-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/gradle-workers-4.7.jar" />
+                  <option value="C:/Gradle/gradle-4.7/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2821,16 +2826,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/InputComponent.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/TagComponent.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Systems/CleanerSystem.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/MovementComponent.java" />
-        <option value="$PROJECT_DIR$/desktop/src/com/agilewhisperers/bunnysnaketankmaze/desktop/DesktopLauncher.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Systems/MovementSystem.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/Collisions/Collision.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/Collisions/PlayerCollision.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/CollisionComponent.java" />
-        <option value="$PROJECT_DIR$/core/src/TestingAshley/Systems/CollisionSystem.java" />
         <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/BodyComponent.java" />
         <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/AnimatorComponent.java" />
         <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/AttackComponent.java" />
@@ -2852,26 +2847,36 @@
         <option value="$PROJECT_DIR$/core/src/TestingAshley/Entities/Player.java" />
         <option value="$PROJECT_DIR$/core/src/TestingAshley/Components/HealthBarComponent.java" />
         <option value="$PROJECT_DIR$/core/src/TestingAshley/MainScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/AmmoBar.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Bullet.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/HealthBar.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/ArrivalComponent.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Box2dRaycastCollisionDetector.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/Utilities/Utils.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/BodyLocation.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/SteerableComponent.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/SplashScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainMenu.java" />
+        <option value="$PROJECT_DIR$/desktop/src/com/agilewhisperers/bunnysnaketankmaze/desktop/DesktopLauncher.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/AssetManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/EndGameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainMenuScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/CollisionManager.java" />
+        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainGameScreen.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java" />
         <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java" />
-        <option value="$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java" />
       </list>
     </option>
   </component>
@@ -2891,8 +2896,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="975" />
+    <option name="x" value="141" />
+    <option name="y" value="20" />
+    <option name="width" value="1458" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -2902,10 +2908,11 @@
     <navigator proportions="" version="1">
       <flattenPackages ProjectPane="false" />
       <showMembers ProjectPane="true" />
-      <hideEmptyPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2929,23 +2936,6 @@
               <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="agilewhisperers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="agilewhisperers" type="462c0819:PsiDirectoryNode" />
               <item name="bunnysnaketankmaze" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2953,34 +2943,8 @@
               <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="agilewhisperers" type="462c0819:PsiDirectoryNode" />
-              <item name="bunnysnaketankmaze" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="agilewhisperers" type="462c0819:PsiDirectoryNode" />
               <item name="bunnysnaketankmaze" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BunnySnakeTankMaze" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="agilewhisperers" type="462c0819:PsiDirectoryNode" />
-              <item name="bunnysnaketankmaze" type="462c0819:PsiDirectoryNode" />
-              <item name="systems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BunnySnakeTankMaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -2988,7 +2952,6 @@
         <option name="show-excluded-files" value="false" />
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -2997,20 +2960,22 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="device.picker.selection" value="Pixel_XL_API_P" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/app-1.1.1/resources/app/git/mingw64/bin/git.exe" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Workstation\BunnySnakeTankMaze\android\assets\Menu" />
+      <recent name="D:\Workstation\BunnySnakeTankMaze\core\src\TestingAshley\Utilities" />
+      <recent name="D:\Workspace\BunnySnakeTankMaze\core\src\TestingAshley\Utilities\Maze" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Workspace\BunnySnakeTankMaze\android\assets\gameObjects" />
       <recent name="D:\Workspace\BunnySnakeTankMaze\android\assets" />
       <recent name="D:\Workspace\BunnySnakeTankMaze\core\src\com\agilewhisperers\bunnysnaketankmaze\systems" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Workstation\BunnySnakeTankMaze\core\src\TestingAshley\Utilities" />
-      <recent name="D:\Workspace\BunnySnakeTankMaze\core\src\TestingAshley\Utilities\Maze" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -3028,6 +2993,29 @@
   <component name="RunManager" selected="Application.Desktop">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="Hiero (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.badlogic.gdx.tools.hiero.Hiero" />
+      <module name="desktop" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.badlogic.gdx.tools.hiero.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Hiero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.badlogic.gdx.tools.hiero.Hiero" />
+      <module name="desktop" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.badlogic.gdx.tools.hiero.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -3086,7 +3074,15 @@
     <list>
       <item itemvalue="Android App.android" />
       <item itemvalue="Application.Desktop" />
+      <item itemvalue="Application.Hiero" />
+      <item itemvalue="Application.Hiero (1)" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Hiero (1)" />
+        <item itemvalue="Application.Hiero" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\God\AppData\Roaming\Subversion</configuration>
@@ -3146,11 +3142,16 @@
       <workItem from="1525360644331" duration="707000" />
       <workItem from="1525371717856" duration="1204000" />
       <workItem from="1525379706856" duration="14308000" />
+      <workItem from="1525631170852" duration="12477000" />
+      <workItem from="1525650562769" duration="1317000" />
+      <workItem from="1525651920553" duration="22000" />
+      <workItem from="1525651959445" duration="810000" />
+      <workItem from="1525653105800" duration="935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216356000" />
+    <option name="totallyTimeSpent" value="231917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3162,38 +3163,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info id="Build Variants" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.26308724" side_tool="true" weight="0.37037036" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50625" side_tool="true" visible="true" weight="0.32837406" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.3295302" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4859375" weight="0.32051283" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.48229167" weight="0.31880978" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.50084317" side_tool="true" weight="0.25208333" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947917" weight="0.32837406" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7369127" weight="0.37037036" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49947917" weight="0.32837406" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.73229164" weight="0.36981934" />
+      <window_info anchor="bottom" x="766" y="339" width="948" height="309" id="Terminal" order="7" sideWeight="0.49375" type="WINDOWED" weight="0.32837406" />
       <window_info id="Captures" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915683" visible="true" weight="0.25208333" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32478634" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3295302" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.50084317" side_tool="true" weight="0.25208333" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" sideWeight="0.49947917" weight="0.32943678" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.32943678" />
@@ -3201,47 +3203,47 @@
       <window_info anchor="right" id="Android Model" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Android Monitor" order="7" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49947917" weight="0.32837406" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Thumbnails" order="15" weight="0.32943678" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4859375" weight="0.32051283" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4859375" weight="0.31880978" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Android Model" order="3" side_tool="true" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7369127" visible="true" weight="0.37037036" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7369127" visible="true" weight="0.36981934" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="bottom" id="Android Monitor" order="8" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Captures" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26308724" side_tool="true" visible="true" weight="0.37037036" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26308724" side_tool="true" weight="0.37037036" />
       <window_info anchor="bottom" id="Messages" order="16" weight="0.32905984" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32478634" />
       <window_info anchor="right" id="Device File Explorer" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32905984" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3295302" />
+      <window_info anchor="right" id="Android Model" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32905984" />
       <window_info anchor="right" id="Gradle" order="7" weight="0.3295302" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25208333" />
       <window_info anchor="right" id="Database" order="8" weight="0.3295302" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32478634" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
@@ -3256,7 +3258,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="25" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -3264,94 +3266,35 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Components/BodyComponent.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="2006">
+          <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/AssetManagingSystem.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="2091">
+          <caret line="123" column="32" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/Constants.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPool.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPoolForPlayer1.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/Pools/BulletPoolForPlayer2.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Components/TimeComponent.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="2091">
+          <caret line="123" column="32" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Components/StatsComponent.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="2074">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Systems/InputSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="90" column="16" lean-forward="true" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/bac17f395be5010619b31280fe84e9f53118d0b9/gdx-1.9.8-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/bac17f395be5010619b31280fe84e9f53118d0b9/gdx-1.9.8-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/Skin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Systems/RenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Utilities/ObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="203" column="52" selection-start-line="203" selection-start-column="52" selection-end-line="203" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Entities/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Systems/AttackSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Systems/AttackSystem.java" />
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/BodyEditorLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-424">
@@ -3375,24 +3318,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="37" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/MainScreen.java" />
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Collider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/CollisionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -3405,21 +3335,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/HealthBar.java" />
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kotcrab.vis/vis-ui/1.4.1-SNAPSHOT/594bdf2492099e2838b6538f1d2da81c8a409e87/vis-ui-1.4.1-SNAPSHOT-sources.jar!/com/kotcrab/vis/ui/VisUI.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-ai/1.8.1/a0e7e1f3732190d68e376360d894175af72fabf2/gdx-ai-1.8.1-sources.jar!/com/badlogic/gdx/ai/steer/behaviors/RaycastObstacleAvoidance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -3428,20 +3344,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Box2dRaycastCollisionDetector.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="119" column="7" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-ai/1.8.1/a0e7e1f3732190d68e376360d894175af72fabf2/gdx-ai-1.8.1-sources.jar!/com/badlogic/gdx/ai/steer/behaviors/Arrive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -3453,65 +3355,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Entities/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/TestingAshley/Entities/Wall.java" />
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Body.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="374">
           <caret line="28" column="41" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/BodyLocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1410#1411#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -3526,57 +3384,186 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding>
-            <element signature="e#2634#2635#0" expanded="true" />
-            <element signature="e#2668#2669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1858">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#startCollision#0;class#WallMover#0" />
-            <element signature="method#endCollision#0;class#WallMover#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="544">
           <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/MyScreen.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-tools/1.9.8/6c7486ec4bf38d3a632455638356f6e85c97f437/gdx-tools-1.9.8-sources.jar!/com/badlogic/gdx/tools/hiero/Hiero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1140" column="18" selection-start-line="1140" selection-start-column="18" selection-end-line="1140" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/Menu/tracerUISkin/skin/tracer-ui.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="262" selection-start-line="262" selection-end-line="262" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/com/agilewhisperers/bunnysnaketankmaze/desktop/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/AssetManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/components/Stats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/BulletPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="80" column="51" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/BulletPoolForPlayer1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ScriptManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Physic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/Renderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/GameObjectManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/CollisionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/systems/ObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="208" column="27" selection-start-line="208" selection-start-column="27" selection-end-line="208" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainMenuScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/BunnySnakeTankMaze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/EndGameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/screens/MainGameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/WallMover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/agilewhisperers/bunnysnaketankmaze/entities/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3585,11 +3572,20 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+              <type id="jpa-descriptors" />
+              <type id="javaee-facet-resources" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>BunnyBattleTank</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

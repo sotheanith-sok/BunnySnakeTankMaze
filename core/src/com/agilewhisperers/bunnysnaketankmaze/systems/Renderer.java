@@ -32,11 +32,11 @@ public class Renderer {
     private float elapsedTime = 0f;
 
     private Stage stageUI;
-  private HealthBar healthBar1,healthBar2;
-  private AmmoBar ammoBar1, ammoBar2;
+    private HealthBar healthBar1, healthBar2;
+    private AmmoBar ammoBar1, ammoBar2;
 
     private Renderer() {
-         initializeHpBar();
+        initializeHpBar();
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 1980, 1060);
         batch = new SpriteBatch();
@@ -100,14 +100,14 @@ public class Renderer {
                     }
 
                 }
-              updatePlayerHPBar(object);
+                updatePlayerHPBar(object);
             }
         }
-       //
+        //
 
         batch.end();
-       stageUI.act();
-       stageUI.draw();
+        stageUI.act();
+        stageUI.draw();
     }
 
     /**
@@ -117,40 +117,45 @@ public class Renderer {
      */
     public void renderHitBox(World world) {
 
-       renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
+        renderer.render(world, camera.combined.cpy().scale(ppm, ppm, 0));
     }
 
-    public void updatePlayerHPBar(GameObject gameObject){
-       if(gameObject instanceof Player){
-          Stats stats= ((GameObject) gameObject.getBody().getBody().getUserData()).getStats();
-          if(gameObject instanceof Player1){
-             healthBar1.setValue(stats.getCurrentHP()/stats.getMaxHP());
-             ammoBar1.setValue((stats.getCapacity()-stats.getCapacityCounter())/stats.getCapacity());
-          }
-          if(gameObject instanceof Player2){
-             healthBar2.setValue(stats.getCurrentHP()/stats.getMaxHP());
-             ammoBar2.setValue((stats.getCapacity()-stats.getCapacityCounter())/stats.getCapacity());
-          }
-       }
+    public void updatePlayerHPBar(GameObject gameObject) {
+        if (gameObject instanceof Player) {
+            Stats stats = ((GameObject) gameObject.getBody().getBody().getUserData()).getStats();
+            if (gameObject instanceof Player1) {
+                healthBar1.setValue(stats.getCurrentHP() / stats.getMaxHP());
+                ammoBar1.setValue((stats.getCapacity() - stats.getCapacityCounter()) / stats.getCapacity());
+            }
+            if (gameObject instanceof Player2) {
+                healthBar2.setValue(stats.getCurrentHP() / stats.getMaxHP());
+                ammoBar2.setValue((stats.getCapacity() - stats.getCapacityCounter()) / stats.getCapacity());
+            }
+        }
     }
-    public void initializeHpBar(){
 
-       stageUI = new Stage();
-       Group group=new Group();
-       healthBar1 =new HealthBar(Gdx.graphics.getWidth()/3,25);
-       healthBar1.setPosition(0,0);
-       ammoBar1=new AmmoBar(Gdx.graphics.getWidth()/4,10);
-       ammoBar1.setPosition(0,25);
-       group.addActor(healthBar1);
-       group.addActor(ammoBar1);
-       group.setPosition(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-       group.setRotation(180);
-       healthBar2 =new HealthBar(Gdx.graphics.getWidth()/3,25);
-       healthBar2.setPosition(0,Gdx.graphics.getHeight()-25);
-       ammoBar2=new AmmoBar(Gdx.graphics.getWidth()/4,10);
-       ammoBar2.setPosition(0,Gdx.graphics.getHeight()-35);
-       stageUI.addActor(group);
-       stageUI.addActor(healthBar2);
-       stageUI.addActor(ammoBar2);
+    public void initializeHpBar() {
+
+        stageUI = new Stage();
+        Group group = new Group();
+        healthBar1 = new HealthBar(Gdx.graphics.getWidth() / 3, 25);
+        healthBar1.setPosition(0, 0);
+        ammoBar1 = new AmmoBar(Gdx.graphics.getWidth() / 4, 10);
+        ammoBar1.setPosition(0, 25);
+        group.addActor(healthBar1);
+        group.addActor(ammoBar1);
+        group.setPosition(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        group.setRotation(180);
+        healthBar2 = new HealthBar(Gdx.graphics.getWidth() / 3, 25);
+        healthBar2.setPosition(0, Gdx.graphics.getHeight() - 25);
+        ammoBar2 = new AmmoBar(Gdx.graphics.getWidth() / 4, 10);
+        ammoBar2.setPosition(0, Gdx.graphics.getHeight() - 35);
+        stageUI.addActor(group);
+        stageUI.addActor(healthBar2);
+        stageUI.addActor(ammoBar2);
+    }
+
+    public void clean() {
+        single_instance = null;
     }
 }

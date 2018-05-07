@@ -5,18 +5,20 @@ import com.badlogic.gdx.ai.utils.Location;
 import com.badlogic.gdx.math.Vector2;
 
 
-
 public class BodyLocation implements Location<Vector2> {
     Vector2 position;
     float orientation;
+
     public BodyLocation() {
-        this.position=new Vector2();
-        this.orientation=0;
+        this.position = new Vector2();
+        this.orientation = 0;
     }
-      public BodyLocation(float x, float y, float orientation){
-         this.position=new Vector2(x,y);
-         this.orientation=orientation;
-      }
+
+    public BodyLocation(float x, float y, float orientation) {
+        this.position = new Vector2(x, y);
+        this.orientation = orientation;
+    }
+
     /**
      * Returns the vector indicating the position of this location.
      */
@@ -41,7 +43,7 @@ public class BodyLocation implements Location<Vector2> {
      */
     @Override
     public void setOrientation(float orientation) {
-        this.orientation=orientation;
+        this.orientation = orientation;
     }
 
     /**
@@ -63,7 +65,7 @@ public class BodyLocation implements Location<Vector2> {
      */
     @Override
     public Vector2 angleToVector(Vector2 outVector, float angle) {
-        return Utils.angleToVector(outVector,angle);
+        return Utils.angleToVector(outVector, angle);
     }
 
     /**

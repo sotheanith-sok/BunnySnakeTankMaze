@@ -47,7 +47,7 @@ public class Player2 extends Player {
                     this.getBody().getPreviousPosition().y,
                     this.getBody().getPreviousAngle() / MathUtils.degRad, getStats().getBulletSpeed());
             rateTimer = 0;
-            getStats().setCapacityCounter(getStats().getCapacityCounter()+1);
+            getStats().setCapacityCounter(getStats().getCapacityCounter() + 1);
         }
 
         //Reload

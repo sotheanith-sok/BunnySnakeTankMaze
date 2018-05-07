@@ -54,4 +54,9 @@ public class ScriptManager {
             gameObjectArray.get(i).getBody().updatePreviousState();
         }
     }
+
+    public void clean() {
+        scriptList.clear();
+        single_instance = null;
+    }
 }

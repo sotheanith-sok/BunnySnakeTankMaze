@@ -66,4 +66,8 @@ public class CollisionManager implements ContactListener {
 
     }
 
+    public void clean() {
+        single_instance = null;
+    }
+
 }

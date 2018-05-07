@@ -13,7 +13,7 @@ public class Stats {
     private float bulletSpeed = 50f;
     private float reloadTime = 5f;
     private float capacity = 50;
-   private float capacityCounter = 0;
+    private float capacityCounter = 0;
 
     //Health
     private float currentHP = 100;
@@ -106,11 +106,11 @@ public class Stats {
         this.rotatingSpeed = rotatingSpeed;
     }
 
-   public float getCapacityCounter() {
-      return capacityCounter;
-   }
+    public float getCapacityCounter() {
+        return capacityCounter;
+    }
 
-   public void setCapacityCounter(float capacityCounter) {
-      this.capacityCounter = capacityCounter;
-   }
+    public void setCapacityCounter(float capacityCounter) {
+        this.capacityCounter = capacityCounter;
+    }
 }

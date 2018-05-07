@@ -37,14 +37,6 @@ public class GameObjectManager {
         gameObjectList.insert(0, gameObject);
     }
 
-    public void removeGameObject(GameObject gameObject) {
-        gameObject.getStats().setExist(false);
-        gameObjectList.removeValue(gameObject, true);
-        if (gameObject instanceof Script) {
-            ScriptManager.getObject().removeScriptListener((Script) gameObject);
-        }
-    }
-
 
     /**
      * Get the list of all gameObject.
@@ -65,11 +57,18 @@ public class GameObjectManager {
     }
 
     public void freeBullet(Bullet bullet, boolean isPlayer1) {
-
         if (isPlayer1) {
             bulletPoolForPlayer1.free(bullet);
         } else {
             bulletPoolForPlayer2.free(bullet);
         }
     }
+
+    public void clean() {
+        gameObjectList.clear();
+        bulletPoolForPlayer1.clear();
+        bulletPoolForPlayer2.clear();
+        single_instance = null;
+    }
+
 }

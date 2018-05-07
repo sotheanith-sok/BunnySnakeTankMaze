@@ -3,12 +3,48 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\God\.gradle\caches\modules-2\files-2.1\com.badlogicgames.ashley\ashley\1.7.3\8482bc42449d5e6d92d03ebb319c2b2d386e644a\ashley-1.7.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8482bc42449d5e6d92d03ebb319c2b2d386e644a">
+        <dex dex="D:\Workstation\BunnySnakeTankMaze\android\build\intermediates\pre-dexed\debug\ashley-1.7.3_433c1247842181ee6e7c7b272598cbccb01f7f92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\God\.gradle\caches\modules-2\files-2.1\org.mini2Dx\universal-tween-engine\6.3.3\a65cd6d5c8c26adca5ddf8b4482238a422b33b18\universal-tween-engine-6.3.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a65cd6d5c8c26adca5ddf8b4482238a422b33b18">
+        <dex dex="D:\Workstation\BunnySnakeTankMaze\android\build\intermediates\pre-dexed\debug\universal-tween-engine-6.3.3_d233092ff9ecbdae77108a2aceb6d23a3678e208.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\God\.gradle\caches\modules-2\files-2.1\com.kotcrab.vis\vis-ui\1.4.1-SNAPSHOT\e421faf07acec30402413d2d499032f6f9313e8\vis-ui-1.4.1-SNAPSHOT.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0e421faf07acec30402413d2d499032f6f9313e8">
+        <dex dex="D:\Workstation\BunnySnakeTankMaze\android\build\intermediates\pre-dexed\debug\vis-ui-1.4.1-SNAPSHOT_19d4dcdd923a6c8a6d533f1e5a3ee997feb0c111.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Workstation\BunnySnakeTankMaze\core\build\libs\core-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="41484d1d796b600cf47b60de93099ebd41492192">
+        sha1="94d4deb07606c49f4b341fe90efa2c64b5526e6d">
         <dex dex="D:\Workstation\BunnySnakeTankMaze\android\build\intermediates\pre-dexed\debug\core-1.0_cf02c762bb45dbb9a2a42c464882999fb6fe1bca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\God\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-ai\1.8.1\a52367e373fe52f0d20f162cbf8711c38f002a25\gdx-ai-1.8.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a52367e373fe52f0d20f162cbf8711c38f002a25">
+        <dex dex="D:\Workstation\BunnySnakeTankMaze\android\build\intermediates\pre-dexed\debug\gdx-ai-1.8.1_e526e9240ee474ece62c07199bc7f5b19b76e336.jar" />
     </item>
 
 </items>

@@ -4,7 +4,6 @@ import com.agilewhisperers.bunnysnaketankmaze.components.Body;
 import com.agilewhisperers.bunnysnaketankmaze.components.Sprite;
 import com.agilewhisperers.bunnysnaketankmaze.components.Stats;
 import com.agilewhisperers.bunnysnaketankmaze.systems.*;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -95,14 +94,14 @@ public class Bullet extends GameObject implements Script, Pool.Poolable, Collide
             body2 = contact.getFixtureA().getBody();
             body1 = contact.getFixtureB().getBody();
         }
-       GameObject body= (GameObject) body2.getUserData();
+        GameObject body = (GameObject) body2.getUserData();
         Stats stats = body.getStats();
         if (stats.getID().equals("Player")) {
-           if(((Player)body).getiFrameTimer()<0){
-              stats.setCurrentHP(stats.getCurrentHP() - (stats.getMaxHP() / 3f));
-              GameObjectManager.getObject().freeBullet(this, isPlayer1);
-              ((Player)body).startIFrame();
-           }
+            if (((Player) body).getiFrameTimer() < 0) {
+                stats.setCurrentHP(stats.getCurrentHP() - (stats.getMaxHP() / 3f));
+                GameObjectManager.getObject().freeBullet(this, isPlayer1);
+                ((Player) body).startIFrame();
+            }
 
         }
 

@@ -1,21 +1,9 @@
 package com.agilewhisperers.bunnysnaketankmaze.systems;
 
 import com.agilewhisperers.bunnysnaketankmaze.MazeGenerator.Maze;
-import com.agilewhisperers.bunnysnaketankmaze.components.Box2dRaycastCollisionDetector;
-import com.agilewhisperers.bunnysnaketankmaze.components.SteerableComponent;
 import com.agilewhisperers.bunnysnaketankmaze.entities.*;
-import com.badlogic.gdx.ai.steer.behaviors.Arrive;
-import com.badlogic.gdx.ai.steer.behaviors.BlendedSteering;
-import com.badlogic.gdx.ai.steer.behaviors.PrioritySteering;
-import com.badlogic.gdx.ai.steer.behaviors.RaycastObstacleAvoidance;
-import com.badlogic.gdx.ai.steer.utils.RayConfiguration;
-import com.badlogic.gdx.ai.steer.utils.rays.CentralRayWithWhiskersConfiguration;
-import com.badlogic.gdx.ai.steer.utils.rays.SingleRayConfiguration;
-import com.badlogic.gdx.ai.utils.Collision;
-import com.badlogic.gdx.ai.utils.Ray;
-import com.badlogic.gdx.ai.utils.RaycastCollisionDetector;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 
 /**
  * Method use to creates a batch of object.
@@ -24,10 +12,12 @@ public class ObjectFactory {
     public static ObjectFactory single_instance;
     private int[][] data;
     private Maze maze;
+    private Array<Player> playerList;
 
     private ObjectFactory() {
         maze = new Maze();
         data = new int[32][62];
+        playerList = new Array<>();
 
     }
 
@@ -167,7 +157,6 @@ public class ObjectFactory {
         new WallMover();
 
 
-
     }
 
     public void spawnPlayer() {
@@ -178,35 +167,14 @@ public class ObjectFactory {
             y = MathUtils.random(data.length - 1);
         } while (data[y][x] == 1);
         Player player1 = new Player1(x, y);
+        playerList.add(player1);
         do {
             x = MathUtils.random(data[0].length - 1);
             y = MathUtils.random(data.length - 1);
         } while (data[y][x] == 1);
         Player player2 = new Player2(x, y);
+        playerList.add(player2);
 
-        /*player1.setSteerableComponent(new SteerableComponent(player1.getBody().getBody(),1));
-        player2.setSteerableComponent(new SteerableComponent(player2.getBody().getBody(),1));
-        Arrive<Vector2> arriveSB=new Arrive<Vector2>(player2.getSteerableComponent(),player1.getSteerableComponent());
-        arriveSB.setArrivalTolerance(2);
-
-
-
-        CentralRayWithWhiskersConfiguration<Vector2> configuration=new CentralRayWithWhiskersConfiguration<>(
-                player2.getSteerableComponent(),
-                1f,0.5f,
-                35*MathUtils.degreesToRadians);
-       SingleRayConfiguration<Vector2> singleRayConfiguration=new SingleRayConfiguration<>(player2.getSteerableComponent(),0.01f);
-
-        RaycastCollisionDetector<Vector2>raycastCollisionDetector=new Box2dRaycastCollisionDetector(Physic.getObject().getWorld());
-
-        RaycastObstacleAvoidance<Vector2>raycastObstacleAvoidance=new RaycastObstacleAvoidance<>(player2.getSteerableComponent(),
-                configuration
-        ,raycastCollisionDetector,0.001f);
-       PrioritySteering<Vector2> prioritySteering=new PrioritySteering<>(player2.getSteerableComponent(),0.001f);
-       // prioritySteering.add(raycastObstacleAvoidance);
-        prioritySteering.add(arriveSB);
-
-        player2.getSteerableComponent().setSteeringBehavior(prioritySteering);*/
     }
 
     public void spawnWall() {
@@ -219,5 +187,11 @@ public class ObjectFactory {
         }
     }
 
+    public Array<Player> getPlayerList() {
+        return playerList;
+    }
 
+    public void clean() {
+        playerList.clear();
+    }
 }

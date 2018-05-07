@@ -1,23 +1,32 @@
 package com.agilewhisperers.bunnysnaketankmaze;
 
-import TestingAshley.MainScreen;
+import com.agilewhisperers.bunnysnaketankmaze.screens.EndGameScreen;
+import com.agilewhisperers.bunnysnaketankmaze.screens.MainGameScreen;
+import com.agilewhisperers.bunnysnaketankmaze.screens.MainMenuScreen;
 import com.badlogic.gdx.Game;
 
 public class BunnySnakeTankMaze extends Game {
 
-    private MainScreen ashleyScreen;
-    private MyScreen myScreen;
-   private int choice=0;
     @Override
     public void create() {
-       if(choice==0){
-          myScreen = new MyScreen(this);
-          setScreen(myScreen);
-       }else {
-          ashleyScreen = new MainScreen(this);
-          setScreen(ashleyScreen);
-       }
 
+        setScreen(new MainMenuScreen(this));
 
     }
+
+    public void changeScreen(int choice, int decision) {
+        switch (choice) {
+            case 1:
+                setScreen(new MainGameScreen(this));
+                break;
+            case 2:
+                setScreen(new EndGameScreen(this, decision));
+                break;
+            default:
+                setScreen(new MainMenuScreen(this));
+                break;
+        }
+    }
+
+
 }

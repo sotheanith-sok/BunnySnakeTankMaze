@@ -18,7 +18,7 @@ public class Physic {
     public static final short CATEGORY_WORLDMOVER = 0x0010;
     public static final short MASK_PLAYER1 = ~CATEGORY_PLAYER1 & ~CATEGORY_BULLET;
     public static final short MASK_PLAYER2 = ~CATEGORY_PLAYER2 & ~CATEGORY_BULLET;
-    public  static final  short MASK_WORLDMOVER=0;
+    public static final short MASK_WORLDMOVER = 0;
 
 
     private static Physic single_instance;
@@ -66,5 +66,14 @@ public class Physic {
             }
 
         }
+    }
+
+    public void clean() {
+        Array<Body> bodies = new Array<>();
+        Physic.getObject().getWorld().getBodies(bodies);
+        for (com.badlogic.gdx.physics.box2d.Body body : bodies) {
+            world.destroyBody(body);
+        }
+        single_instance = null;
     }
 }

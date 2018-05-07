@@ -17,6 +17,7 @@ public class AssetManager {
     public static AssetManager getObject() {
         if (manager == null) {
             manager = new AssetManager();
+
         }
         return manager;
     }
@@ -27,7 +28,7 @@ public class AssetManager {
         assetManager.load("gameObjects/Background.png", Texture.class);
         assetManager.load("gameObjects/Projectiles.atlas", TextureAtlas.class);
         assetManager.load("gameObjects/NPC.atlas", TextureAtlas.class);
-
+        assetManager.finishLoading();
     }
 
     public com.badlogic.gdx.assets.AssetManager getAssetManager() {
