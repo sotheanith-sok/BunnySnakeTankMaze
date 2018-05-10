@@ -1,9 +1,16 @@
 
 NPC.png
-size: 512,512
+size: 1024,512
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+MrFrog
+  rotate: false
+  xy: 350, 108
+  size: 300, 240
+  orig: 300, 240
+  offset: 0, 0
+  index: 1
 Spider
   rotate: false
   xy: 2, 2

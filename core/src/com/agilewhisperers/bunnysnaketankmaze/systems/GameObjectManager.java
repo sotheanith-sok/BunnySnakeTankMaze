@@ -9,66 +9,66 @@ import com.badlogic.gdx.utils.Array;
  * Database of all gameObject.
  */
 public class GameObjectManager {
-    private static GameObjectManager single_instance;
-    private Array<GameObject> gameObjectList;
-    private BulletPool bulletPoolForPlayer1, bulletPoolForPlayer2;
+   private static GameObjectManager single_instance;
+   private Array<GameObject> gameObjectList;
+   private BulletPool bulletPoolForPlayer1, bulletPoolForPlayer2;
 
-    private GameObjectManager() {
-        gameObjectList = new Array<>();
-        bulletPoolForPlayer1 = new BulletPoolForPlayer1();
-        bulletPoolForPlayer2 = new BulletPoolForPlayer2();
-    }
+   private GameObjectManager() {
+      gameObjectList = new Array<>();
+      bulletPoolForPlayer1 = new BulletPoolForPlayer1();
+      bulletPoolForPlayer2 = new BulletPoolForPlayer2();
+   }
 
-    public static GameObjectManager getObject() {
-        if (single_instance == null) {
-            single_instance = new GameObjectManager();
-        }
-        return single_instance;
-    }
-
-
-    /**
-     * Add gameObject to the database
-     *
-     * @param gameObject
-     */
-    public void addGameObject(GameObject gameObject) {
-
-        gameObjectList.insert(0, gameObject);
-    }
+   public static GameObjectManager getObject() {
+      if (single_instance == null) {
+         single_instance = new GameObjectManager();
+      }
+      return single_instance;
+   }
 
 
-    /**
-     * Get the list of all gameObject.
-     *
-     * @return gameObject list.
-     */
-    public Array<GameObject> getAllGameObjects() {
-        return gameObjectList;
-    }
+   /**
+    * Add gameObject to the database
+    *
+    * @param gameObject
+    */
+   public void addGameObject(GameObject gameObject) {
 
-    public Bullet getBullet(boolean isPlayer1) {
-        if (isPlayer1) {
-            return bulletPoolForPlayer1.obtain();
-        } else {
-            return bulletPoolForPlayer2.obtain();
-        }
+      gameObjectList.insert(0, gameObject);
+   }
 
-    }
 
-    public void freeBullet(Bullet bullet, boolean isPlayer1) {
-        if (isPlayer1) {
-            bulletPoolForPlayer1.free(bullet);
-        } else {
-            bulletPoolForPlayer2.free(bullet);
-        }
-    }
+   /**
+    * Get the list of all gameObject.
+    *
+    * @return gameObject list.
+    */
+   public Array<GameObject> getAllGameObjects() {
+      return gameObjectList;
+   }
 
-    public void clean() {
-        gameObjectList.clear();
-        bulletPoolForPlayer1.clear();
-        bulletPoolForPlayer2.clear();
-        single_instance = null;
-    }
+   public Bullet getBullet(boolean isPlayer1) {
+      if (isPlayer1) {
+         return bulletPoolForPlayer1.obtain();
+      } else {
+         return bulletPoolForPlayer2.obtain();
+      }
+
+   }
+
+   public void freeBullet(Bullet bullet, boolean isPlayer1) {
+      if (isPlayer1) {
+         bulletPoolForPlayer1.free(bullet);
+      } else {
+         bulletPoolForPlayer2.free(bullet);
+      }
+   }
+
+   public void clean() {
+      gameObjectList.clear();
+      bulletPoolForPlayer1.clear();
+      bulletPoolForPlayer2.clear();
+      single_instance = null;
+   }
 
 }

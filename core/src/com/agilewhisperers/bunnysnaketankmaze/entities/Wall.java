@@ -11,39 +11,46 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Contact;
 
 public class Wall extends GameObject implements Collider, Script {
-    public Wall(float posX, float posY) {
-        super(new Sprite(
-                "gameObjects/Environment.atlas", "Wall", 1
-        ), new Body(Physic.getObject().getWorld(), posX, posY, 1, 0, "Wall"));
-        this.getBody().getBody().setType(BodyDef.BodyType.KinematicBody);
-        getStats().setID("Wall");
-        getStats().setExist(true);
-        this.getBody().getBody().setUserData(this);
-        this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
-        this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
-        ScriptManager.getObject().addScriptListener(this);
-        setSteerableComponent(new SteerableComponent(getBody().getBody(), 1));
+   public Wall(float posX, float posY) {
+      super(new Sprite(
+              "gameObjects/Environment.atlas", "Wall", 1
+      ), new Body(Physic.getObject().getWorld(), posX, posY, 1, 0, "Wall"));
+      this.getBody().getBody().setType(BodyDef.BodyType.StaticBody);
+      getStats().setID("Wall");
+      getStats().setExist(true);
+      this.getBody().getBody().setUserData(this);
+      this.getBody().getFixtureList().get(0).setUserData(getStats().getID());
+      this.getBody().updateFilter(Physic.CATEGORY_ENVIRONMENT, (short) -1);
+      ScriptManager.getObject().addScriptListener(this);
+      setSteerableComponent(new SteerableComponent(getBody().getBody(), 1));
 
-    }
+   }
 
-    @Override
-    public void startCollision(Contact contact) {
+   @Override
+   public void startCollision(Contact contact) {
+      com.badlogic.gdx.physics.box2d.Body body1, body2;
+      if (contact.getFixtureA().getBody() == this.getBody().getBody()) {
+         body1 = contact.getFixtureA().getBody();
+         body2 = contact.getFixtureB().getBody();
+      } else {
+         body2 = contact.getFixtureA().getBody();
+         body1 = contact.getFixtureB().getBody();
+      }
+   }
 
-    }
+   @Override
+   public void endCollision(Contact contact) {
 
-    @Override
-    public void endCollision(Contact contact) {
-
-    }
+   }
 
 
-    /**
-     * This method will be call every game loop.
-     *
-     * @param deltaTime
-     */
-    @Override
-    public void runObjectScript(float deltaTime) {
+   /**
+    * This method will be call every game loop.
+    *
+    * @param deltaTime
+    */
+   @Override
+   public void runObjectScript(float deltaTime) {
 
-    }
+   }
 }

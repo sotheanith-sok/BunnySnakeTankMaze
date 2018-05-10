@@ -31,7 +31,7 @@ limitMemory=true
 useIndexes=true
 
 scaleFactors=[{suffix:"",factor:1}]
-inputFiles=[{path:Sprites/Player_001.png,type:Input,regionName:null},{path:Sprites/Player_009.png,type:Input,regionName:null},{path:Sprites/Player_002.png,type:Input,regionName:null},{path:Sprites/Player_003.png,type:Input,regionName:null},{path:Sprites/Player_004.png,type:Input,regionName:null},{path:Sprites/Player_005.png,type:Input,regionName:null},{path:Sprites/Player_006.png,type:Input,regionName:null},{path:Sprites/Player_007.png,type:Input,regionName:null},{path:Sprites/Player_008.png,type:Input,regionName:null}]
+inputFiles=[{path:Sprites/Player_001.png,type:Input,regionName:null},{path:Sprites/Player_002.png,type:Input,regionName:null}]
 
 
 ---
@@ -145,7 +145,7 @@ limitMemory=true
 useIndexes=true
 
 scaleFactors=[{suffix:"",factor:1}]
-inputFiles=[{path:Sprites/Carrot_01.png,type:Input,regionName:null},{path:Sprites/Carrot_05.png,type:Input,regionName:null},{path:Sprites/Carrot_02.png,type:Input,regionName:null},{path:Sprites/Carrot_03.png,type:Input,regionName:null},{path:Sprites/Carrot_04.png,type:Input,regionName:null}]
+inputFiles=[{path:Sprites/Carrot_01.png,type:Input,regionName:null}]
 
 
 -PROJ-
