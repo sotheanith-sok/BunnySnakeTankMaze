@@ -62,3 +62,4 @@ android/build/intermediates/incremental/mergeDebugResources/compile-file-map.pro
 android/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties
 android/android.iml
 .gradle/buildOutputCleanup/cache.properties
+gradlew
