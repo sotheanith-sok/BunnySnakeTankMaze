@@ -7,7 +7,7 @@ A two players tank game designed using LibGDx.
  - [Java](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
  - [LibGDX](https://libgdx.com/)
  
-## Author
+## Authors
  - [Sotheanith Sok](https://github.com/sotheanith)
  - [Tommy So](https://github.com/tommy8492nd)
  - [Rubin](https://github.com/rub3z)
