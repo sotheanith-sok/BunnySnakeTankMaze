@@ -8,7 +8,7 @@ A two players tank game designed using LibGDx.
  - [LibGDX](https://libgdx.com/)
  
 ## Authors
- - [Sotheanith Sok](https://github.com/sotheanith)
+ - [Sotheanith Sok](https://github.com/sotheanith-sok)
  - [Tommy So](https://github.com/tommy8492nd)
  - [Rubin](https://github.com/rub3z)
  - [Jose Vargas](https://github.com/jvargas7130)
